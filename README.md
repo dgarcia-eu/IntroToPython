@@ -17,7 +17,7 @@ The course does not follow a specific textbook but useful references are "Learn 
 
 Before starting the block course:
 
-1. Install the Jupyter environment or another IDE that allows them to follow the course.  
+1. Install the Jupyter environment or another IDE that allows you to follow the course.  
 [Instructions how to install Jupyter can be found here.](https://dgarcia-eu.github.io/IntroToPython/setup/Anaconda.html)
 2. Familiarize yourself with the Jupyter environment.  
 You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyter_walkthrough.txt)
