@@ -22,7 +22,8 @@ Before starting the block course:
 2. Familiarize yourself with the Jupyter environment.  
 You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyter_walkthrough.txt)
 3. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
-
+4. Check out Ilias to get the link to our private DataCamp Classroom. DataCamp is for you to do extra exercises besides the course. 
+5. Take a look at the [Github forum to ask questions](https://github.com/dgarcia-eu/IntroToPython/discussions/)
 
 ### Day 1
 

@@ -100,9 +100,28 @@ After this course, you should:
 - Day 5: 
   - Data visualization
   - Final exam
+  
 :::
 
 ::::
+
+
+## **Resources and help**
+
+- Ask questions in our Github Forum!  
+[https://github.com/dgarcia-eu/IntroToPython/discussions/](https://github.com/dgarcia-eu/IntroToPython/discussions/)
+  - I will check once a day after the morning session
+  - The most useful resource and often overlooked
+- DataCamp practice
+  - We recommend additional DataCamp exercises in some notebooks
+  - Check Ilias for an invite link
+  - You have to use your uni-konstanz.de email address to access
+- The course is self-contained but some useful books are:
+  - ["Learn Python the Hard Way" by Zed Shaw](https://learnpythonthehardway.org/)
+  - ["Python Crash Course" by Eric Matthes](https://nostarch.com/python-crash-course-3rd-edition)
+
+
+
 
 ## **Course grading**
 
