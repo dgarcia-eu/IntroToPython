@@ -18,14 +18,14 @@ The course does not follow a specific textbook but useful references are "Learn 
 Before starting the block course:
 
 1. Install the Jupyter environment or another IDE that allows them to follow the course.
-[Instructions how to install Jupyter can be found here.](setup/Anaconda.html)
+[Instructions how to install Jupyter can be found here.](https://dgarcia-eu.github.io/IntroToPython/setup/Anaconda.html)
 2. Familiarize yourself with the Jupyter environment. You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyter_walkthrough.txt)
 3. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
 
 
 ### Day 1
 
-- Welcome and course logistics: [Slides](Day1/Slides/Day1.html)
+- Welcome and course logistics: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day1/Slides/Day1.html)
 - Interactive lecture: Jupyter Notebook walkthrough
     - [10_jupyter_walkthrough.txt](Day1/10_jupyter_walkthrough.txt)
 - Interactive lecture: Variables, strings, and numbers
@@ -38,7 +38,7 @@ Before starting the block course:
 
 ### Day 2
 
-- Quiz about Day 1: [Slides](Day2/Slides/Day2.html)
+- Quiz about Day 1: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day2/Slides/Day2.html)
 - Interactive lecture: Advanced lists, slicing, and comprehensions
     - [21_lists_tuples-2.ipynb](Day2/21_lists_tuples-2.ipynb)
 - Interactive lecture: Conditional statements
@@ -49,7 +49,7 @@ Before starting the block course:
 
 ### Day 3
 
-- Quiz about Day 2: [Slides](Day3/Slides/Day3.html)
+- Quiz about Day 2: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day3/Slides/Day3.html)
 - Interactive lecture: Dictionaries
   - [31_dictionaries.ipynb](Day3/31_dictionaries.ipynb)
 - Interactive lecture: Functions
@@ -60,7 +60,7 @@ Before starting the block course:
 
 ### Day 4
 
-- Quiz about Day 3: [Slides](Day4/Slides/Day4.html)
+- Quiz about Day 3: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day4/Slides/Day4.html)
 - Interactive lecture: Python modules and exceptions
   - [41_modules_exceptions.ipynb](Day4/41_modules_exceptions.ipynb)
 - Interactive lecture: Write and read files
@@ -73,7 +73,7 @@ Before starting the block course:
 
 ### Day 5
 
-- Quiz about Day 4: [Slides](Day5/Slides/Day5.html)
+- Quiz about Day 4: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
 - Interactive lecture: Data visualisation in Python
   - [52_visualization.ipynb](Day5/51_visualization.ipynb)
 - **Written exam (90 min)**
