@@ -1,0 +1,148 @@
+---
+title: "Introduction to Programming with Python \n\n\n Day 1"
+author: "David Garcia, University of Konstanz"
+format: metropolis-revealjs
+highlight-style: github
+---
+
+## **About me**
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![](Profile.jpg)
+:::
+
+::: {.column width="70%"}
+<br/>
+
+- Website: [dgarcia.eu](https://dgarcia.eu/)
+- Bluesky: [@dgarcia.eu](https://bsky.app/profile/dgarcia.eu)
+- Github: [dgarcia-eu](https://github.com/dgarcia-eu)
+- Email: [david.garcia@uni-konstanz.de](mailto:david.garcia@uni-konstanz.de)
+:::
+
+::::
+
+- Professor for Social and Behavioral Data Science
+- Faculty member of the Complexity Science Hub Vienna
+- External faculty at the Barcelona Super Computing Center
+- Privatdozent at ETH Zurich
+- **Assistants in WS 2025/26: Anastasia Siebers and Niklas Bacher**
+
+
+
+## **Course aims**
+
+After this course, you should:
+
+- Have a solid foundation in Python programming. 
+
+- Understand fundamental programming concepts such as variables, control flow, basic data structures, and functions, 
+
+- Know how to load, manipulate, and visualize data in Python
+
+- Be able to apply these skills to basic data analysis and programming in other courses and to start developing more advanced, domain-specific Python skills.
+
+
+## **Target audience**
+
+**This course is designed for first-semester students of Social and Economic Data Science**
+
+::: {.incremental}
+- Who has ever written a simple script?
+- Who has learned programming before?
+- In which languages?
+- The target audience is students with nearly zero programming experience. There will be extra ungraded exercises for those of you with more experience.
+:::
+
+
+## **Teaching approach**
+
+
+- **Mornings:** Interactive lectures that cover theoretical and technical aspects of programming with Python
+  - Mostly based on going together through notebooks with concepts and exercises
+  - It is essential that you have the notebook in front of you and that you try the coding exercises
+  - The best time to ask questions about understanding
+- **Afternoons:** Practical tutorials where you apply the acquired knowledge in assignments
+  - Self-work with support from tutors
+  - The best time to get technical support and to ask questions about assignments
+
+
+
+## **Course overview**
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Day 1:
+  - Variables, strings and numbers
+  - Lists and tuples basics. Looping over lists
+
+- Day 2:
+  - Tuples and lists advanced
+  - Conditional commands
+
+- Day 3:
+  - Dictionaries
+  - Functions 
+
+:::
+
+::: {.column width="50%"}
+
+- Day 4:
+  - Exceptions
+  - Files
+  - Data exploration with pandas
+
+- Day 5: 
+  - Data visualization
+  - Final exam
+:::
+
+::::
+
+## **Course grading**
+
+The course has a pass/fail grade. To pass the course, students must complete the following:
+
+1. **Pass each of the five daily assignments (at least 50% points in each)**
+  - The deadline is 23:59 in each of the days of the course
+  - Submissions are done through Ilias. Familiarize yourself with Ilias as soon as possible, talk to the tutors in the afternoon if you need help
+
+2. **Pass the final written exam (at least 50% points)**
+  - 90-minutes written exam on Friday before lunch
+  - Not writing scripts on pen an paper, code input will be very short
+  - Designed to check experience with Python and conceptual knowledge
+  - **About programming! Not about memorizing stuff from slides or notebooks**. Quizzes from day 2 will provide example questions
+
+
+## **Warning about vibe coding (e.g. ChatGPT)**
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+**Vibe coding:** Using chatbots (ChatGPT, Claude, Gemini) to write the code of a software project and using the software without understanding the code
+
+Vibe coding is OK for hobbyist but **a professional data scientist is responsible of the code they run and deliver**.
+
+It's OK to discuss your work with a chatbot but not to copy-paste code from a chatbot or anywhere else (e.g. Stackoverflow, another student)
+
+Coding plugins might use AI for autocomplete but **you must always understand your code**
+
+:::
+
+::: {.column width="40%"}
+![](VibeCoding.png)
+:::
+
+:::: 
+
+## Anaconda and jupyter
+
+**Are you set up?**  -- Break for setup support, check instructions in: [setup/Anaconda.html](../../setup/Anaconda.html)
+
+![](../../setup/Navigator.png)

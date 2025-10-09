@@ -1,0 +1,27 @@
+Walkthrough Jupyter Notebooks
+
+1- Create a new notebook
+
+2- Write the following in the first cell:
+
+print("Hello World")
+
+3- Press Shift + Enter. What happens?
+
+4- Write the following in the second cell:
+
+print("Hello World)
+
+5- Press Shift + Enter. What happens?
+
+6- Write the following in the third cell:
+
+#print("Hello World)
+
+7- Press Shift + Enter. What happens?
+
+8- Now find how to restart the kernel and clear all ouput from all cells.
+
+9- Now run all cells again at once
+
+10- Delete the notebook where you wrote that code

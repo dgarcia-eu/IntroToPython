@@ -1,0 +1,68 @@
+---
+title: "Introduction to Programming with Python \n\n\n Day 2"
+author: "David Garcia, University of Konstanz"
+format: metropolis-revealjs
+highlight-style: github
+---
+
+## Quiz I
+
+1. Write the output of the following code:
+
+```python
+a = [1, 100]
+b = a
+b[0] = 0
+print(a)
+```
+2. Write the output of the following code:
+
+```python
+a = [1, 2, 3]
+c = [1, 2, 3]
+print(a is c)
+```
+
+3. Write the output of the following code:
+```python
+a = [0,1,2]
+for i in a:
+  print(i)
+```
+
+## Quiz II
+
+4. Evaluate whether each of the following code snippets produces an error. If it
+produces an error, briefly explain the reason why:
+
+```python
+name = "dollhouse"
+cats = 4
+name_cats = name + cats
+```
+
+```python
+some_list = [2, 5, "Elephant", 6, 8.2, True]
+print(some_list)
+```
+
+```python
+name = "dollhouse"
+cats = 4
+print(name, cats)
+```
+
+```python
+dollhouse = ['pandy', 'gabby', 'cakey', 'kitty', 'babybox']
+print(dollhouse.index(1))
+```
+
+```python
+t = (1,2,3)
+t.append(4)
+```
+
+## Feedback on Day 1
+
+![](QR.png){fig-align="center"}
+

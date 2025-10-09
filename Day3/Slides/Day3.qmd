@@ -1,0 +1,62 @@
+---
+title: "Introduction to Programming with Python \n\n\n Day 3"
+author: "David Garcia, University of Konstanz"
+format: metropolis-revealjs
+highlight-style: github
+---
+
+## Quiz I
+
+1.  In the following code, what is the output?
+
+```python
+dogs = ['willie', 'hootz', 'peso', 'monty', 'doggy']
+if len(dogs) >= 5:
+  print("Holy mackerel, we might as well start a dog hostel!")
+elif len(dogs) >= 3:
+  print("Wow, we have a lot of dogs here!")
+else:
+  print("Okay, this is a reasonable number of dogs.")
+```
+
+2.  In the following code, what is the output?
+
+```python
+num = 3
+if num >= 3:
+    num = 1
+    print("one")
+elif num == 1:
+    num = 3
+    print("three")
+elif num == 3:
+    print("???")
+print(num)
+```
+
+
+## Quiz II
+
+3.  In the following code, what is the output?
+
+
+```python
+from datetime import datetime
+date = ['Feb 09 2020', 'Feb 09 2020', 'Feb 09 2020', 'Feb 03 2020', 'Feb 03 2020']
+formatted_dates = [ \
+  datetime.strptime(d, '%b %d %Y').strftime("%Y-%m-%d") \
+  for d in date ]
+print(formatted_dates)
+```
+
+
+4. Using list comprehension, write one line of code that, from a list of dates, creates a list of tuples where each tuple contains a unique date and the count of its occurrences. 
+
+```python
+#Your code here
+```
+
+## Feedback on Day 2
+
+![](QR.png){fig-align="center"}
+

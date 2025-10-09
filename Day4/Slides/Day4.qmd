@@ -1,0 +1,80 @@
+---
+title: "Introduction to Programming with Python \n\n\n Day 4"
+author: "David Garcia, University of Konstanz"
+format: metropolis-revealjs
+highlight-style: github
+---
+
+## Quiz I
+
+
+1. Assume you have the following dictionary:
+
+```python
+dictionary = { "applez": 100, "oranges": 120", "bananas": 50}
+```
+How can I change the key of the key-value pair ```("apples", 100)```?
+
+
+2. What will be the output of the following code?
+
+```python
+num_sum = 10
+
+def doubler():
+    num_sum *= 2
+    
+doubler()
+```
+
+---
+
+3. What will be the output of the following code?
+
+```python
+def initialize():
+    first_value = 1 
+
+print(first_value)
+```
+
+4. What is the correct output of the following code? 
+
+```python
+def text_to_list(text):
+  t = text.lower()
+  return t.split()
+
+some_text = "The Old Man in The Sea"
+print(text_to_list(some_text))
+```
+
+1. ['the', 'old', 'man', 'in', 'the', 'sea']
+2. ['The', 'Old', 'Man', 'in', 'The', 'Sea']
+3. ["the, old, man, in, the, sea"]
+4. "the, old, man, in, the, sea"
+
+---
+
+5.  Write the output of the following code:
+
+```python
+word = 'letters'
+letters_d = {x: word.count(x) for x in word}
+print(letters_d['e'])
+```
+
+6.  Write the output of the following code:
+
+```python
+x = lambda a, b : a - b
+print(x(5, 3))
+```
+
+---
+
+
+## Feedback on Day 3
+
+![](QR.png){fig-align="center"}
+

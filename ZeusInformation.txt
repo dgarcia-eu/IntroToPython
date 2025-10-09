@@ -1,0 +1,27 @@
+Contents
+
+This introductory course is exclusively designed for first-semester MA SEDS students, aiming to provide a solid foundation in Python programming. It consists of hands-on sessions that cover theoretical and technical aspects of programming with Python and practical sessions where participants directly apply their acquired knowledge. Students will learn fundamental programming concepts such as variables, control flow, basic data structures, and functions, and will also learn how to use Python to load, manipulate, and visualize data. Successfully completing this course will enable students to apply these skills to basic data analysis and programming in other courses and will help them develop more advanced, domain-specific Python skills.
+
+Prerequisites
+
+Before starting the block course, students should install the Jupyter environment or another IDE that allows them to follow the course. Instructions are sent over email before the course and on the online materials. We recommend the students to familiarize themselves with the basics of coding in the Jupyter environment before the course starts.
+
+Mandatory requirement
+
+This course is exclusively for students of the Master's Programme in Social and Economic Data Science.
+
+Remark
+
+This course is exclusively for students of the Master's Programme in Social and Economic Data Science.
+
+
+Record of academic assessments
+
+The course has a pass/fail grade. To pass the course, students must complete the following:
+- Pass each of the five daily assignments (at least 50% points in each)
+- Pass the final written exam (at least 50% points)
+
+
+Course literature
+
+The course materials can be found in advance on the Github. The course does not follow a specific textbook but useful references are "Learn Python the Hard Way" by Zed Shaw and "Introduction to Python" by Eric Matthes.

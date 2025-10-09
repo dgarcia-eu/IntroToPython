@@ -1,0 +1,89 @@
+---
+title: "Introduction to Programming with Python \n\n\n Day 5"
+author: "David Garcia, University of Konstanz"
+format: metropolis-revealjs
+highlight-style: github
+---
+
+## Quiz I
+
+
+1.  Write the output of the following code:
+
+```python
+short_list = [1, 2, '3', 4]
+
+sum = 0
+for i in short_list:
+    try:
+        sum += i
+    except Exception as e:
+        print("Invalid value")
+print("Total sum:", sum)
+```
+
+2. The following code outputs an error. Rewrite it so it calculates the mean of the values:
+
+```python
+mean([1,2,3])
+
+> Traceback (most recent call last):
+>   File "<python-input-3>", line 1, in <module>
+>     mean([1,2,3])
+>     ^^^^
+> NameError: name 'mean' is not defined
+```
+
+---
+
+3. Consider the code below. Briefly describe what it does:
+
+```python
+with open('helloworld.csv', 'a') as f:
+    line = f.readline()
+    while line:
+        print(line)
+        line = f.readline()
+```
+
+4. Out of the lines below, select the ones that return the first row in a pandas data frame:
+
+a) ```df.loc[0]```
+b) ```df[0]```
+c) ```df.get(0)```
+
+---
+
+5. Describe in your own words the output of the following code:
+
+```python
+df.columns()
+> Index(['age', 'workclass', 'fnlwgt', 'education', 'education-num',
+>        'marital-status', 'occupation', 'relationship', 'race', 'sex',
+>        'capital-gain', 'capital-loss', 'hours-per-week', 'native-country',
+>        'class'],
+>       dtype='object')
+df.education-num.mean()
+```
+
+6. Assuming that df contains information on individual people, describe in your own words what the following code does:
+
+```python
+df.groupby("marital-status")["capital-gain"].mean()
+```
+
+---
+
+## Visual Studio Code for ICSS
+
+https://code.visualstudio.com/
+
+![](VSCode.png)
+
+**Install Visual Studio Code to start with ICSS next week**
+
+
+## Feedback on Day 4
+
+![](QR.png){fig-align="center"}
+
