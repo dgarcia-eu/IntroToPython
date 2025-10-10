@@ -123,19 +123,30 @@ After this course, you should:
 
 
 
-## **Course grading**
-
-The course has a pass/fail grade. To pass the course, students must complete the following:
+## **To pass the course, you must:**
 
 1. **Pass each of the five daily assignments (at least 50% points in each)**
   - The deadline is 23:59 in each of the days of the course
   - Submissions are done through Ilias. Familiarize yourself with Ilias as soon as possible, talk to the tutors in the afternoon if you need help
+  - There are advanced, ungraded assignments for you who have more experience. Don't submit those, we won't grade them
 
 2. **Pass the final written exam (at least 50% points)**
   - 90-minutes written exam on Friday before lunch
   - Not writing scripts on pen an paper, code input will be very short
   - Designed to check experience with Python and conceptual knowledge
   - **About programming! Not about memorizing stuff from slides or notebooks**. Quizzes from day 2 will provide example questions
+
+## **Registering for "exam"**
+
+- **This course is only pass/fail, there is no numeric grade**
+
+- We will inform you of whether you pass fail in the two weeks after the course
+
+- Then, between **December 1 and January 15th**, you have to **"REGISTER FOR THE EXAM"** in Zeus
+  - You need to do this to get the course credited at the end of the semester
+  - Make a note in your calendar because you can forget
+  - You will have to do this for other courses each semester, including seminars, tutorials, etc
+  
 
 
 ## **Warning about vibe coding (e.g. ChatGPT)**
