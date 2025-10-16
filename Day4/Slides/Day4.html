@@ -457,10 +457,10 @@ David Garcia, University of Konstanz
 <span id="cb5-2"><a href=""></a>letters_d <span class="op">=</span> {x: word.count(x) <span class="cf">for</span> x <span class="kw">in</span> word}</span>
 <span id="cb5-3"><a href=""></a><span class="bu">print</span>(letters_d[<span class="st">'e'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
-<li>Write the output of the following code:</li>
+<li>Describe the role of lambda in this code:</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>x <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">-</span> b</span>
-<span id="cb6-2"><a href=""></a><span class="bu">print</span>(x(<span class="dv">5</span>, <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>countpairs <span class="op">=</span> [(x,y) <span class="cf">for</span> (x,y) <span class="kw">in</span> counts.items()]</span>
+<span id="cb6-2"><a href=""></a>countpairs.sort(key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="feedback-on-day-3" class="slide level2">
 <h2>Feedback on Day 3</h2>
