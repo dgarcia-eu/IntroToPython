@@ -5,6 +5,20 @@ format: metropolis-revealjs
 highlight-style: github
 ---
 
+## Recap of Day 2
+
+*Fill in from yesterday's feedback form before the session. Delete the slide if
+there is genuinely nothing to pick up — but check the form first.*
+
+::: {.incremental}
+- **You asked us to repeat:** …
+- **We ran out of time on:** …
+- **The assignment tripped people up on:** …
+:::
+
+**Anything else from yesterday you want to go over? Now is the moment.**
+
+
 ## Quiz I
 
 1.  In the following code, what is the output?
