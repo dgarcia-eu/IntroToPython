@@ -1,0 +1,17 @@
+# Environment for mybinder.org, so a student whose local install fails on Monday
+# morning can still follow the course from a browser.
+#
+# Keep this in step with ../requirements.txt. CI installs requirements.txt; this
+# file is what Binder builds. Both are deliberately small - the course teaches
+# core Python, not a stack.
+name: introtopython
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pandas>=2.2,<3
+  - matplotlib>=3.9
+  - numpy>=2.0
+  - notebook
+  - jupyterlab
+  - ipykernel

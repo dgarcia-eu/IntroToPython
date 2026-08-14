@@ -41,7 +41,9 @@ body.dark .reveal h6 {
 
 .reveal {
     font-family: "Fira Sans";
-    font-size: 32px;
+    /* Raised from 32px for WS 2026/27: a student reported not being able to read
+       the slides from the back row of K503. */
+    font-size: 38px;
     font-weight: normal;
     color: #33474b; }
 
@@ -203,7 +205,9 @@ h1.title {
     width: 90%;
     margin: 20px auto;
     text-align: left;
-    font-size: 0.55em;
+    /* Raised from 0.55em: code is what the quiz slides are made of, and it was
+       the smallest text in the deck. 0.7em of 38px is about 27px. */
+    font-size: 0.7em;
     font-family: monospace;
     line-height: 1.2em;
     word-wrap: break-word;

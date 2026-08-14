@@ -18,7 +18,10 @@ The course does not follow a specific textbook but useful references are "Learn 
 Before starting the block course:
 
 1. Install the Jupyter environment or another IDE that allows you to follow the course.  
-[Instructions how to install Jupyter can be found here.](https://dgarcia-eu.github.io/IntroToPython/setup/Anaconda.html)
+[Instructions how to install Jupyter can be found here.](https://dgarcia-eu.github.io/IntroToPython/setup/Anaconda.html)  
+If your installation is not working on the first morning, don't lose the session to it:
+open the course in your browser instead and sort the installation out in the afternoon.  
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dgarcia-eu/IntroToPython/HEAD)
 2. Familiarize yourself with the Jupyter environment.  
 You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyter_walkthrough.txt)
 3. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
@@ -80,9 +83,9 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
 ### Day 5
 
 - Quiz about Day 4: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
+- **Written exam (90 min)** -- first thing, so you are not sitting through a lecture worrying about it
 - Interactive lecture: Data visualisation in Python
   - [51_visualization.ipynb](Day5/51_visualization.ipynb)
-- **Written exam (90 min)**
 - Assignment 5: Data visualization
   - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 17th, 23:59**
 
