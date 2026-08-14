@@ -1,0 +1,38 @@
+# --- Jupyter -----------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.virtual_documents/
+
+# --- Anaconda / RStudio / Quarto working state --------------------------------
+anaconda_projects/
+.Rhistory
+.Rproj.user/
+.quarto/
+*.quarto_ipynb
+
+# --- Files the notebooks generate when students run them ----------------------
+# These are outputs, not inputs: every one is written by an earlier cell of the
+# same notebook before it is read again. Keeping them out of the repository
+# stops student runs from showing up as local modifications.
+Day4/germany_party_account*.txt
+Day4/germany_party_account*.csv
+Day4/tweet_example.json
+Day4/tweet_example.pickle
+Day4/tweets_example.json
+Day4/test.csv
+Day4/fibo.py
+Day5/myfig.jpg
+
+# Deliberately NOT ignored, because they are inputs the notebooks read:
+#   Day4/adult.csv, Day5/adult.csv
+#   Day4/assignment_4/example_ten_tweets.json
+#   Day5/assignment_5/qog_std_cs_jan17_subset.csv
+#   Day2/assignment_2/date_example.pickle
+#   Day1/assignment_1/theoldmanandthesea.txt, Day3/assignment_3/...
+#   Day4/helloworld.txt  (kept so 42_files survives out-of-order execution)
+
+# --- OS ------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
