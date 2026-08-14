@@ -11,7 +11,7 @@ highlight-style: github
 1. Assume you have the following dictionary:
 
 ```python
-dictionary = { "applez": 100, "oranges": 120", "bananas": 50}
+dictionary = { "applez": 100, "oranges": 120, "bananas": 50}
 ```
 How can I change the key of the key-value pair ```("apples", 100)```?
 
