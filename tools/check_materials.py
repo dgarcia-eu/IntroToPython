@@ -70,11 +70,34 @@ def notebooks(patterns: list[str]) -> list[str]:
     return sorted(p for p in found if ".ipynb_checkpoints" not in p)
 
 
-def check_execution(paths: list[str], report: Report) -> None:
-    print("\n[1/4] Executing notebooks")
+def splice_solutions(nb, workdir: str) -> int:
+    """Replace each commented-out '%load solutions/x.py' with the file's contents.
+
+    The solutions ship commented out so students meet the exercise first. That
+    also means nothing ever executes them, so a solution can rot silently -
+    exactly what happened to Exercise 3.5, which grouped by a column this
+    notebook never creates. Splicing them in makes the check real.
+    """
+    spliced = 0
+    for cell in nb.cells:
+        if cell.cell_type != "code":
+            continue
+        m = re.search(r'#\s*%load\s+"?([^"\n]+?)"?\s*$', cell.source, re.M)
+        if not m:
+            continue
+        target = os.path.join(workdir, m.group(1).strip())
+        if os.path.exists(target):
+            cell.source = open(target, encoding="utf-8").read()
+            spliced += 1
+    return spliced
+
+
+def check_execution(paths: list[str], report: Report, with_solutions: bool = False) -> None:
+    print(f"\n[1/4] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
     for path in paths:
         workdir = os.path.dirname(path) or "."
         nb = nbformat.read(path, as_version=4)
+        spliced = splice_solutions(nb, workdir) if with_solutions else 0
         try:
             NotebookClient(
                 nb,
@@ -95,7 +118,7 @@ def check_execution(paths: list[str], report: Report) -> None:
             raised = [o for o in cell.get("outputs", []) if o.output_type == "error"]
             if raised and not tagged:
                 unexpected.append(f"cell {i} ({raised[0].ename}: {raised[0].evalue[:70]})")
-            elif tagged and not raised:
+            elif tagged and not raised and not with_solutions:
                 silent.append(f"cell {i}")
 
         for u in unexpected:
@@ -110,7 +133,8 @@ def check_execution(paths: list[str], report: Report) -> None:
                 "raises-exception" in c.get("metadata", {}).get("tags", [])
                 for c in nb.cells
             )
-            report.ok(f"{path} ({tags} deliberate exception{'s' if tags != 1 else ''})")
+            extra = f", {spliced} solutions" if spliced else ""
+            report.ok(f"{path} ({tags} deliberate exception{'s' if tags != 1 else ''}{extra})")
 
         check_warnings(path, nb, report)
 
@@ -195,6 +219,8 @@ def check_kernels(paths: list[str], report: Report) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--network", action="store_true", help="also verify external URLs")
+    parser.add_argument("--solutions", action="store_true",
+                        help="also run every notebook with its solution files spliced in")
     args = parser.parse_args()
 
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
@@ -207,6 +233,8 @@ def main() -> int:
 
     report = Report()
     check_execution(lectures, report)
+    if args.solutions:
+        check_execution(lectures, report, with_solutions=True)
     check_load_paths(every, report)
     check_urls(every, report, args.network)
     check_kernels(every, report)

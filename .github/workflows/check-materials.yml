@@ -34,7 +34,7 @@ jobs:
           python -m ipykernel install --user --name python3
 
       - name: Execute notebooks and check materials
-        run: python tools/check_materials.py
+        run: python tools/check_materials.py --solutions
 
       # Link checking is split out and allowed to fail: a university server
       # being down for an afternoon should not turn the build red.
