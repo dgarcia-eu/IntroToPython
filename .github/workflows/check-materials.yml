@@ -1,0 +1,38 @@
+name: Check course materials
+
+# Runs the checks in tools/check_materials.py. The weekly schedule is what
+# catches the slow failures: a library deprecation landing in a new pandas
+# release, or an external link going dead months after it was last touched.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m ipykernel install --user --name python3
+
+      - name: Execute notebooks and check materials
+        run: python tools/check_materials.py
+
+      # Link checking is split out and allowed to fail: a university server
+      # being down for an afternoon should not turn the build red.
+      - name: Check external links
+        continue-on-error: true
+        run: python tools/check_materials.py --network
