@@ -24,6 +24,8 @@ Day4/tweets_example.json
 Day4/test.csv
 Day4/fibo.py
 Day5/myfig.jpg
+Day5/word_count.py
+Day5/greet.py
 
 # Deliberately NOT ignored, because they are inputs the notebooks read:
 #   Day4/adult.csv, Day5/adult.csv
