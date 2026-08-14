@@ -41,10 +41,12 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
 ### Day 2
 
 - Quiz about Day 1: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day2/Slides/Day2.html)
-- Interactive lecture: Advanced lists, slicing, and comprehensions
-    - [21_lists_tuples-2.ipynb](Day2/21_lists_tuples-2.ipynb)
+- Interactive lecture: Advanced lists, slicing, mutability, and nesting
+    - [21_lists_advanced.ipynb](Day2/21_lists_advanced.ipynb)
 - Interactive lecture: Conditional statements
     - [22_if_statements.ipynb](Day2/22_if_statements.ipynb)
+- Interactive lecture: List comprehensions
+    - [23_comprehensions.ipynb](Day2/23_comprehensions.ipynb)
 - Assignment 2: Lists, Tuples, Sets, Comprehensions, and if-statements
   - [assignment_2.ipynb](Day2/assignment_2/assignment_2.ipynb) -- **Deadline: October 14th, 23:59**
   - [Extra exercises 2 (ungraded)](Day2/assignment_2/assignment_2-extra.ipynb)
@@ -54,7 +56,7 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
 - Quiz about Day 2: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day3/Slides/Day3.html)
 - Interactive lecture: Dictionaries
   - [31_dictionaries.ipynb](Day3/31_dictionaries.ipynb)
-- Interactive lecture: Functions
+- Interactive lecture: Functions, lambda, and scope
   - [32_functions.ipynb](Day3/32_functions.ipynb)
 - Assignment 3: Dictionaries and Functions
   - [assignment_3.ipynb](Day3/assignment_3/assignment_3.ipynb) -- **Deadline: October 15th, 23:59**
@@ -63,6 +65,8 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
 ### Day 4
 
 - Quiz about Day 3: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day4/Slides/Day4.html)
+- Interactive lecture: Flexible function arguments (*args and **kwargs)
+  - [40_arguments.ipynb](Day4/40_arguments.ipynb)
 - Interactive lecture: Python modules and exceptions
   - [41_modules_exceptions.ipynb](Day4/41_modules_exceptions.ipynb)
 - Interactive lecture: Write and read files
