@@ -231,8 +231,33 @@ def check_binder(report: Report, network: bool) -> None:
     import urllib.error
     import urllib.request
 
-    for candidate in ("binder/environment.yml", "environment.yml", "binder/requirements.txt",
-                      "requirements.txt"):
+    def exists(path: str) -> bool | None:
+        """True / False, or None when GitHub would not tell us."""
+        url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}?ref={ref}"
+        req = urllib.request.Request(url, headers={"User-Agent": "IntroToPython-CI",
+                                                   "Accept": "application/vnd.github+json"})
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return resp.status == 200
+        except urllib.error.HTTPError as exc:
+            if exc.code == 404:
+                return False
+            return None
+        except Exception:
+            return None
+
+    # repo2docker's rule: if a binder/ directory exists it is the ONLY place
+    # config is read from, and root-level files are ignored. Mirror that, or the
+    # check passes on a root environment.yml that Binder will never look at.
+    in_binder = exists("binder")
+    if in_binder is None:
+        report.note("Binder check skipped: could not reach the GitHub API")
+        return
+    candidates = (["binder/environment.yml", "binder/requirements.txt", "binder/Dockerfile"]
+                  if in_binder else
+                  ["environment.yml", "requirements.txt", "Dockerfile"])
+
+    for candidate in candidates:
         url = f"https://api.github.com/repos/{owner}/{repo}/contents/{candidate}?ref={ref}"
         req = urllib.request.Request(url, headers={"User-Agent": "IntroToPython-CI",
                                                    "Accept": "application/vnd.github+json"})
@@ -248,10 +273,12 @@ def check_binder(report: Report, network: bool) -> None:
             continue
         except Exception:
             continue
+    where = "binder/" if in_binder else "the repository root"
     report.fail(
-        f"the Binder badge points at {owner}/{repo}@{ref}, but that ref has no "
-        f"environment.yml or requirements.txt. Binder will fail with 'No environment "
-        f"specification found'. Point the badge at a ref that has one.")
+        f"the Binder badge points at {owner}/{repo}@{ref}, but {where} on that ref "
+        f"has none of {', '.join(candidates)}. Binder will fail with 'No environment "
+        f"specification found'. Note that when a binder/ directory exists, "
+        f"repo2docker ignores root-level config entirely.")
 
 
 def check_kernels(paths: list[str], report: Report) -> None:
