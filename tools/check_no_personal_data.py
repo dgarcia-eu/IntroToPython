@@ -47,6 +47,10 @@ FORBIDDEN_WORDS = re.compile(
     r"nachname\s*,\s*vorname|student\s+id\s*[:=])", re.I)
 
 TEXTUAL = re.compile(r"\.(ipynb|md|py|txt|csv|json|qmd|yml|yaml|html)$", re.I)
+
+# Vendored third-party assets, and this file itself: it necessarily contains the
+# very words it searches for, so scanning its own source would always fail.
+SELF = "tools/check_no_personal_data.py"
 SKIP = re.compile(r"(_files/|_extensions/|\.min\.|/libs/)")
 
 EMAIL = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
@@ -68,7 +72,7 @@ def main() -> int:
 
     scanned = 0
     for path in files:
-        if not TEXTUAL.search(path) or SKIP.search(path):
+        if not TEXTUAL.search(path) or SKIP.search(path) or path == SELF:
             continue
         try:
             text = open(path, encoding="utf-8", errors="ignore").read()
