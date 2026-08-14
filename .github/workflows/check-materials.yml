@@ -38,11 +38,16 @@ jobs:
 
       # Slides need Chrome and pdftoppm, so they are checked separately and
       # allowed to fail rather than blocking the notebook checks.
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
       - name: Check slides fit 16:9
         continue-on-error: true
         run: |
           pip install pillow
           sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          quarto --version
+          google-chrome --version
           python tools/check_slides.py
 
       # Link checking is split out and allowed to fail: a university server

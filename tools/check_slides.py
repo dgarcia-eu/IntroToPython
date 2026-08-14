@@ -83,8 +83,13 @@ def check_nothing_lost(qmd: str, pdf: str) -> list[str]:
 
 
 def main() -> int:
+    missing = [t for t in ("quarto", "pdftoppm")
+               if subprocess.run(["which", t], capture_output=True).returncode != 0]
     if CHROME is None:
-        print("No Chrome/Chromium found; cannot print slides to PDF.")
+        missing.append("google-chrome or chromium")
+    if missing:
+        print("Cannot check slides: " + ", ".join(missing) + " not installed.")
+        print("Needed: quarto (render), Chrome (print to PDF), poppler-utils (pdftoppm).")
         return 1
     only = sys.argv[1] if len(sys.argv) > 1 else None
     decks = sorted(glob.glob(os.path.join(ROOT, "Day*/Slides/Day*.qmd")))
