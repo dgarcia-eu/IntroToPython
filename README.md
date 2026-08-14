@@ -77,7 +77,7 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
 
 - Quiz about Day 4: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
 - Interactive lecture: Data visualisation in Python
-  - [52_visualization.ipynb](Day5/51_visualization.ipynb)
+  - [51_visualization.ipynb](Day5/51_visualization.ipynb)
 - **Written exam (90 min)**
 - Assignment 5: Data visualization
   - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 17th, 23:59**
