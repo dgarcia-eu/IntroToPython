@@ -1,8 +1,22 @@
 ---
-title: "Introduction to Programming with Python \n\n\n Day 1"
-author: "David Garcia, University of Konstanz"
-format: metropolis-revealjs
-highlight-style: github
+title: "Introduction to Programming<br>with Python<br><span class='session'>Day 1 &ndash; Welcome and course logistics</span>"
+author: "David Garcia<br><span class='semester'>Winter Semester 2026-27</span>"
+format:
+  revealjs:
+    theme: [default, ../../assets/unikn.scss, ../../assets/introtopython.scss]
+    width: 1280
+    height: 720
+    margin: 0.06
+    center: false
+    slide-number: false
+    progress: true
+    controls: true
+    history: true
+    logo: ../../assets/unikn-logo.png
+    footer: "<span class='fbar-left'>Day 1</span><span class='fbar-mid'>Introduction to Programming with Python</span><span class='fbar-right'>Winter Semester 2026-27</span>"
+    highlight-style: github
+    link-external-newwindow: true
+    fig-align: left
 ---
 
 ## **About me**
@@ -10,7 +24,7 @@ highlight-style: github
 :::: {.columns}
 
 ::: {.column width="30%"}
-![](Profile.jpg)
+![](Profile.jpg){height="8em"}
 :::
 
 ::: {.column width="70%"}
@@ -125,16 +139,18 @@ After this course, you should:
 
 ## **To pass the course, you must:**
 
+::: {.sm}
 1. **Pass each of the five daily assignments (at least 50% points in each)**
-  - The deadline is 23:59 in each of the days of the course
-  - Submissions are done through Ilias. Familiarize yourself with Ilias as soon as possible, talk to the tutors in the afternoon if you need help
-  - There are advanced, ungraded assignments for you who have more experience. Don't submit those, we won't grade them
+  - The deadline is 23:59 on each day of the course
+  - Submissions go through Ilias. Familiarize yourself with Ilias as soon as possible, and talk to the tutors in the afternoon if you need help
+  - There are advanced, ungraded assignments for those of you with more experience. Don't submit those, we won't grade them
 
 2. **Pass the final written exam (at least 50% points)**
-  - 90-minutes written exam on Friday before lunch
-  - Not writing scripts on pen an paper, code input will be very short
-  - Designed to check experience with Python and conceptual knowledge
-  - **About programming! Not about memorizing stuff from slides or notebooks**. Quizzes from day 2 will provide example questions
+  - 90 minutes, on Friday morning &ndash; before the last lecture
+  - You will not write scripts on paper; the code you write will be very short
+  - It tests experience with Python and conceptual knowledge
+  - **About programming, not about memorizing slides or notebooks**. The daily quizzes are the best practice for it
+:::
 
 ## **Registering for "exam"**
 
@@ -164,7 +180,7 @@ You cannot defend a finding you cannot explain, and you cannot debug code you di
 :::
 
 ::: {.column width="40%"}
-![](VibeCoding.png)
+![](VibeCoding.png){height="15.5em"}
 :::
 
 ::::
@@ -206,4 +222,4 @@ On Day 4 you will be given a piece of plausible-looking, chatbot-flavoured code 
 
 **Are you set up?**  -- Break for setup support, check instructions in: [setup/Anaconda.html](../../setup/Anaconda.html)
 
-![](../../setup/Navigator.png)
+![](../../setup/Navigator.png){height="12em" fig-align="center"}

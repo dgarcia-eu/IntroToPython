@@ -1,0 +1,40 @@
+/*-- scss:rules --*/
+// ============================================================================
+//  Introduction to Programming with Python - overrides on top of unikn.scss
+//
+//  assets/unikn.scss is an unmodified copy of the ICSS theme
+//  (ICSS-local/Slides/Quarto/unikn.scss). Everything specific to this course
+//  goes here instead, so the shared theme can be updated by copying it over.
+// ============================================================================
+
+// --- Code size --------------------------------------------------------------
+// These decks are mostly quiz snippets, and a student in 2025 reported not
+// being able to read the slides from the back row of K503. The ICSS theme sets
+// code at 0.62em, which suits its dense pseudocode boxes; here the slides are
+// short snippets with room to spare, so the code can be considerably larger.
+.reveal pre code {
+  font-size: 0.8em;
+  line-height: 1.35;
+}
+
+// Inline code in a sentence, e.g. ("apples", 100)
+.reveal code:not(pre code) {
+  font-size: 0.92em;
+}
+
+// --- Quiz slides ------------------------------------------------------------
+// Numbered questions with a code block under each. A little air between the
+// question and its code, and between one question and the next.
+.reveal .slides section > ol > li {
+  margin-bottom: 0.75em;
+}
+
+.reveal div.sourceCode {
+  margin: 0.45em 0 0.55em 0;
+}
+
+// --- Quiz answer options ----------------------------------------------------
+// Multiple-choice options read better indented under their question.
+.reveal ol ol {
+  margin-top: 0.3em;
+}

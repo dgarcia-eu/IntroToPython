@@ -1,8 +1,22 @@
 ---
-title: "Introduction to Programming with Python \n\n\n Day 3"
-author: "David Garcia, University of Konstanz"
-format: metropolis-revealjs
-highlight-style: github
+title: "Introduction to Programming<br>with Python<br><span class='session'>Day 3 &ndash; Quiz on Day 2</span>"
+author: "David Garcia<br><span class='semester'>Winter Semester 2026-27</span>"
+format:
+  revealjs:
+    theme: [default, ../../assets/unikn.scss, ../../assets/introtopython.scss]
+    width: 1280
+    height: 720
+    margin: 0.06
+    center: false
+    slide-number: false
+    progress: true
+    controls: true
+    history: true
+    logo: ../../assets/unikn-logo.png
+    footer: "<span class='fbar-left'>Day 3</span><span class='fbar-mid'>Introduction to Programming with Python</span><span class='fbar-right'>Winter Semester 2026-27</span>"
+    highlight-style: github
+    link-external-newwindow: true
+    fig-align: left
 ---
 
 ## Recap of Day 2
@@ -33,6 +47,8 @@ else:
   print("Okay, this is a reasonable number of dogs.")
 ```
 
+## Quiz II
+
 2.  In the following code, what is the output?
 
 ```python
@@ -49,7 +65,7 @@ print(num)
 ```
 
 
-## Quiz II
+## Quiz III
 
 3.  In the following code, what is the output?
 
@@ -72,5 +88,5 @@ print(formatted_dates)
 
 ## Feedback on Day 2
 
-![](QR.png){fig-align="center"}
+![](QR.png){height="12.5em" fig-align="center"}
 

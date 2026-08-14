@@ -6,14 +6,11 @@
 <script src="Day2_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="Day2_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="Day2_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Day2_files/libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Day2_files/libs/quarto-contrib/jquery-3.6.3/jquery-3.6.3.min.js"></script>
-<script src="Day2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.js" defer="true"></script>
-<link href="Day2_files/libs/quarto-contrib/code-fullscreen-1.0.0/code-fullscreen.css" rel="stylesheet"><meta charset="utf-8">
+<link href="Day2_files/libs/quarto-html/quarto-syntax-highlighting-86daaaaad7353f9cc0c554efc1dd6d94.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
-  <meta name="author" content="David Garcia, University of Konstanz">
-  <title>Introduction to Programming with Python Day 2</title>
+  <meta name="author" content="David Garcia Winter Semester 2026-27">
+  <title>Introduction to Programming with Python Day 2 – Quiz on Day 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -97,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Day2_files/libs/revealjs/dist/theme/quarto-2cf87519b1d01a63d8e32a1c9795d11a.css">
+  <link rel="stylesheet" href="Day2_files/libs/revealjs/dist/theme/quarto-ab648c0774e59b852e52a310a3dd715d.css">
   <link href="Day2_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Day2_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Day2_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -195,13 +192,12 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to Programming with Python<br>
-Day 2</h1>
+  <h1 class="title">Introduction to Programming<br>with Python<br><span class="session">Day 2 – Quiz on Day 1</span></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-David Garcia, University of Konstanz 
+David Garcia<br><span class="semester">Winter Semester 2026-27</span> 
 </div>
 </div>
 </div>
@@ -261,13 +257,18 @@ David Garcia, University of Konstanz
 </section>
 <section id="feedback-on-day-1" class="slide level2">
 <h2>Feedback on Day 1</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="QR.png" class="quarto-figure quarto-figure-center" style="height:12.5em"></p>
+</figure>
+</div>
 
-
-<img data-src="QR.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="../../assets/unikn-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-
+<p><span class="fbar-left">Day 2</span><span class="fbar-mid">Introduction to Programming with Python</span><span class="fbar-right">Winter Semester 2026-27</span></p>
 </div>
 </div></div>
 
@@ -292,7 +293,7 @@ David Garcia, University of Konstanz
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
-'controlsAuto': true,
+'controlsAuto': false,
 'previewLinksAuto': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
@@ -303,7 +304,7 @@ David Garcia, University of Konstanz
 'smaller': false,
  
         // Display controls in the bottom right corner
-        controls: false,
+        controls: true,
 
         // Help the user learn the controls by providing hints, for example by
         // bouncing the down arrow when they first encounter a vertical slide
@@ -445,12 +446,12 @@ David Garcia, University of Konstanz
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1280,
 
-        height: 700,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.1,
+        margin: 6.0e-2,
 
         math: {
           mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
@@ -580,6 +581,11 @@ David Garcia, University of Konstanz
             if (link.dataset.originalHref !== undefined) {
               link.href = link.dataset.originalHref;
             }
+              // target, if specified
+              link.setAttribute("target", "_blank");
+              if (link.getAttribute("rel") === null) {
+                link.setAttribute("rel", "noopener");
+              }
           }
         }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

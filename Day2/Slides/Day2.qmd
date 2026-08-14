@@ -1,8 +1,22 @@
 ---
-title: "Introduction to Programming with Python \n\n\n Day 2"
-author: "David Garcia, University of Konstanz"
-format: metropolis-revealjs
-highlight-style: github
+title: "Introduction to Programming<br>with Python<br><span class='session'>Day 2 &ndash; Quiz on Day 1</span>"
+author: "David Garcia<br><span class='semester'>Winter Semester 2026-27</span>"
+format:
+  revealjs:
+    theme: [default, ../../assets/unikn.scss, ../../assets/introtopython.scss]
+    width: 1280
+    height: 720
+    margin: 0.06
+    center: false
+    slide-number: false
+    progress: true
+    controls: true
+    history: true
+    logo: ../../assets/unikn-logo.png
+    footer: "<span class='fbar-left'>Day 2</span><span class='fbar-mid'>Introduction to Programming with Python</span><span class='fbar-right'>Winter Semester 2026-27</span>"
+    highlight-style: github
+    link-external-newwindow: true
+    fig-align: left
 ---
 
 ## Recap of Day 1
@@ -78,5 +92,5 @@ t.append(4)
 
 ## Feedback on Day 1
 
-![](QR.png){fig-align="center"}
+![](QR.png){height="12.5em" fig-align="center"}
 
