@@ -1,0 +1,14 @@
+# What Binder installs on top of its base image.
+#
+# Deliberately just the three libraries the notebooks import. Jupyter itself,
+# ipykernel and the Python version all come from repo2docker's base image, and
+# asking for them again is what broke the previous build: pinning python=3.13
+# forced mamba to re-solve an environment that already had Jupyter pinned, and
+# it failed with "critical libmamba Package cache error".
+#
+# pip is used rather than conda because it has far less to solve and Binder
+# builds it much more reliably. The root environment.yml stays as the conda
+# recipe for a local install.
+pandas>=2.2,<3
+matplotlib>=3.9
+numpy>=2.0
