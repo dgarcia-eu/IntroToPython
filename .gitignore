@@ -36,3 +36,10 @@ Day5/myfig.jpg
 # --- OS ------------------------------------------------------------------------
 .DS_Store
 Thumbs.db
+
+# --- Student data must never enter this PUBLIC repository ---------------------
+# Enforced by tools/check_no_personal_data.py, which CI runs on every push.
+GradingSheets/
+Feedback/
+*.xlsx
+*.docx

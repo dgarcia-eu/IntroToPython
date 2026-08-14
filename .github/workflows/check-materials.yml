@@ -17,6 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # First, and before anything else: this repository is public, so fail fast
+      # if student data has crept in. Needs no dependencies.
+      - name: Check for student data
+        run: python tools/check_no_personal_data.py
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
