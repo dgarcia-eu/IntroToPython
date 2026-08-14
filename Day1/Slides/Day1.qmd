@@ -149,19 +149,17 @@ After this course, you should:
   
 
 
-## **Warning about vibe coding (e.g. ChatGPT)**
+## **Using AI to write code**
 
 
 :::: {.columns}
 
 ::: {.column width="60%"}
-**Vibe coding:** Using chatbots (ChatGPT, Claude, Gemini) to write the code of a software project and using the software without understanding the code
+**Vibe coding:** using a chatbot to write your code and running it without understanding it.
 
-Vibe coding is OK for hobbyist but **a professional data scientist is responsible of the code they run and deliver**.
+Fine for a hobbyist. Not fine for a data scientist: **you are responsible for the code you run and the results you publish.**
 
-It's OK to discuss your work with a chatbot but not to copy-paste code from a chatbot or anywhere else (e.g. Stackoverflow, another student)
-
-Coding plugins might use AI for autocomplete but **you must always understand your code**
+You cannot defend a finding you cannot explain, and you cannot debug code you did not read.
 
 :::
 
@@ -169,7 +167,40 @@ Coding plugins might use AI for autocomplete but **you must always understand yo
 ![](VibeCoding.png)
 :::
 
-:::: 
+::::
+
+## **The rule in this course**
+
+**Do not copy code you do not understand.** From a chatbot, from Stackoverflow, from another student — the source does not matter, the understanding does.
+
+::: {.incremental}
+- The assignments are how you find out whether you can do this yet. Outsourcing them tells you nothing.
+- The exam is on paper, closed book, and there is no chatbot in it.
+- Autocomplete plugins are fine — as long as you read what they suggest and would have written it yourself.
+:::
+
+## **What to use it for instead**
+
+::: {.incremental}
+- **"Explain this error message to me"** — genuinely useful, and it teaches you something reusable.
+- **"What does this line do?"** on code you already have.
+- **"Give me three more exercises like this one."**
+- **"I think X, am I wrong?"** — argue with it, don't dictate to it.
+:::
+
+**Ask it to explain, not to produce.** The moment you paste code you cannot read, you have stopped learning and started gambling.
+
+## **Chatbots are confidently wrong**
+
+On Day 4 you will be given a piece of plausible-looking, chatbot-flavoured code with two bugs in it, and asked to find them.
+
+::: {.incremental}
+- It looks right. It runs. It gives a wrong answer.
+- No error message will tell you.
+- The only defence is being able to read it and judge whether the result is plausible.
+:::
+
+**That is the skill this course is actually for.**
 
 ## Anaconda and jupyter
 

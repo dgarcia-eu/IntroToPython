@@ -89,6 +89,8 @@ Monday morning to a broken setup.
 - **Written exam (90 min)** -- first thing, so you are not sitting through a lecture worrying about it
 - Interactive lecture: Data visualisation in Python
   - [51_visualization.ipynb](Day5/51_visualization.ipynb)
+- Interactive lecture: Beyond the notebook -- scripts, packages, and environments
+  - [52_beyond_the_notebook.ipynb](Day5/52_beyond_the_notebook.ipynb)
 - Assignment 5: Data visualization
   - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 17th, 23:59**
 
