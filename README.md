@@ -21,7 +21,7 @@ Before starting the block course:
 [Instructions how to install Jupyter can be found here.](https://dgarcia-eu.github.io/IntroToPython/setup/Anaconda.html)  
 If your installation is not working on the first morning, don't lose the session to it:
 open the course in your browser instead and sort the installation out in the afternoon.  
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dgarcia-eu/IntroToPython/HEAD)  
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dgarcia-eu/IntroToPython/refresh-2026)  
 ⚠️ **Binder is a fallback for following the lecture, not a place to work.** It can take a
 few minutes to start, and **anything you write there is lost when the tab closes** — it
 saves nothing. If you do use it, download your notebook before you leave (*File → Download*).

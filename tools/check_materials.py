@@ -203,6 +203,57 @@ def check_urls(paths: list[str], report: Report, network: bool) -> None:
         report.ok(f"all {len(urls)} URLs reachable")
 
 
+BINDER_RE = re.compile(r"mybinder\.org/v2/gh/([^/]+)/([^/]+)/([^)\s]+)")
+
+
+def check_binder(report: Report, network: bool) -> None:
+    """The Binder badge names a git ref. Check that ref actually has a spec.
+
+    This is easy to get wrong and fails silently until a student clicks it. It
+    already did: the badge said HEAD, which is main, but the environment lives on
+    the refresh-2026 branch, so repo2docker reported "No environment specification
+    found". When the branch is merged, the badge has to move back to HEAD - and
+    this check is what will say so.
+    """
+    try:
+        readme = open("README.md", encoding="utf-8").read()
+    except OSError:
+        return
+    m = BINDER_RE.search(readme)
+    if not m:
+        return
+    owner, repo, ref = m.groups()
+    if not network:
+        report.note(f"Binder badge points at {owner}/{repo}@{ref}; "
+                    f"re-run with --network to check that ref has an environment file")
+        return
+
+    import urllib.error
+    import urllib.request
+
+    for candidate in ("binder/environment.yml", "environment.yml", "binder/requirements.txt",
+                      "requirements.txt"):
+        url = f"https://api.github.com/repos/{owner}/{repo}/contents/{candidate}?ref={ref}"
+        req = urllib.request.Request(url, headers={"User-Agent": "IntroToPython-CI",
+                                                   "Accept": "application/vnd.github+json"})
+        try:
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                if resp.status == 200:
+                    report.ok(f"Binder badge -> {ref}, which has {candidate}")
+                    return
+        except urllib.error.HTTPError as exc:
+            if exc.code == 403:  # rate limited, not a real answer
+                report.note("Binder check skipped: GitHub API rate limit")
+                return
+            continue
+        except Exception:
+            continue
+    report.fail(
+        f"the Binder badge points at {owner}/{repo}@{ref}, but that ref has no "
+        f"environment.yml or requirements.txt. Binder will fail with 'No environment "
+        f"specification found'. Point the badge at a ref that has one.")
+
+
 def check_kernels(paths: list[str], report: Report) -> None:
     print("\n[4/4] Checking notebook metadata")
     bad = 0
@@ -237,6 +288,7 @@ def main() -> int:
         check_execution(lectures, report, with_solutions=True)
     check_load_paths(every, report)
     check_urls(every, report, args.network)
+    check_binder(report, args.network)
     check_kernels(every, report)
 
     print("\n" + "=" * 68)
