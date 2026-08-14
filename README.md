@@ -24,9 +24,12 @@ open the course in your browser instead and sort the installation out in the aft
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dgarcia-eu/IntroToPython/HEAD)
 2. Familiarize yourself with the Jupyter environment.  
 You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyter_walkthrough.txt)
-3. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
-4. Check out Ilias to get the link to our private DataCamp Classroom. DataCamp is for you to do extra exercises besides the course. 
-5. Take a look at the [Github forum to ask questions](https://github.com/dgarcia-eu/IntroToPython/discussions/)
+3. **Run the [Day 0 self-check notebook](Day1/00_day0_selfcheck.ipynb).** Ten minutes, not graded.
+It confirms your installation works and shows you where you are starting from, so nobody loses
+Monday morning to a broken setup.
+4. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
+5. Check out Ilias to get the link to our private DataCamp Classroom. DataCamp is for you to do extra exercises besides the course. 
+6. Take a look at the [Github forum to ask questions](https://github.com/dgarcia-eu/IntroToPython/discussions/)
 
 ### Day 1
 
@@ -98,6 +101,8 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
   - **Pass each of the five daily assignments (at least 50% points in each)**
   - **Pass the final written exam (at least 50% points)**
 
+- **[Read the exam blueprint](EXAM_BLUEPRINT.md)** on Day 1: what the exam covers, the three kinds of question, and five worked examples.
+- **[Two-page Python reference](python_reference.md)**: everything the course uses, on one page, for revision. Not permitted in the exam.
 - During the daily sessions, we will do small ungraded quizzes as practice for the final written exam.
 - Attendance is not mandatory but highly recommended to pass the assignments and to practice for the final exam.
 - **From Monday to Friday, there is an assignment due each day by 23:59.**
