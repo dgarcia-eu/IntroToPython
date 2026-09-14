@@ -1,0 +1,491 @@
+/*-- scss:defaults --*/
+
+// ============================================================================
+//  University of Konstanz corporate design for Quarto / reveal.js
+//  Colours follow the "Seeblau" ramp of the official CD templates
+//  (see Konstanz-Templates/CD.UniKN.LaTeX.Presentation.v0.6/beamerthemeKonstanz.sty)
+// ============================================================================
+
+// --- Seeblau ---------------------------------------------------------------
+$seeblau:  #00a9e0 !default;   // Seeblau 100 %  (primary accent)
+$seeblau4: #59c7eb !default;   //          ~65 %
+$seeblau3: #7fd4f0 !default;   //          ~50 %
+$seeblau2: #a6e1f4 !default;   //          ~35 %  (title boxes)
+$seeblau1: #cceef9 !default;   //          ~20 %  (soft fills)
+
+// --- Neutrals --------------------------------------------------------------
+$grau5: #333333 !default;
+$grau4: #666666 !default;
+$grau3: #999999 !default;
+$grau2: #cccccc !default;
+$grau1: #e5e5e5 !default;
+
+// --- Secondary CD colours (used sparingly: links, code, emphasis) -----------
+$karpfenblau: #3e5496 !default;
+$petrol:      #00797b !default;
+$seegruen:    #0a9086 !default;
+$bordeaux:    #8e2043 !default;
+
+// --- Typography ------------------------------------------------------------
+// The Konstanz CD prescribes Arial.
+$font-family-sans-serif: Arial, "Helvetica Neue", Helvetica, "Liberation Sans", sans-serif !default;
+$presentation-font-size-root: 30px !default;
+$presentation-line-height: 1.35 !default;
+
+$body-bg:    #ffffff !default;
+$body-color: #111111 !default;
+
+$link-color:       $karpfenblau !default;
+$link-color-hover: $seeblau !default;
+
+$selection-bg:    $seeblau2 !default;
+$selection-color: #111111 !default;
+
+$presentation-heading-font:        $font-family-sans-serif !default;
+$presentation-heading-color:       #111111 !default;
+$presentation-heading-font-weight: 400 !default;
+$presentation-heading-line-height: 1.2 !default;
+
+$code-block-bg:           #fbfbfb !default;
+$code-block-border-color: $grau2 !default;
+$code-block-font-size:    0.62em !default;
+$code-color:              $bordeaux !default;
+
+/*-- scss:rules --*/
+
+// ============================================================================
+//  Slide title: rounded Seeblau plate, top left, with a soft drop shadow
+// ============================================================================
+// NOTE: `display: block` + `width: fit-content` (rather than `inline-block`)
+// is deliberate -- an inline-level title breaks Quarto's `.columns` layout.
+.reveal .slides section > h1:first-child,
+.reveal .slides section > h2:first-child {
+  display: block;
+  width: fit-content;
+  max-width: 84%;
+  margin: 0 0 0.55em 0;
+  padding: 0.1em 0.5em 0.14em;
+  background-color: $seeblau2;
+  border-radius: 8px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+  font-size: 1.18em;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  text-transform: none;
+  color: #111;
+}
+
+// ============================================================================
+//  Title slide
+// ============================================================================
+#title-slide {
+  text-align: center;
+
+  .title {
+    display: block;
+    width: 86%;
+    margin: 0.2em auto 0.9em;
+    padding: 0.35em 0.6em 0.45em;
+    background-color: $seeblau2;
+    border-radius: 26px;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25);
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.22;
+    color: #111;
+  }
+
+  // Third line inside the title plate ("Session 1 - Introduction")
+  .session {
+    display: block;
+    margin-top: 0.15em;
+    font-size: 0.66em;
+  }
+
+  .author,
+  .quarto-title-author-name {
+    margin: 0.3em 0 0;
+    font-size: 1.15em;
+    color: #111;
+  }
+
+  // Second line of the author field: the semester
+  .semester {
+    display: block;
+    margin-top: 0.7em;
+    font-size: 0.8em;
+  }
+
+  .date {
+    margin-top: 0.55em;
+    font-size: 0.92em;
+    color: #111;
+  }
+
+  .subtitle {
+    font-size: 0.9em;
+    color: $grau4;
+  }
+}
+
+// ============================================================================
+//  Uni Konstanz wordmark, top right on every slide
+// ============================================================================
+.reveal .slide-logo {
+  position: fixed !important;
+  top: 1.4vh !important;
+  right: 1.4vw !important;
+  bottom: auto !important;
+  left: auto !important;
+  height: auto !important;
+  width: auto !important;
+  max-height: 7.5vh !important;
+  max-width: 22vw;
+  margin: 0 !important;
+  z-index: 40;
+}
+
+// ============================================================================
+//  Three-part Seeblau footer bar
+// ============================================================================
+.reveal .footer {
+  position: fixed !important;
+  left: 0;
+  right: 0;
+  bottom: 0 !important;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: stretch;
+  text-align: center;
+  font-size: clamp(9px, 1.05vw, 17px);
+  line-height: 1.1;
+  color: #111;
+  z-index: 40;
+
+  p {
+    margin: 0 !important;
+    display: contents !important;   // let the spans be the flex items
+  }
+
+  span {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45em 0.4em;
+  }
+
+  .fbar-left {
+    flex: 0 0 20%;
+    background-color: $seeblau4;
+  }
+  .fbar-mid {
+    flex: 1 1 auto;
+    background-color: $seeblau2;
+  }
+  .fbar-right {
+    flex: 0 0 24%;
+    background-color: $seeblau1;
+  }
+}
+
+// Keep slide content clear of the footer bar
+.reveal .slides section {
+  padding-bottom: 1.2em;
+}
+
+// ============================================================================
+//  Lists
+// ============================================================================
+.reveal ul { list-style-type: disc; }
+.reveal ul ul { list-style-type: circle; }
+.reveal ul ul ul { list-style-type: square; }
+
+.reveal li::marker { color: $seeblau; }
+.reveal ol li::marker { color: $grau4; }
+
+.reveal ul,
+.reveal ol {
+  margin-left: 0.9em;
+}
+
+.reveal li {
+  margin-bottom: 0.34em;
+  line-height: 1.3;
+}
+
+.reveal li li {
+  margin-bottom: 0.2em;
+  font-size: 0.92em;
+}
+
+.reveal strong { font-weight: 700; }
+
+// ============================================================================
+//  Local font-size helpers (applied to a ::: div, so slide titles keep
+//  their size on dense slides)
+// ============================================================================
+.reveal .sm { font-size: 0.86em; }
+.reveal .xs { font-size: 0.74em; }
+.reveal .xxs { font-size: 0.64em; }
+
+// Tighter list spacing for the densest slides
+.reveal .xs li,
+.reveal .xxs li { margin-bottom: 0.18em; }
+
+// ============================================================================
+//  Section-outline slides
+// ============================================================================
+.reveal .outline {
+  margin-top: 0.6em;
+  font-size: 1.05em;
+}
+
+.reveal .outline ol { margin-left: 1.6em; }
+.reveal .outline li { margin-bottom: 0.5em; }
+
+.reveal .outline .current {
+  background-color: $seeblau1;
+  border-radius: 4px;
+  padding: 0.06em 0.45em 0.12em;
+  font-weight: 700;
+}
+
+// ============================================================================
+//  Highlight plate (e.g. the closing "Don't miss them!" box)
+// ============================================================================
+.reveal .plate {
+  background-color: $seeblau2;
+  border-radius: 8px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.22);
+  padding: 0.5em 0.8em;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.reveal .plate p { margin: 0; }
+
+// ============================================================================
+//  Images and figure grids
+// ============================================================================
+.reveal img { margin: 0; }
+
+.reveal figure { margin: 0; }
+
+.reveal figure figcaption,
+.reveal .caption {
+  margin-top: 0.25em;
+  font-size: 0.62em;
+  line-height: 1.25;
+  color: #111;
+  text-align: center;
+}
+
+// Pandoc wraps loose inline content in <p>; let the flex/grid parents see
+// the images and spans themselves.
+.reveal .imgrow > p,
+.reveal .imgcol > p,
+.reveal .logos > p,
+.reveal .photos > p,
+.reveal .timeline > p {
+  display: contents;
+}
+
+// A horizontal row of images, bottom-aligned
+.reveal .imgrow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.2em;
+  margin-top: 0.5em;
+}
+
+.reveal .imgrow img { display: block; }
+
+.reveal .imgrow figure { text-align: center; }
+
+// Same, but images centred vertically
+.reveal .imgrow.middle { align-items: center; }
+
+// A column of stacked images
+.reveal .imgcol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+}
+
+.reveal .imgcol img { display: block; }
+
+// --- The lab slide: portrait grid + administration column ------------------
+.reveal .lab {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.4em;
+  margin-top: 0.3em;
+}
+
+.reveal .admin-label {
+  font-size: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+// Portrait grid (the lab slide)
+.reveal .photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7em 1.1em;
+  align-items: flex-end;
+  max-width: 26em;
+}
+
+.reveal .photos.col {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: none;
+}
+
+.reveal .photos figure {
+  width: 7.2em;
+  text-align: center;
+}
+
+.reveal .photos img {
+  width: 100%;
+  height: 7.4em;
+  object-fit: cover;
+  display: block;
+}
+
+.reveal .photos figcaption {
+  font-size: 0.5em;
+  margin-top: 0.2em;
+}
+
+// Placeholder for a missing portrait
+.reveal .photos .noimg {
+  width: 100%;
+  height: 7.4em;
+  background-color: $grau1;
+  border: 1px dashed $grau2;
+}
+
+// Logos stacked at the right edge of a slide
+.reveal .logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.4em;
+  padding-top: 0.4em;
+}
+
+.reveal .logos img { max-width: 100%; }
+
+// ============================================================================
+//  Timeline (year -> event) used by the history slides
+// ============================================================================
+.reveal .timeline {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35em 1.1em;
+  align-items: baseline;
+  margin: 0.2em 0 0.6em;
+  font-size: 0.88em;
+}
+
+.reveal .timeline .year {
+  text-align: right;
+  color: $grau5;
+  white-space: nowrap;
+}
+
+.reveal .timeline .event { font-weight: 700; }
+
+// ============================================================================
+//  Code and pseudocode
+// ============================================================================
+.reveal pre {
+  box-shadow: none;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+.reveal div.sourceCode {
+  background-color: $code-block-bg;
+  border: 1px solid $grau2;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.reveal pre code {
+  padding: 0.5em 0.7em;
+  max-height: none;
+  line-height: 1.3;
+}
+
+// Cormen-style pseudocode box
+.reveal pre.pseudocode {
+  display: block;
+  background-color: #fff;
+  border: 1px solid $grau4;
+  border-radius: 3px;
+  padding: 0.7em 0.9em;
+  font-family: "Times New Roman", Times, Georgia, serif;
+  font-size: 0.52em;
+  line-height: 1.45;
+  white-space: pre;
+  overflow-x: auto;
+  color: #111;
+  box-shadow: none;
+}
+
+.reveal pre.pseudocode b { font-weight: 700; }
+.reveal pre.pseudocode i { font-style: italic; }
+
+// ============================================================================
+//  Tables
+// ============================================================================
+.reveal table {
+  font-size: 0.8em;
+  border-collapse: collapse;
+}
+
+.reveal table th {
+  background-color: $seeblau1;
+  border-bottom: 2px solid $seeblau;
+  text-align: left;
+}
+
+.reveal table td { border-bottom: 1px solid $grau1; }
+
+// ============================================================================
+//  Misc
+// ============================================================================
+.reveal a { text-decoration: none; }
+.reveal a:hover { text-decoration: underline; }
+
+.reveal .source {
+  font-size: 0.55em;
+  color: $grau4;
+  text-align: right;
+}
+
+.reveal .center-h { text-align: center; }
+
+.reveal blockquote {
+  border-left: 5px solid $seeblau;
+  background-color: $seeblau1;
+  box-shadow: none;
+  padding: 0.4em 0.8em;
+  font-style: normal;
+}
+
+// Progress bar / controls in Seeblau
+.reveal .progress { color: $seeblau; }
+.reveal .controls { color: $seeblau; }

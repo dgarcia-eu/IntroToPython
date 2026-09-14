@@ -1,0 +1,57 @@
+name: Check course materials
+
+# Runs the checks in tools/check_materials.py. The weekly schedule is what
+# catches the slow failures: a library deprecation landing in a new pandas
+# release, or an external link going dead months after it was last touched.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1"   # Mondays, 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # First, and before anything else: this repository is public, so fail fast
+      # if student data has crept in. Needs no dependencies.
+      - name: Check for student data
+        run: python tools/check_no_personal_data.py
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python -m ipykernel install --user --name python3
+
+      - name: Execute notebooks and check materials
+        run: python tools/check_materials.py --solutions
+
+      # Slides need Chrome and pdftoppm, so they are checked separately and
+      # allowed to fail rather than blocking the notebook checks.
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Check slides fit 16:9
+        continue-on-error: true
+        run: |
+          pip install pillow
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          quarto --version
+          google-chrome --version
+          python tools/check_slides.py
+
+      # Link checking is split out and allowed to fail: a university server
+      # being down for an afternoon should not turn the build red.
+      - name: Check external links
+        continue-on-error: true
+        run: python tools/check_materials.py --network

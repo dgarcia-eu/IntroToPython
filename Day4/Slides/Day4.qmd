@@ -1,9 +1,37 @@
 ---
-title: "Introduction to Programming with Python \n\n\n Day 4"
-author: "David Garcia, University of Konstanz"
-format: metropolis-revealjs
-highlight-style: github
+title: "Introduction to Programming<br>with Python<br><span class='session'>Day 4 &ndash; Quiz on Day 3</span>"
+author: "David Garcia<br><span class='semester'>Winter Semester 2026-27</span>"
+format:
+  revealjs:
+    theme: [default, ../../assets/unikn.scss, ../../assets/introtopython.scss]
+    width: 1280
+    height: 720
+    margin: 0.06
+    center: false
+    slide-number: false
+    progress: true
+    controls: true
+    history: true
+    logo: ../../assets/unikn-logo.png
+    footer: "<span class='fbar-left'>Day 4</span><span class='fbar-mid'>Introduction to Programming with Python</span><span class='fbar-right'>Winter Semester 2026-27</span>"
+    highlight-style: github
+    link-external-newwindow: true
+    fig-align: left
 ---
+
+## Recap of Day 3
+
+*Fill in from yesterday's feedback form before the session. Delete the slide if
+there is genuinely nothing to pick up — but check the form first.*
+
+::: {.incremental}
+- **You asked us to repeat:** …
+- **We ran out of time on:** …
+- **The assignment tripped people up on:** …
+:::
+
+**Anything else from yesterday you want to go over? Now is the moment.**
+
 
 ## Quiz I
 
@@ -11,7 +39,7 @@ highlight-style: github
 1. Assume you have the following dictionary:
 
 ```python
-dictionary = { "applez": 100, "oranges": 120", "bananas": 50}
+dictionary = { "applez": 100, "oranges": 120, "bananas": 50}
 ```
 How can I change the key of the key-value pair ```("apples", 100)```?
 
@@ -76,5 +104,5 @@ countpairs.sort(key=lambda x: x[1], reverse = True)
 
 ## Feedback on Day 3
 
-![](QR.png){fig-align="center"}
+![](QR.png){height="12.5em" fig-align="center"}
 
