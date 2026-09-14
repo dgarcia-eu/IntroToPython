@@ -32,7 +32,6 @@ You can start trying to do the steps in the [Jupyter walkthrough.](Day1/10_jupyt
 It confirms your installation works and shows you where you are starting from, so nobody loses
 Monday morning to a broken setup.
 4. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
-5. Check out Ilias to get the link to our private DataCamp Classroom. DataCamp is for you to do extra exercises besides the course. 
 
 ### Day 1
 

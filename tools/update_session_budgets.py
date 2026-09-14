@@ -19,6 +19,9 @@ Estimates come from content volume at CHARS_PER_MIN, calibrated against the
 but each produces output worth discussing, so treat them as a starting point to
 calibrate against the room rather than as measurements.
 
+The morning is 9:30-13:00 with one short break, so MORNING_MINUTES is 200 and
+a day is flagged only above that.
+
 "Core" excludes every section whose heading carries [IF TIME] or
 [EXTRA - read at home], from that heading up to the next heading.
 """
@@ -30,6 +33,9 @@ import re
 import sys
 
 CHARS_PER_MIN = 260
+
+# 9:30-13:00 with one short break in the middle.
+MORNING_MINUTES = 200
 
 # Not taught sessions: the Day 0 self-check, and the redirect stub left behind
 # at the old Day 2 filename.
@@ -107,7 +113,9 @@ def main() -> int:
 
     print()
     for day, (c, t) in sorted(per_day.items()):
-        flag = "  <-- over a ~190 min morning" if minutes(c) > 190 else ""
+        # The morning runs 9:30-13:00 with one short break, so about 200 minutes
+        # of teaching time.
+        flag = "  <-- over the 200 min morning" if minutes(c) > MORNING_MINUTES else ""
         print(f"  {day}: core {minutes(c)} min, everything {minutes(t)} min{flag}")
     print()
     print(f"{changed} notebook(s) {'updated' if write else 'would change'}.")
