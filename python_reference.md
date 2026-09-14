@@ -1,5 +1,52 @@
 # Python reference / cheat sheet
 
+<!--
+Rationale, kept out of the stylesheet on purpose: rmarkdown renders this file
+with pandoc's markdown_in_html_blocks extension on, which parses the contents
+of a style block as markdown. CSS comments therefore get eaten - the closing
+slash-star pair reads as emphasis and corrupts every rule after it. So the
+stylesheet below carries no CSS comments at all.
+
+What it does: gives every table a border around the whole grid, a visible
+separator between all cells, and equal fixed column widths so the layout does
+not shift with the content. GitHub strips style blocks when it renders the
+markdown and applies its own fully bordered table style, so the tables come
+out gridded in both views.
+-->
+
+<style>
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  margin: 1em 0 1.4em 0;
+  border: 2px solid #555555;
+  font-size: 95%;
+}
+table th,
+table td {
+  border: 1px solid #999999;
+  padding: 0.4em 0.6em;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+table th {
+  background-color: #eef1f4;
+  font-weight: bold;
+  border-bottom: 2px solid #555555;
+}
+table code {
+  background: none;
+  padding: 0;
+}
+table tbody tr:nth-child(even) td {
+  background-color: #fafafa;
+}
+</style>
+
+
 ## Working with text
 
 ```python
@@ -33,7 +80,7 @@ print("a", "b")                      # a b        print adds spaces
 
 ## Numbers
 
-| operator | example | result | |
+| operator | example | result | note |
 |---|---|---|---|
 | `+` | `7 + 2` | `9` | |
 | `-` | `7 - 2` | `5` | |
@@ -43,7 +90,7 @@ print("a", "b")                      # a b        print adds spaces
 | `%` | `7 % 2` | `1` | remainder |
 | `**` | `7 ** 2` | `49` | to the power of |
 
-| converting a value | | on a list of numbers | |
+| converting a value | gives | on a list of numbers | gives |
 |---|---|---|---|
 | `int("42")` | `42` | `sum([1, 5, 3])` | `9` |
 | `float("3.1")` | `3.1` | `max([1, 5, 3])` | `5` |
@@ -143,7 +190,7 @@ else:                      # only runs if all others were False
 
 **Python takes the first branch that is true and skips the rest, so the order of your tests is the design.** Put the strictest condition first.
 
-| comparing | | combining | | membership | |
+| comparing | means | combining | means | membership | means |
 |---|---|---|---|---|---|
 | `==` | equal | `and` | both must hold | `x in xs` | is it there? |
 | `!=` | not equal | `or` | either will do | `x not in xs` | is it absent? |
@@ -283,7 +330,7 @@ with open("file.txt", "a") as f:   # 'a' appends
 import json
 ```
 
-| | read | write |
+| working on | read | write |
 |---|---|---|
 | a **file** | `obj = json.load(f)` | `json.dump(obj, f)` |
 | a **string** | `obj = json.loads(s)` | `s = json.dumps(obj)` |
@@ -321,7 +368,7 @@ import pandas as pd
 df = pd.read_csv("adult.csv", na_values="?")
 ```
 
-| looking at a data frame | |
+| looking at a data frame | what it gives you |
 |---|---|
 | `df.head()` | the first five rows (`df.head(20)` for more) |
 | `df.info()` | one line per column: name, type, how many non-empty |
@@ -341,7 +388,7 @@ df[df.education.isin(["Bachelors"])]        # matches any of a list
 
 **Every condition needs its own parentheses, and it is `&` / `|`, not `and` / `or`.**
 
-| summarising one column | |
+| summarising one column | what it gives you |
 |---|---|
 | `df.education.unique()` | the distinct values |
 | `df.education.nunique()` | how many distinct values there are |
@@ -368,7 +415,7 @@ plt.bar(x, heights)                             # bars
 plt.hist(values, bins=20)                       # histogram
 ```
 
-| dressing up the plot | |
+| dressing up the plot | what it does |
 |---|---|
 | `plt.xlabel("day")` | name the x axis |
 | `plt.ylabel("temperature")` | name the y axis |
