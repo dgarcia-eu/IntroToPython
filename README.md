@@ -9,7 +9,7 @@ Students will learn fundamental programming concepts such as variables, control 
 Successfully completing this course will enable students to apply these skills to basic data analysis and programming in other courses and will help them develop more advanced, domain-specific Python skills.
 The course does not follow a specific textbook but useful references are "Learn Python the Hard Way" by Zed Shaw and "Introduction to Python" by Eric Matthes.
 
-**Time and place in WS 2026/27: October 12-16, 2025, 9:30 - 17:00,  K503 (except 13.10 afternoon in C427)**
+**Time and place in WS 2026/27: October 12-16, 2026, 9:30 - 17:00,  K503 (except 13.10 afternoon in C427)**
 
 ## Course contents
 
@@ -33,7 +33,6 @@ It confirms your installation works and shows you where you are starting from, s
 Monday morning to a broken setup.
 4. Make sure that you have a university account and can access course Ilias. If you have problems with this, talk to support at the university.
 5. Check out Ilias to get the link to our private DataCamp Classroom. DataCamp is for you to do extra exercises besides the course. 
-6. Take a look at the [Github forum to ask questions](https://github.com/dgarcia-eu/IntroToPython/discussions/)
 
 ### Day 1
 
@@ -44,6 +43,7 @@ Monday morning to a broken setup.
     - [11_var_string_num.ipynb](Day1/11_var_string_num.ipynb)
 - Interactive lecture: Introduction to lists and basic loops
     - [12_lists_tuples-1.ipynb](Day1/12_lists_tuples-1.ipynb)
+- **[Read the exam blueprint](EXAM_BLUEPRINT.md)** on your own time
 - Assignment 1: Variables, Strings, Numbers, Lists, and Loops
   - [assignment_1.ipynb](Day1/assignment_1/assignment_1.ipynb) -- **Deadline: October 12th, 23:59**
   - [Extra exercises 1 (ungraded)](Day1/assignment_1/assignment_1-extra.ipynb)
@@ -109,9 +109,8 @@ Monday morning to a broken setup.
 - The course is graded as pass/fail. To pass the course, you need the following:
   - **Pass each of the five daily assignments (at least 50% points in each)**
   - **Pass the final written exam (at least 50% points)**
-
-- **[Read the exam blueprint](EXAM_BLUEPRINT.md)** on Day 1: what the exam covers, the three kinds of question, and five worked examples.
-- **[Two-page Python reference](python_reference.md)**: everything the course uses, on one page, for revision. Not permitted in the exam.
+- **[Read the exam blueprint](EXAM_BLUEPRINT.md)** on Day 1. It explains how the exam looks like, how to prepare for it, and contains some example exercises.
+- **[The Short Python Reference](python_reference.md)** is a summary of the basics covered in the course. Not permitted in the written exam but helpful when preparing assigments or as a refresher.
 - During the daily sessions, we will do small ungraded quizzes as practice for the final written exam.
 - Attendance is not mandatory but highly recommended to pass the assignments and to practice for the final exam.
 - **From Monday to Friday, there is an assignment due each day by 23:59.**
