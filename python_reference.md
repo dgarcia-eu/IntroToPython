@@ -202,7 +202,7 @@ else:                      # only runs if all others were False
 | `<` `<=` | smaller (or equal) | `not` | flips true/false | | |
 | `>` `>=` | larger (or equal) | | | | |
 
-"Falsy"" values count as `False` in an `if`: `False`, `0`, `""`, `[]`, `{}`, `None`.
+"Falsy" values count as `False` in an `if`: `False`, `0`, `""`, `[]`, `{}`, `None`.
 
 ## Comprehensions
 
@@ -214,7 +214,7 @@ else:                      # only runs if all others were False
 {w: len(w) for w in words}                  # a dictionary comprehension
 ```
 
-Read it as: **`[` what goes in the new list · `for` each item · `in` · list or dictionary  `if` it passes condition0 `]`**
+Read it as: **`[` what goes in the new list · `for` each item · `in` · list or dictionary  `if` it passes the condition `]`**
 
 Every comprehension can be written as a loop, and a loop is never wrong:
 

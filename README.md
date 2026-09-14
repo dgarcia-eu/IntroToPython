@@ -110,7 +110,7 @@ Monday morning to a broken setup.
   - **Pass each of the five daily assignments (at least 50% points in each)**
   - **Pass the final written exam (at least 50% points)**
 - **[Read the exam blueprint](EXAM_BLUEPRINT.md)** on Day 1. It explains how the exam looks like, how to prepare for it, and contains some example exercises.
-- **[The Short Python Reference](python_reference.md)** is a summary of the basics covered in the course. Not permitted in the written exam but helpful when preparing assigments or as a refresher.
+- **[The Short Python Reference](python_reference.md)** is a summary of the basics covered in the course. Not permitted in the written exam but helpful when preparing assignments or as a refresher.
 - During the daily sessions, we will do small ungraded quizzes as practice for the final written exam.
 - Attendance is not mandatory but highly recommended to pass the assignments and to practice for the final exam.
 - **From Monday to Friday, there is an assignment due each day by 23:59.**
