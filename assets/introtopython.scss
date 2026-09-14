@@ -38,3 +38,87 @@
 .reveal ol ol {
   margin-top: 0.3em;
 }
+
+// ============================================================================
+//  Hold the deck to 16:9 on screen
+// ============================================================================
+// Without this the deck stretches to whatever shape the browser window is.
+// reveal.js scales the *content* correctly, but the theme's logo and footer bar
+// are positioned against the viewport, so in a 1400x1000 window the logo sat in
+// the window's top right corner and the footer along the window's bottom edge,
+// with the slide area 1400x1000 instead of 16:9.
+//
+// Fixing it at the body level is what works here, because .footer is a sibling
+// of .reveal rather than a child of it: constraining .reveal alone would leave
+// the footer behind. Making body itself an exactly 16:9 box, centred in the
+// window, puts everything inside it - reveal, the footer and the logo - and
+// reveal then computes its own scale against that box.
+//
+// Screen only. In ?print-pdf mode reveal sets its own page geometry and this
+// must not interfere with it.
+@media screen {
+  html,
+  html.reveal-full-page {
+    background-color: #2f3438;
+  }
+
+  // reveal.js puts the class reveal-viewport on <body> at runtime, and its own
+  // stylesheet sets .reveal-viewport{height:100%}. A bare `body` selector loses
+  // to that on specificity, which is why the first attempt compiled correctly
+  // and changed nothing on screen.
+  body,
+  body.reveal-viewport {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    // An exact 16:9 rectangle, as large as fits in the window.
+    width: min(100vw, calc(100vh * 16 / 9));
+    height: min(100vh, calc(100vw * 9 / 16));
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.45);
+    container-type: size;
+  }
+
+  // The theme pins both of these with position:fixed and sizes them in vh/vw,
+  // so they stick to the browser window and ignore the box - the logo ended up
+  // floating in the grey band above the slide and the footer bar along the very
+  // bottom of the window. Going absolute resolves them against the box instead:
+  // .footer is a child of body, and .slide-logo sits inside .reveal, which
+  // fills body. Sizes become percentages of the box for the same reason.
+  //
+  // (container-type: size above does NOT do this job on its own. On body,
+  // containment does not establish a containing block for fixed descendants,
+  // because of the viewport-propagation rules for html and body.)
+  .reveal .slide-logo {
+    position: absolute !important;
+    top: 1.9% !important;
+    right: 1.4% !important;
+    max-height: 7.5% !important;
+    max-width: 22%;
+  }
+
+  .reveal .footer {
+    position: absolute !important;
+    font-size: clamp(9px, 1.05cqw, 17px);
+  }
+
+  // Same treatment for reveal's own fixed-position furniture: the menu button
+  // and the menu panel it opens, and the progress bar. Left alone, the
+  // hamburger sat in the grey band below the slide.
+  .slide-menu-button,
+  .reveal .slide-menu-button {
+    position: absolute !important;
+    bottom: 1.2% !important;
+    left: 1% !important;
+  }
+
+  .slide-menu-panel,
+  .slide-menu-overlay {
+    position: absolute !important;
+  }
+
+  .reveal .progress {
+    position: absolute !important;
+  }
+}
