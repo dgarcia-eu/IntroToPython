@@ -11,7 +11,7 @@
 
 
 
-<title>README</title>
+<title>EXAM_BLUEPRINT</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -352,223 +352,167 @@ display: none;
 </div>
 
 
-<div id="introduction-to-programming-with-python" class="section level1">
-<h1>Introduction to Programming with Python</h1>
-<p><a href="http://dgarcia.eu">David Garcia</a></p>
-<p>Welcome to the online materials for the Python Crash Course at
-SEDS.</p>
-<p>This introductory course is exclusively designed for first-semester
-MA SEDS students, aiming to provide a solid foundation in Python
-programming. It consists of hands-on sessions that cover theoretical and
-technical aspects of programming with Python and practical sessions
-where participants directly apply their acquired knowledge. Students
-will learn fundamental programming concepts such as variables, control
-flow, basic data structures, and functions, and will also learn how to
-use Python to load, manipulate, and visualize data. Successfully
-completing this course will enable students to apply these skills to
-basic data analysis and programming in other courses and will help them
-develop more advanced, domain-specific Python skills. The course does
-not follow a specific textbook but useful references are “Learn Python
-the Hard Way” by Zed Shaw and “Introduction to Python” by Eric
-Matthes.</p>
-<p><strong>Time and place in WS 2026/27: October 12-16, 2025, 9:30 -
-17:00, K503 (except 13.10 afternoon in C427)</strong></p>
-<div id="course-contents" class="section level2">
-<h2>Course contents</h2>
-<div id="day-0" class="section level3">
-<h3>Day 0</h3>
-<p>Before starting the block course:</p>
+<div id="introduction-to-programming-with-python---final-exam-mode" class="section level1">
+<h1>Introduction to Programming with Python - Final exam mode</h1>
+<p>The purpose of this document is to familiarize you with the mode of
+the final written exam of the course. Knowing the shape of the exam
+should let you spend most of your time learning Python rather than doing
+guesswork about how the exam will be. Questions about the exam are
+welcome during the course but I expect you to read this document the
+latest on <strong>Day 1</strong>.</p>
+<div id="the-basics" class="section level2">
+<h2>The basics</h2>
+<ul>
+<li><strong>When:</strong> Day 5 (Friday) in the morning, starting at
+<strong>9:30</strong>. The visualization session follows and is applied
+in the last assignment.</li>
+<li><strong>How long:</strong> 90 minutes</li>
+<li><strong>Points:</strong> a total of 100 points, with 50 needed to
+pass</li>
+<li><strong>Setup:</strong> Closed book, no calculators, computers,
+mobile phones, nor notes.</li>
+</ul>
+<p>Remember that you also have to pass all five daily assignments (50%
+of each) to pass the course. The exam and the assignments are separate
+evaluations. Doing well in one does not compensate for the other, you
+have to pass all.</p>
+</div>
+<div id="what-the-written-exam-tests" class="section level2">
+<h2>What the written exam tests</h2>
+<p><strong>Whether you can read and reason about Python code.</strong>
+Not whether you have memorized the notebooks or precise Python syntax or
+commands. You will not be asked to write a long program on paper. You
+will have to write some code but it will be a line or two and what is
+evaluated is your logic and understanding of the language and of
+programming concepts, not syntax or typos. Most questions show you a
+short snippet and ask what it does. The best skill to practice to
+prepare for that is <em>tracing code</em> in your head or on a sheet of
+paper, line by line, keeping track of what each variable holds.</p>
+</div>
+<div id="the-three-kinds-of-questions" class="section level2">
+<h2>The three kinds of questions</h2>
+<ul>
+<li><strong>“What does this print?”</strong> You get a short snippet,
+your task is to write its output. If it raises an error, say which error
+and why. The particular punctuation and structure of the output does not
+matter as long as it is not a key component of your understanding. You
+should focus on showing that you know what happens rather than on
+getting each character right.</li>
+<li><strong>“What is wrong here, and why?”</strong> You get code that
+runs but does the wrong thing or fails. Your task is to explain the
+cause for this failure in a sentence or two.</li>
+<li><strong>“Write a line that does X.”</strong> Might be in isolation
+or within the context of a larger program. This task asks for one or two
+lines, not a whole program. There can be many possible ways to solve
+this task.</li>
+</ul>
+</div>
+<div id="what-it-covers" class="section level2">
+<h2>What it covers</h2>
+<p>Everything from Day 1 to Day 4. Expect questions drawn from across
+the whole week rather than concentrated in one day. A few things for you
+to check that you understand:</p>
+<ul>
+<li>strings</li>
+<li>lists</li>
+<li>slicing</li>
+<li>loops</li>
+<li>conditionals</li>
+<li>list and dictionary comprehensions</li>
+<li>dictionaries</li>
+<li>functions, return values and scope</li>
+<li>exceptions</li>
+<li>reading and writing files, JSON</li>
+<li>pandas</li>
+</ul>
+</div>
+<div id="how-to-prepare" class="section level2">
+<h2>How to prepare</h2>
 <ol style="list-style-type: decimal">
-<li>Install the Jupyter environment or another IDE that allows you to
-follow the course.<br />
-<a href="https://dgarcia-eu.github.io/IntroToPython/setup/Anaconda.html">Instructions
-how to install Jupyter can be found here.</a><br />
-If your installation is not working on the first morning, don’t lose the
-session to it: open the course in your browser instead and sort the
-installation out in the afternoon.<br />
-<a href="https://mybinder.org/v2/gh/dgarcia-eu/IntroToPython/refresh-2026"><img role="img" aria-label="Binder" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTA5IiBoZWlnaHQ9IjIwIj48bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgyPSIwIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYmJiIiBzdG9wLW9wYWNpdHk9Ii4xIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLW9wYWNpdHk9Ii4xIi8+PC9saW5lYXJHcmFkaWVudD48Y2xpcFBhdGggaWQ9ImEiPjxyZWN0IHdpZHRoPSIxMDkiIGhlaWdodD0iMjAiIGZpbGw9IiNmZmYiIHJ4PSIzIi8+PC9jbGlwUGF0aD48ZyBjbGlwLXBhdGg9InVybCgjYSkiPjxwYXRoIGZpbGw9IiM1NTUiIGQ9Ik0wIDBoNjR2MjBIMHoiLz48cGF0aCBmaWxsPSIjNTc5YWNhIiBkPSJNNjQgMGg0NXYyMEg2NHoiLz48cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMCAwaDEwOXYyMEgweiIvPjwvZz48ZyBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iRGVqYVZ1IFNhbnMsVmVyZGFuYSxHZW5ldmEsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjxpbWFnZSB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHg9IjUiIHk9IjMiIHhsaW5rOmhyZWY9ImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBRmtBQUFCWkNBTUFBQUJpMVhpZEFBQUI4bEJNVkVYLy8vOVhtc3JtWllIMW9sSlhtc3Ixb2xKWG1zcm1aWUgxb2xKWG1zcjFvbEpYbXNybVpZSDFvbEwxb2xKWG1zcjFvbEpYbXNybVpZSDFvbEwxb2xKWG1zcm1aWUgxb2xKWG1zcjFvbEwxb2xKWG1zcm1aWUgxb2xMMW9sSlhtc3JtWllIMW9sTDFvbEwwbkZmMW9sSlhtc3JtWllIMW9sSlhtc3E4ZFpiMW9sSlhtc3JtWllIMW9sSlhtc3BYbXNwWG1zcjFvbEwxb2xKWG1zcm1aWUgxb2xKWG1zcjFvbEwxb2xKWG1zcm1aWUgxb2xMMW9sTGVhSVZYbXNybVpZSDFvbEwxb2xMMW9sSlhtc3JtWllIMW9sTG5hMzFYbXNyMW9sSlhtc3Ixb2xKWG1zcm1aWUgxb2xMcW9WcjFvbEpYbXNyMW9sSlhtc3JtWllIMW9sTDFvbEtrZmFQb2JYdnZpR2FiZ2FkWG1zcVRoS3VvZktIbVo0RG9ibnIxb2xKWG1zcjFvbEpYbXNwWG1zcjFvbEpYbXNyZlo0VHVoV24xb2xMMW9sSlhtc3FCaTdYMW9sSlhtc3BabXNsYm1NaGJtc2RlbXNWZmw4Wmdtc05pbThKcGs4RjBtN1I0bTdGNW5MQjZqYmg3amJpRGlyT0VpYk9HbkthTWhxK1BuYUNWZzZxV2c2cWVnS2FmZjZXaG5wS29mS0d0bm9teGVaeTNub0c2ZFppK24zdkNjcFBEY3BQR24zYkxiNC9NYjQ3VWJJclZhNHJZb0dqZGFJYmVhSVhob1dIbVpZSG9iWHZwY0hqcWRIWHJlSExyb1Zyc2ZHL3VoR251aDJid2oySHhrMTd5bDF2em1sanptMWowbmxYMW9sTDNBSlhXQUFBQWJYUlNUbE1BRUJBUUh4OGdJQ0F1TGpBd01EdzlQVUJBUUVwUVVGQlhWMWhnWUdCa2NIQndjWGw4Z0lDQWdvaUlrSkNRbEppY25KMmdvS0NtcUsrd3NMQzR1c0RBd01qUDBORFExTmJXM056ZzRPRGk1KzN2OFBEdzgvVDA5UFgyOXZiMzkvZjUrZnI3Ky96OC9QejkvdjcremN6Q3hnQUFCQzVKUkVGVWVBSE4xdWwzazBVVUJ2Q2IxQ1RWcG1wYWl0QUdTTFNwU3VLQ0xXcGJUS05KRkdsY1NNQUZGNjNpVW1SY2NORzZnTGJ1eGtYVTY2SkFVZWYvOUxTcG1YbnlMcjNUNUFPL3J6bDV6ajEzN3AxMzZCSVN5NDRmS0pYdUdOL2QxOVBVZlllTzY3Wm5xdGYyS0gzM0lkMXBzWG9GZFczMHNQWjFzTXZzMkQwNjBBSHF3czRGSGVKb2pMWnFudzUzY21mdmcrWFI4bUMwT0VqdXhyWEVrWDV5ZGVWSkxWSWxWMGUxMFBYazVrN2RZZUh1N0NqMWorNDl1S2c3dUxVNjF0R0x3MWxxMjd1Z1FZbGNsSEM0Ymd2N1ZRK1RBeWo1WmMvVWpzUHZzMXNkNWNXcnlXT2J0dldUMkVQYTRydG5XVzNKa3BqZ2dFcGJPc1ByN0Y3RXlOZXd0cEJJc2xBN3A0M0hDc253b29YVEVjM1VtUG1DTm41bHJxVEp4eTZuUm1jYXZHWlZ0LzNEYTJwRDVOSHZzT0hKQ3JkYzFHMnIzRElUcFU3eWljN3cvN1J4bmpjMGt0NUdDNGRqaXYyU3ozRmIyaUVaZzQxL2Rkc0ZEb3l1WXJJa21GZWh6MEhSMnRoUGdRcU15UVliMk90QjBXeHNaM0JlRzMrd3BSYjF2emwyVVlCb2c4RmZHaHR0RktqdEFjbG5aWXJSbzlyeUc5dUcvRlpRVTRBRWc4WkU5TGpHTXpUbXFLWFBMbmxXVm5JbFFRVHZ4SmY4aXA3VmdqWmp5VlByancxdGU1b3RNN1JtUDd4bStzSzJHdjlJOEdpKytCUmJFa1I5RUJ3OHpSVWNLeHdwNzN4a2FMaXFRYitrR2R1SlROSEc3MnpjVzlMb0pncVF4cFAzL1RqLy9jM3lCMHRxemFtbDA1LytvckhMa3NWTys5NWtYNy83cWdKdm5qbHJmcjJHZ3N5eDBlb3k5dVB6TjVTUGQ4NmFYZ2dPc0VLVzJQcno3ZHUzVklEMy90enMvc1NSczJ3N292VkhLdGpyWDJwZDdaTWxUeEFZZkJBTDlqaUR3ZkxrcTU1VG03aWZoTWxUR1B5Q0FzN1JGUmhuNDdKbmxjQjlSTTVUOTdBU3VaWEljVk51VURJbmRwRGJkc2ZycXNPcHBlWGw1WStYVktkakZDVGgrekdhVnVqMGQ5enkwNVBQSzNRekJhbXhkd3RUQ3J6eWcvMlJ2ZjJFc3RVam9yZEd3YS9reDltU0pMcjhtTEx0Q1c4SEhHSmMyUjVoUzIxOUlpRjZQblR1c09xY01sNTdnbTBaOGthbktNQVFnMHFTeXVaZm43ekl0c2JHeU85UWxueFkwZUN1RDFYTDJ5cy9Nc3JRaGx0RTdVZzB1Rk96dWZKRkUyUHhCby9ZQXg4WFBQZER3V04wTXJEUllJWkYwbVNNS0NOSGdhSVZGb0JiTm9MSjd0RVFES3hHRjBrY0xRaW1vakNab3B2ME9rTk95V0NDZzlYTVZBaTdBUkp6UWRNMlFVaDBnbUJvempjM1NrZzZkU0JScURHWVNVT3U2NlpnK0kyZk5acy9NMy9mL0dybC9YbnlGMUd3M1ZLQ2V6MFBONUlVZkZMcXZnVU40QzBxTnFZczVZaFBMK2FWWllERTRJcFVrNTdvU0ZuSm00RnlDcXFPRTBqaFkyU015TEZvbzU2enlvNmJlY09TNVVWRGRqN1ZpaDB6cCt0Y01od1JwQmVMeXF0SWpsSktBSVpTYkk4U0dTRjNrMHBBM21SNXRIdXdQRm9hN043cmVvcTJicUNzQWsxSHFDdTV1dkkxbjZKdVJYSStTMU1jbzU0WW1ZVHdjbjZBZWljK2tzc1hpOFhwWEM0VjN0Ny9BRHVUTkthUUpkU2NBQUFBQUVsRlRrU3VRbUNDIi8+PHRleHQgeD0iNDE1IiB5PSIxNTAiIGZpbGw9IiMwMTAxMDEiIGZpbGwtb3BhY2l0eT0iLjMiIHRleHRMZW5ndGg9IjM3MCIgdHJhbnNmb3JtPSJzY2FsZSguMSkiPmxhdW5jaDwvdGV4dD48dGV4dCB4PSI0MTUiIHk9IjE0MCIgdGV4dExlbmd0aD0iMzcwIiB0cmFuc2Zvcm09InNjYWxlKC4xKSI+bGF1bmNoPC90ZXh0Pjx0ZXh0IHg9Ijg1NSIgeT0iMTUwIiBmaWxsPSIjMDEwMTAxIiBmaWxsLW9wYWNpdHk9Ii4zIiB0ZXh0TGVuZ3RoPSIzNTAiIHRyYW5zZm9ybT0ic2NhbGUoLjEpIj5iaW5kZXI8L3RleHQ+PHRleHQgeD0iODU1IiB5PSIxNDAiIHRleHRMZW5ndGg9IjM1MCIgdHJhbnNmb3JtPSJzY2FsZSguMSkiPmJpbmRlcjwvdGV4dD48L2c+PC9zdmc+" alt="Binder" /></a><br />
-⚠️ <strong>Binder is a fallback for following the lecture, not a place
-to work.</strong> It can take a few minutes to start, and
-<strong>anything you write there is lost when the tab closes</strong> —
-it saves nothing. If you do use it, download your notebook before you
-leave (<em>File → Download</em>). Write your assignments locally.</li>
-<li>Familiarize yourself with the Jupyter environment.<br />
-You can start trying to do the steps in the <a href="Day1/10_jupyter_walkthrough.txt">Jupyter walkthrough.</a></li>
-<li><strong>Run the <a href="Day1/00_day0_selfcheck.ipynb">Day 0
-self-check notebook</a>.</strong> Ten minutes, not graded. It confirms
-your installation works and shows you where you are starting from, so
-nobody loses Monday morning to a broken setup.</li>
-<li>Make sure that you have a university account and can access course
-Ilias. If you have problems with this, talk to support at the
-university.</li>
-<li>Check out Ilias to get the link to our private DataCamp Classroom.
-DataCamp is for you to do extra exercises besides the course.</li>
-<li>Take a look at the <a href="https://github.com/dgarcia-eu/IntroToPython/discussions/">Github
-forum to ask questions</a></li>
+<li><strong>Do the daily quizzes properly.</strong> Every morning starts
+with a few questions in the same style as the exam for us to practice
+together. They are ungraded but trying them live during the session is a
+great way to practice.</li>
+<li><strong>Re-run the notebooks cell by cell and predict what happens
+before you run each cell.</strong> Cover the output, say out loud what
+you think will happen, then check. The parts where you are wrong are the
+gaps the exam is aiming to test. If you don’t understand something, you
+should ask the tutors. You can also do this with a study partner and
+take turns and help each other to understand when the other doesn’t.
+Explaining code to other people will also help you to find gaps in your
+understanding.</li>
+<li><strong>Do the Parsons problems and the faded examples.</strong>
+They are in the notebooks marked 🧩 and “Three at once”. They train the
+skill of tracing code and understanding what it does.</li>
+<li><strong>Use the two-page reference</strong>
+(<code>python_reference.md</code>). Not permitted in the exam but it is
+the shortest revision list of everything the course actually used. You
+can also call it the cheat sheet, have it close to you when you are
+practicing.</li>
+<li><strong>Do not try to memorize the notebooks.</strong> You will be
+asked about code you have never seen. Memorizing examples or slides does
+not prepare you for the exam. If there is any similar code, it will be
+slighlty different and memorizing will lead to mistakes.</li>
 </ol>
 </div>
-<div id="day-1" class="section level3">
-<h3>Day 1</h3>
-<ul>
-<li>Welcome and course logistics: <a href="https://dgarcia-eu.github.io/IntroToPython/Day1/Slides/Day1.html">Slides</a></li>
-<li>Interactive lecture: Jupyter Notebook walkthrough
-<ul>
-<li><a href="Day1/10_jupyter_walkthrough.txt">10_jupyter_walkthrough.txt</a></li>
-</ul></li>
-<li>Interactive lecture: Variables, strings, and numbers
-<ul>
-<li><a href="Day1/11_var_string_num.ipynb">11_var_string_num.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Introduction to lists and basic loops
-<ul>
-<li><a href="Day1/12_lists_tuples-1.ipynb">12_lists_tuples-1.ipynb</a></li>
-</ul></li>
-<li>Assignment 1: Variables, Strings, Numbers, Lists, and Loops
-<ul>
-<li><a href="Day1/assignment_1/assignment_1.ipynb">assignment_1.ipynb</a> –
-<strong>Deadline: October 12th, 23:59</strong></li>
-<li><a href="Day1/assignment_1/assignment_1-extra.ipynb">Extra exercises
-1 (ungraded)</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="day-2" class="section level3">
-<h3>Day 2</h3>
-<p><strong>NOTE: only this day, the afternoon session is in C427, all
-the rest is in K503</strong></p>
-<ul>
-<li>Quiz about Day 1: <a href="https://dgarcia-eu.github.io/IntroToPython/Day2/Slides/Day2.html">Slides</a></li>
-<li>Interactive lecture: Advanced lists, slicing, mutability, and
-nesting
-<ul>
-<li><a href="Day2/21_lists_advanced.ipynb">21_lists_advanced.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Conditional statements
-<ul>
-<li><a href="Day2/22_if_statements.ipynb">22_if_statements.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: List comprehensions
-<ul>
-<li><a href="Day2/23_comprehensions.ipynb">23_comprehensions.ipynb</a></li>
-</ul></li>
-<li>Assignment 2: Lists, Tuples, Sets, Comprehensions, and if-statements
-<ul>
-<li><a href="Day2/assignment_2/assignment_2.ipynb">assignment_2.ipynb</a> –
-<strong>Deadline: October 13th, 23:59</strong></li>
-<li><a href="Day2/assignment_2/assignment_2-extra.ipynb">Extra exercises
-2 (ungraded)</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="day-3" class="section level3">
-<h3>Day 3</h3>
-<ul>
-<li>Quiz about Day 2: <a href="https://dgarcia-eu.github.io/IntroToPython/Day3/Slides/Day3.html">Slides</a></li>
-<li>Interactive lecture: Dictionaries
-<ul>
-<li><a href="Day3/31_dictionaries.ipynb">31_dictionaries.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Functions, lambda, and scope
-<ul>
-<li><a href="Day3/32_functions.ipynb">32_functions.ipynb</a></li>
-</ul></li>
-<li>Assignment 3: Dictionaries and Functions
-<ul>
-<li><a href="Day3/assignment_3/assignment_3.ipynb">assignment_3.ipynb</a> –
-<strong>Deadline: October 14th, 23:59</strong></li>
-<li><a href="Day3/assignment_3/assignment_3-extra.ipynb">Extra exercises
-3 (ungraded)</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="day-4" class="section level3">
-<h3>Day 4</h3>
-<ul>
-<li>Quiz about Day 3: <a href="https://dgarcia-eu.github.io/IntroToPython/Day4/Slides/Day4.html">Slides</a></li>
-<li>Interactive lecture: Flexible function arguments (*args and
-**kwargs)
-<ul>
-<li><a href="Day4/40_arguments.ipynb">40_arguments.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Python modules and exceptions
-<ul>
-<li><a href="Day4/41_modules_exceptions.ipynb">41_modules_exceptions.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Write and read files
-<ul>
-<li><a href="Day4/42_files.ipynb">42_files.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Data Exploration with Pandas
-<ul>
-<li><a href="Day4/43_data_exploration_Pandas.ipynb">43_data_exploration_Pandas.ipynb</a></li>
-</ul></li>
-<li>Assignment 4: Data exploration
-<ul>
-<li>Quiz about Day 4: <a href="https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html">Slides</a></li>
-<li><a href="Day4/assignment_4/assignment_4.ipynb">assignment_4.ipynb</a> -
-<strong>Deadline: October 15th, 23:59</strong></li>
-<li><a href="Day4/assignment_4/assignment_4-extra.ipynb">Extra exercises
-4 (ungraded)</a></li>
-</ul></li>
-</ul>
-</div>
-<div id="day-5" class="section level3">
-<h3>Day 5</h3>
-<ul>
-<li><strong>Written exam (90 min)</strong></li>
-<li>Interactive lecture: Data visualisation in Python
-<ul>
-<li><a href="Day5/51_visualization.ipynb">51_visualization.ipynb</a></li>
-</ul></li>
-<li>Interactive lecture: Beyond the notebook – scripts, packages, and
-environments
-<ul>
-<li><a href="Day5/52_beyond_the_notebook.ipynb">52_beyond_the_notebook.ipynb</a></li>
-</ul></li>
-<li>Assignment 5: Data visualization
-<ul>
-<li><a href="Day5/assignment_5/assignment_5.ipynb">assignment_5.ipynb</a> –
-<strong>Deadline: October 16th, 23:59</strong></li>
-</ul></li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="course-grading" class="section level2">
-<h2>Course grading</h2>
-<ul>
-<li>The course is graded as pass/fail. To pass the course, you need the
-following:
-<ul>
-<li><strong>Pass each of the five daily assignments (at least 50% points
-in each)</strong></li>
-<li><strong>Pass the final written exam (at least 50%
-points)</strong></li>
-</ul></li>
-<li><strong><a href="EXAM_BLUEPRINT.md">Read the exam
-blueprint</a></strong> on Day 1: what the exam covers, the three kinds
-of question, and five worked examples.</li>
-<li><strong><a href="python_reference.md">Two-page Python
-reference</a></strong>: everything the course uses, on one page, for
-revision. Not permitted in the exam.</li>
-<li>During the daily sessions, we will do small ungraded quizzes as
-practice for the final written exam.</li>
-<li>Attendance is not mandatory but highly recommended to pass the
-assignments and to practice for the final exam.</li>
-<li><strong>From Monday to Friday, there is an assignment due each day
-by 23:59.</strong></li>
-<li>Assignment submissions are done through ILIAS</li>
-</ul>
-</div>
-<div id="who-am-i" class="section level2">
-<h2>Who am I?</h2>
-<p>I am the Professor for Social and Behavioral Data Science at the
-University of Konstanz. My background is Computer Science but I worked
-my whole career with psychologists, sociologists and physicists to learn
-new ways to understand human behavior. I got my PhD from ETH Zurich in
-2012 and a habilitation in 2018, starting to work as full professor TU
-Graz in 2020 and then at the University of Konstanz in 2022. To learn
-more about my work, check my <a href="https://dgarcia.eu">website</a>.</p>
+<div id="five-example-questions" class="section level2">
+<h2>Five example questions</h2>
+<p>Real questions, in the real format.</p>
+<p><strong>1. (5 points)</strong> Write the output of the following
+code.</p>
+<pre class="python"><code>a = [1, 100]
+b = a
+b[0] = 0
+print(a)</code></pre>
+<p><strong>2. (5 points)</strong> Write the output. If it raises an
+error, briefly explain why.</p>
+<pre class="python"><code>t = (1, 2, 3)
+t.append(4)</code></pre>
+<p><strong>3. (5 points)</strong> Look at the code below. State what it
+outputs, and explain in one or two sentences why.</p>
+<pre class="python"><code>greeting = &quot;hello&quot;
+greeting.upper()
+print(greeting)</code></pre>
+<p><strong>4. (10 points)</strong> Given
+<code>dictionary = {&quot;applez&quot;: 100, &quot;oranges&quot;: 120, &quot;bananas&quot;: 50}</code>,
+write code that changes the key <code>&quot;applez&quot;</code> to
+<code>&quot;apples&quot;</code>, keeping its value.</p>
+<p><strong>5. (15 points)</strong> We want a function that adds five to
+its argument. Below is an attempt.</p>
+<pre class="python"><code>def add_five(n):
+    num_sum = 10
+    new_n = n + 5
+    return num_sum
+
+print(add_five(20))</code></pre>
+<ol style="list-style-type: lower-alpha">
+<li>What does the last line print?</li>
+<li>Explain why it does not print 25.</li>
+<li>Rewrite <code>add_five(n)</code> so that it works.</li>
+</ol>
+<details>
+<summary>
+Answers
+</summary>
+<ol style="list-style-type: decimal">
+<li><code>[0, 100]</code> — <code>b</code> is another name for the same
+list, not a copy, so changing <code>b</code> changes
+<code>a</code>.</li>
+<li><code>AttributeError</code> — tuples are immutable and have no
+<code>append</code> method.</li>
+<li><code>hello</code> — string methods return a new string and never
+modify the original, so the result was thrown away. It needed
+<code>greeting = greeting.upper()</code>.</li>
+<li><code>dictionary[&quot;apples&quot;] = dictionary.pop(&quot;applez&quot;)</code>, or add
+the new key and <code>del</code> the old one. Keys cannot be renamed in
+place.</li>
+<li><ol style="list-style-type: lower-alpha">
+<li><code>10</code>. (b) The function computes <code>new_n</code> but
+returns <code>num_sum</code>, so the computed value is discarded. (c)
+<code>def add_five(n): return n + 5</code></li>
+</ol></li>
+</ol>
+</details>
 </div>
 </div>
 

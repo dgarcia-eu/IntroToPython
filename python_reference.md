@@ -1,12 +1,4 @@
-# Python reference — everything this course uses
-
-*"A summary sheet of all the important commands / python codes together would be cool for revision"* — student feedback, 2025. Here it is.
-
-This is deliberately **only** what the course actually uses. If something is not here, you were not asked to know it. Organised by what you are trying to *do*, not by data type — because that is how you look things up when you are stuck.
-
-Not permitted in the exam, but it is the shortest possible revision list.
-
----
+# Python reference / cheat sheet
 
 ## Working with text
 
@@ -25,26 +17,38 @@ s.startswith("The")   # True
 "Old" in s            # True                   substring test
 ```
 
-**These return a new string. They never change the original.**
-`s.upper()` on its own does nothing lasting — you need `s = s.upper()`.
+**The lines above return a new string. They never change the original.**
+`s.upper()` on its own does nothing lasting, you need `s = s.upper()`.
 
 ```python
 "{} is {}".format("python", "fun")   # 'python is fun'
 print("a", "b")                      # a b        print adds spaces
-"\n"   # newline        "\t"   # tab        "\\"   # a literal backslash
 ```
+
+| inside a string | means |
+|---|---|
+| `\n` | a new line |
+| `\t` | a tab |
+| `\\` | a single literal backslash |
 
 ## Numbers
 
-```python
-7 + 2   # 9        7 / 2   # 3.5   always a float
-7 - 2   # 5        7 // 2  # 3     floor division
-7 * 2   # 14       7 % 2   # 1     remainder
-7 ** 2  # 49                       to the power of
+| operator | example | result | |
+|---|---|---|---|
+| `+` | `7 + 2` | `9` | |
+| `-` | `7 - 2` | `5` | |
+| `*` | `7 * 2` | `14` | |
+| `/` | `7 / 2` | `3.5` | always a float |
+| `//` | `7 // 2` | `3` | floor division |
+| `%` | `7 % 2` | `1` | remainder |
+| `**` | `7 ** 2` | `49` | to the power of |
 
-int("42")    float("3.1")    str(42)    round(3.7)
-max([1, 5, 3])   min([1, 5, 3])   sum([1, 5, 3])   abs(-4)
-```
+| converting a value | | on a list of numbers | |
+|---|---|---|---|
+| `int("42")` | `42` | `sum([1, 5, 3])` | `9` |
+| `float("3.1")` | `3.1` | `max([1, 5, 3])` | `5` |
+| `str(42)` | `"42"` | `min([1, 5, 3])` | `1` |
+| `round(3.7)` | `4` | `abs(-4)` | `4` |
 
 ## Lists
 
@@ -78,7 +82,7 @@ list(range(1, 11))    # 1 to 10
 list(range(0, 10, 2)) # [0, 2, 4, 6, 8]   with a step
 ```
 
-## Slicing — works on lists *and* strings
+## Slicing 
 
 ```python
 xs[1:4]     # from 1 up to but NOT including 4
@@ -88,6 +92,7 @@ xs[-2:]     # last two
 xs[::2]     # every second item
 xs[::-1]    # reversed
 ```
+**Remember that slicing works on lists and strings.**
 
 ## Tuples and sets
 
@@ -110,41 +115,42 @@ for item in xs:
 for i, item in enumerate(xs):        # position AND item
     print(i, item)
 
-for a, b in zip(names, ages):        # two lists in step
+for a, b in zip(names, ages):        # two lists in parallel
     print(a, b)
 ```
 
-The pattern behind most loops you will write — **build the answer up as you go**:
+The pattern behind most loops you will write: **build the answer up as you go**. For example:
 
 ```python
 total = 0                   # BEFORE the loop: start it off
 for word in words:
-    total = total + len(word)   # INSIDE: change it
+    total = total + len(word)   # INSIDE: change it step by step
 print(total)                # AFTER: use it
 ```
 
 `total = total + 1` can be shortened to `total += 1`.
 
-## Conditions
+## Conditionals
 
 ```python
 if score >= 70:
     print("distinction")
 elif score >= 50:          # only tested if the first was False
     print("pass")
-else:
+else:                      # only runs if all others were False 
     print("fail")
 ```
 
 **Python takes the first branch that is true and skips the rest, so the order of your tests is the design.** Put the strictest condition first.
 
-```python
-==  equal        !=  not equal        <  <=  >  >=
-and    or    not
-x in xs        x not in xs
-```
+| comparing | | combining | | membership | |
+|---|---|---|---|---|---|
+| `==` | equal | `and` | both must hold | `x in xs` | is it there? |
+| `!=` | not equal | `or` | either will do | `x not in xs` | is it absent? |
+| `<` `<=` | smaller (or equal) | `not` | flips true/false | | |
+| `>` `>=` | larger (or equal) | | | | |
 
-Falsy values — these all count as `False` in an `if`: `False`, `0`, `""`, `[]`, `{}`, `None`.
+"Falsy"" values count as `False` in an `if`: `False`, `0`, `""`, `[]`, `{}`, `None`.
 
 ## Comprehensions
 
@@ -156,7 +162,7 @@ Falsy values — these all count as `False` in an `if`: `False`, `0`, `""`, `[]`
 {w: len(w) for w in words}                  # a dictionary comprehension
 ```
 
-Read it as: **`[` what goes in the new list · `for` each item · `if` it passes `]`**
+Read it as: **`[` what goes in the new list · `for` each item · `in` · list or dictionary  `if` it passes condition0 `]`**
 
 Every comprehension can be written as a loop, and a loop is never wrong:
 
@@ -179,13 +185,17 @@ del d["age"]
 "name" in d            # True
 len(d)
 
-d.keys()      d.values()      d.items()
-
 for key, value in d.items():
     print(key, value)
 ```
 
-Counting things — the pattern behind Assignment 3:
+| what you want to loop over | use |
+|---|---|
+| the keys | `d.keys()` &nbsp; (or simply `for k in d:`) |
+| the values | `d.values()` |
+| both at once | `d.items()` &nbsp; &ndash; gives `(key, value)` pairs |
+
+Counting things:
 
 ```python
 counts = {}
@@ -222,7 +232,7 @@ x = shout("hi")     # prints HI
 print(x)            # None - nothing was handed back
 ```
 
-Variables made inside a function do not exist outside it.
+Lambda function example:
 
 ```python
 double = lambda x: x * 2                    # a small unnamed function
@@ -248,12 +258,12 @@ Read a traceback **from the bottom**: the last line names the error, and the arr
 
 | error | usually means |
 |---|---|
-| `NameError` | typo, or you never ran the cell that defines it |
+| `NameError` | typo or you never ran the cell that defines it |
 | `TypeError` | mixing incompatible types, e.g. `"a" + 1` |
 | `IndexError` | list position that does not exist |
 | `KeyError` | dictionary key that does not exist |
 | `AttributeError` | method that this type does not have, e.g. `.append` on a tuple |
-| `IndentationError` | spacing is inconsistent |
+| `IndentationError` | spacing is inconsistent in code |
 | `ValueError` | right type, impossible value, e.g. `int("hello")` |
 
 ## Files
@@ -271,11 +281,14 @@ with open("file.txt", "a") as f:   # 'a' appends
 
 ```python
 import json
-json.load(f)      # read from a FILE       json.dump(obj, f)   # write to a FILE
-json.loads(s)     # read from a STRING     json.dumps(obj)     # write to a STRING
 ```
 
-**The `s` is for string.** That is the whole rule.
+| | read | write |
+|---|---|---|
+| a **file** | `obj = json.load(f)` | `json.dump(obj, f)` |
+| a **string** | `obj = json.loads(s)` | `s = json.dumps(obj)` |
+
+**Notation convention: `s` is for string.**
 
 ## Modules
 
@@ -306,9 +319,17 @@ d.strftime("%Y-%m-%d")                             # FORMAT: date -> string
 import pandas as pd
 
 df = pd.read_csv("adult.csv", na_values="?")
-df.head()          df.info()          df.describe()
-df.columns         len(df)
+```
 
+| looking at a data frame | |
+|---|---|
+| `df.head()` | the first five rows (`df.head(20)` for more) |
+| `df.info()` | one line per column: name, type, how many non-empty |
+| `df.describe()` | count, mean, min, max and quartiles of each numeric column |
+| `df.columns` | the column names |
+| `len(df)` | how many rows |
+
+```python
 df["age"]                       # one column
 df[["age", "sex"]]              # several columns - note the double brackets
 df.age                          # same as df["age"], only for simple names
@@ -320,10 +341,14 @@ df[df.education.isin(["Bachelors"])]        # matches any of a list
 
 **Every condition needs its own parentheses, and it is `&` / `|`, not `and` / `or`.**
 
-```python
-df.education.unique()           df.education.value_counts()
-df.age.mean()   .median()   .max()   .std()
+| summarising one column | |
+|---|---|
+| `df.education.unique()` | the distinct values |
+| `df.education.nunique()` | how many distinct values there are |
+| `df.education.value_counts()` | how often each value occurs |
+| `df.age.mean()` | the mean &ndash; and likewise `.median()`, `.min()`, `.max()`, `.std()`, `.sum()` |
 
+```python
 df.sort_values("age")
 df.sort_values(["age", "hours-per-week"], ascending=False)
 
@@ -341,11 +366,17 @@ plt.plot(x, y, color="red", label="series 1")   # line
 plt.scatter(x, y)                               # points
 plt.bar(x, heights)                             # bars
 plt.hist(values, bins=20)                       # histogram
-
-plt.xlabel("day")      plt.ylabel("temperature")     plt.title("...")
-plt.ylim(-5, 35)       plt.legend()                  plt.show()
-plt.savefig("figure.png")
 ```
+
+| dressing up the plot | |
+|---|---|
+| `plt.xlabel("day")` | name the x axis |
+| `plt.ylabel("temperature")` | name the y axis |
+| `plt.title("...")` | add a title |
+| `plt.ylim(-5, 35)` | fix the visible range (`plt.xlim()` likewise) |
+| `plt.legend()` | show the legend |
+| `plt.show()` | draw it |
+| `plt.savefig("figure.png")` | save it to a file |
 
 `plt.legend()` shows nothing unless each series was given a `label=`.
 
@@ -353,6 +384,3 @@ plt.savefig("figure.png")
 df["age"].plot(kind="bar")      # plot straight from pandas
 ```
 
----
-
-*Anything not on this page was not required by this course.*

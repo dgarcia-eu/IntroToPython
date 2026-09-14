@@ -1,46 +1,72 @@
-# Final exam — what to expect
+# Introduction to Programming with Python - Final exam mode
 
-Handed out on Day 1 so there are no surprises on Friday. Nothing here is a secret: knowing the shape of the exam should let you spend your revision on Python rather than on guessing.
+The purpose of this document is to familiarize you with the mode of the final written exam of the course.
+Knowing the shape of the exam should let you spend most of your time learning Python rather than doing guesswork about how the exam will be.
+Questions about the exam are welcome during the course but I expect you to read this document the latest on **Day 1**.
 
 ## The basics
 
-| | |
-|---|---|
-| **When** | Friday morning, first thing — before the visualisation lecture |
-| **How long** | 90 minutes |
-| **Total** | 100 points |
-| **To pass** | 50 points |
-| **Conditions** | Closed book. No calculators, no computers, no notes. |
+- **When:** Day 5 (Friday) in the morning, starting at **9:30**. The visualization session follows and is applied in the last assignment.
+- **How long:** 90 minutes
+- **Points:** a total of 100 points, with 50 needed to pass
+- **Setup:** Closed book, no calculators, computers, mobile phones, nor notes.
 
-You also have to pass all five daily assignments (50% of 20 points each). The exam and the assignments are separate hurdles; doing well in one does not compensate for the other.
+Remember that you also have to pass all five daily assignments (50% of each) to pass the course.
+The exam and the assignments are separate evaluations. Doing well in one does not compensate for the other, you have to pass all.
 
-## What it is testing
+## What the written exam tests
 
-**Whether you can read and reason about Python code.** Not whether you have memorised the notebooks.
+**Whether you can read and reason about Python code.** Not whether you have memorized the notebooks or precise Python syntax or commands.
+You will not be asked to write a long program on paper. You will have to write some code but it will be a line or two and what is evaluated is your
+logic and understanding of the language and of programming concepts, not syntax or typos.
+Most questions show you a short snippet and ask what it does.
+The best skill to practice to prepare for that is *tracing code* in your head or on a sheet of paper, line by line, 
+keeping track of what each variable holds.
 
-You will not be asked to write a long program on paper. Where you do write code it will be a line or two. Most questions show you a short snippet and ask what it does — which means the skill to practise is *tracing code in your head*, line by line, keeping track of what each variable holds.
+## The three kinds of questions
 
-## The three kinds of question
-
-Roughly speaking, the paper is:
-
-- **About half — "what does this print?"** A short snippet; you write the output. If it raises an error, say which error and why. There are partial marks for identifying the error correctly even if your wording differs from ours.
-- **About a third — "what goes wrong here, and why?"** Code that runs but does the wrong thing, or fails. You explain the cause in a sentence or two. These are the questions where understanding beats recall.
-- **The rest — "write a line that does X."** One or two lines, not a program.
+- **"What does this print?"**  You get a short snippet, your task is to write its output. 
+If it raises an error, say which error and why.
+The particular punctuation and structure of the output does not matter as long as it is not a key component of your understanding. You should focus on showing that you know what happens rather than on getting each character right.
+- **"What is wrong here, and why?"** 
+You get code that runs but does the wrong thing or fails. Your task is to explain the cause for this failure in a sentence or two.
+- **"Write a line that does X."** 
+Might be in isolation or within the context of a larger program. This task asks for one or two lines, not a whole program. There can be many possible ways to solve this task.
 
 ## What it covers
 
-Everything from Monday to Thursday, plus Friday's material only insofar as it was covered before the exam. Expect questions drawn from across the whole week rather than concentrated in one day:
+Everything from Day 1 to Day 4. Expect questions drawn from across the whole week rather than concentrated in one day. A few things for you to check that you understand:
 
-strings · lists · slicing · loops · if/elif/else · list and dictionary comprehensions · dictionaries · functions, return values and scope · `*args` and `**kwargs` · exceptions · reading and writing files, JSON · pandas
+- strings 
+- lists
+- slicing
+- loops
+- conditionals
+- list and dictionary comprehensions
+- dictionaries
+- functions, return values and scope
+- exceptions
+- reading and writing files, JSON
+- pandas
 
 ## How to prepare
 
-1. **Do the daily quizzes properly.** Every morning starts with a few questions in the same style as the exam. They are ungraded and they are the closest thing to a mock paper you will get.
-2. **Re-run the notebooks, and predict before you run.** Cover the output, say what you think will happen, then check. Where you are wrong, that gap is exactly what the exam is looking for.
-3. **Do the Parsons problems and the faded examples.** They are in the notebooks, marked 🧩 and "Three at once". They train the tracing skill directly.
-4. **Use the two-page reference** (`python_reference.md`). Not permitted in the exam, but it is the shortest revision list of everything the course actually used.
-5. **Do not try to memorise the notebooks.** You will be asked about code you have never seen. Memorising examples is the least efficient way to prepare.
+1. **Do the daily quizzes properly.** Every morning starts with a few questions in the same style as the exam for us to practice together.
+They are ungraded but trying them live during the session is a great way to practice.
+2. **Re-run the notebooks cell by cell and predict what happens before you run each cell.** 
+Cover the output, say out loud what you think will happen, then check.
+The parts where you are wrong are the gaps the exam is aiming to test.
+If you don't understand something, you should ask the tutors.
+You can also do this with a study partner and take turns and help each other to understand when the other doesn't.
+Explaining code to other people will also help you to find gaps in your understanding.
+3. **Do the Parsons problems and the faded examples.**
+They are in the notebooks marked 🧩 and "Three at once". They train the skill of tracing code and understanding what it does.
+4. **Use the two-page reference** (`python_reference.md`). 
+Not permitted in the exam but it is a good summary of what we used during the course.
+You can also call it the cheat sheet, have it close to you when you are practicing.
+5. **Do not try to memorize the notebooks.** 
+You will be asked about code you have never seen. Memorizing examples or slides does not prepare you for the exam.
+If there is any similar code, it will be slighlty different and memorizing will lead to mistakes.
 
 ## Five example questions
 

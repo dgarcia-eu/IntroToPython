@@ -9,7 +9,7 @@ Students will learn fundamental programming concepts such as variables, control 
 Successfully completing this course will enable students to apply these skills to basic data analysis and programming in other courses and will help them develop more advanced, domain-specific Python skills.
 The course does not follow a specific textbook but useful references are "Learn Python the Hard Way" by Zed Shaw and "Introduction to Python" by Eric Matthes.
 
-**Time and place in WS 2025/26: K503, October 13-17, 2025, 9:00 - 17:00**
+**Time and place in WS 2026/27: October 12-16, 2025, 9:30 - 17:00,  K503 (except 13.10 afternoon in C427)**
 
 ## Course contents
 
@@ -45,10 +45,12 @@ Monday morning to a broken setup.
 - Interactive lecture: Introduction to lists and basic loops
     - [12_lists_tuples-1.ipynb](Day1/12_lists_tuples-1.ipynb)
 - Assignment 1: Variables, Strings, Numbers, Lists, and Loops
-  - [assignment_1.ipynb](Day1/assignment_1/assignment_1.ipynb) -- **Deadline: October 13th, 23:59**
+  - [assignment_1.ipynb](Day1/assignment_1/assignment_1.ipynb) -- **Deadline: October 12th, 23:59**
   - [Extra exercises 1 (ungraded)](Day1/assignment_1/assignment_1-extra.ipynb)
 
 ### Day 2
+
+**NOTE: only this day, the afternoon session is in C427, all the rest is in K503**
 
 - Quiz about Day 1: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day2/Slides/Day2.html)
 - Interactive lecture: Advanced lists, slicing, mutability, and nesting
@@ -58,7 +60,7 @@ Monday morning to a broken setup.
 - Interactive lecture: List comprehensions
     - [23_comprehensions.ipynb](Day2/23_comprehensions.ipynb)
 - Assignment 2: Lists, Tuples, Sets, Comprehensions, and if-statements
-  - [assignment_2.ipynb](Day2/assignment_2/assignment_2.ipynb) -- **Deadline: October 14th, 23:59**
+  - [assignment_2.ipynb](Day2/assignment_2/assignment_2.ipynb) -- **Deadline: October 13th, 23:59**
   - [Extra exercises 2 (ungraded)](Day2/assignment_2/assignment_2-extra.ipynb)
 
 ### Day 3
@@ -69,7 +71,7 @@ Monday morning to a broken setup.
 - Interactive lecture: Functions, lambda, and scope
   - [32_functions.ipynb](Day3/32_functions.ipynb)
 - Assignment 3: Dictionaries and Functions
-  - [assignment_3.ipynb](Day3/assignment_3/assignment_3.ipynb) -- **Deadline: October 15th, 23:59**
+  - [assignment_3.ipynb](Day3/assignment_3/assignment_3.ipynb) -- **Deadline: October 14th, 23:59**
   - [Extra exercises 3 (ungraded)](Day3/assignment_3/assignment_3-extra.ipynb)
 
 ### Day 4
@@ -84,19 +86,20 @@ Monday morning to a broken setup.
 - Interactive lecture: Data Exploration with Pandas
   - [43_data_exploration_Pandas.ipynb](Day4/43_data_exploration_Pandas.ipynb)
 - Assignment 4: Data exploration
-  - [assignment_4.ipynb](Day4/assignment_4/assignment_4.ipynb) - **Deadline: October 16th, 23:59**
+  - Quiz about Day 4: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
+  - [assignment_4.ipynb](Day4/assignment_4/assignment_4.ipynb) - **Deadline: October 15th, 23:59**
   - [Extra exercises 4 (ungraded)](Day4/assignment_4/assignment_4-extra.ipynb)
+
 
 ### Day 5
 
-- Quiz about Day 4: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
-- **Written exam (90 min)** -- first thing, so you are not sitting through a lecture worrying about it
+- **Written exam (90 min)**
 - Interactive lecture: Data visualisation in Python
   - [51_visualization.ipynb](Day5/51_visualization.ipynb)
 - Interactive lecture: Beyond the notebook -- scripts, packages, and environments
   - [52_beyond_the_notebook.ipynb](Day5/52_beyond_the_notebook.ipynb)
 - Assignment 5: Data visualization
-  - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 17th, 23:59**
+  - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 16th, 23:59**
 
 --------------------------------------------------
 

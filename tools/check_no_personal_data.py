@@ -53,7 +53,14 @@ TEXTUAL = re.compile(r"\.(ipynb|md|py|txt|csv|json|qmd|yml|yaml|html)$", re.I)
 SELF = "tools/check_no_personal_data.py"
 SKIP = re.compile(r"(_files/|_extensions/|\.min\.|/libs/)")
 
-EMAIL = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
+# Anchored on the "@" and bounded on both sides. The obvious pattern,
+# r"[\w.%+-]+@[\w.-]+\.[a-zA-Z]{2,}", backtracks catastrophically on the long
+# unbroken runs of characters in minified CSS and JS: it took 42 s on a single
+# 620 KB pandoc-generated HTML file and timed the whole check out. Matching
+# outwards from each "@" with bounded quantifiers is linear in the file size.
+EMAIL = re.compile(r"(?<![A-Za-z0-9._%+-])[A-Za-z0-9._%+-]{1,64}"
+                   r"@[A-Za-z0-9-]{1,63}(?:\.[A-Za-z0-9-]{1,63}){0,4}"
+                   r"\.[A-Za-z]{2,24}(?![A-Za-z0-9-])")
 
 
 def tracked() -> list[str]:
