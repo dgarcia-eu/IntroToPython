@@ -1,6 +1,6 @@
 ---
-title: "Introduction to Programming<br>with Python<br><span class='session'>Day 1 &ndash; Welcome and course logistics</span>"
-author: "David Garcia<br><span class='semester'>Winter Semester 2026-27</span>"
+title: "Introduction to Programming with Python<br><span class='session'>Day 1 &ndash; Welcome and course logistics</span>"
+author: "David Garcia<br><span class='semester'>Winter Semester 2026/27</span>"
 format:
   revealjs:
     theme: [default, ../../assets/unikn.scss, ../../assets/introtopython.scss]
@@ -42,7 +42,7 @@ format:
 - Faculty member of the Complexity Science Hub Vienna
 - External faculty at the Barcelona Super Computing Center
 - Privatdozent at ETH Zurich
-- **Assistants in WS 2025/26: Anastasia Siebers and Niklas Bacher**
+- **Assistants in WS 2026/27: Eli Schwarer, Luise Harnischmacher, Aaron Siebert**
 
 
 
@@ -112,8 +112,8 @@ After this course, you should:
   - Data exploration with pandas
 
 - Day 5: 
+  - Written exam
   - Data visualization
-  - Final exam
   
 :::
 
@@ -122,9 +122,7 @@ After this course, you should:
 
 ## **Resources and help**
 
-- Ask questions in our Github Forum!  
-[https://github.com/dgarcia-eu/IntroToPython/discussions/](https://github.com/dgarcia-eu/IntroToPython/discussions/)
-  - I will check once a day after the morning session
+- **Ask questions to the tutors!** They are here to help you, not to judge you
   - The most useful resource and often overlooked
 - The course is self-contained but some useful books are:
   - ["Learn Python the Hard Way" by Zed Shaw](https://learnpythonthehardway.org/)
@@ -142,10 +140,12 @@ After this course, you should:
   - There are advanced, ungraded assignments for those of you with more experience. Don't submit those, we won't grade them
 
 2. **Pass the final written exam (at least 50% points)**
-  - 90 minutes, on Friday morning &ndash; before the last lecture
+  - 90 minutes, on Friday morning, before the last lecture
   - You will not write scripts on paper; the code you write will be very short
   - It tests experience with Python and conceptual knowledge
-  - **About programming, not about memorizing slides or notebooks**. The daily quizzes are the best practice for it
+  - **About programming, not about memorizing slides or notebooks**
+  - The daily quizzes are the best practice for it
+  - More information on Github page **Exam Blueprint**
 :::
 
 ## **Registering for "exam"**
@@ -183,21 +183,22 @@ You cannot defend a finding you cannot explain, and you cannot debug code you di
 
 ## **The rule in this course**
 
-**Do not copy code you do not understand.** From a chatbot, from Stackoverflow, from another student — the source does not matter, the understanding does.
+**Do not copy code you do not understand.** From a chatbot, from Stackoverflow, from another student. The source does not matter, what matters is your understanding.
+
 
 ::: {.incremental}
-- The assignments are how you find out whether you can do this yet. Outsourcing them tells you nothing.
+- The assignments are how you find out whether you can do this. Outsourcing them tells you nothing and will misguide you.
 - The exam is on paper, closed book, and there is no chatbot in it.
-- Autocomplete plugins are fine — as long as you read what they suggest and would have written it yourself.
+- Autocomplete plugins are fine, as long as you read and understand what they suggest and would have written it yourself. I recommend not using them this week, you can start later.
 :::
 
 ## **What to use it for instead**
 
 ::: {.incremental}
-- **"Explain this error message to me"** — genuinely useful, and it teaches you something reusable.
-- **"What does this line do?"** on code you already have.
+- **"Explain this error message to me"**:genuinely useful, and it teaches you something reusable.
+- **"What does this line do?"** on code you already have, for example from an exercise of the course.
 - **"Give me three more exercises like this one."**
-- **"I think X, am I wrong?"** — argue with it, don't dictate to it.
+- **"I think X, am I wrong?"** great if you argue with it, don't dictate to it.
 :::
 
 **Ask it to explain, not to produce.** The moment you paste code you cannot read, you have stopped learning and started gambling.
@@ -212,10 +213,10 @@ On Day 4 you will be given a piece of plausible-looking, chatbot-flavoured code 
 - The only defence is being able to read it and judge whether the result is plausible.
 :::
 
-**That is the skill this course is actually for.**
+**This is one of the most important skills to learn in this course.**
 
 ## Anaconda and jupyter
 
 **Are you set up?**  -- Break for setup support, check instructions in: [setup/Anaconda.html](../../setup/Anaconda.html)
 
-![](../../setup/Navigator.png){height="12em" fig-align="center"}
+![](../../setup/Navigator.png){height="18em" fig-align="center"}

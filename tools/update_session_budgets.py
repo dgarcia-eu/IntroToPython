@@ -42,11 +42,13 @@ MORNING_MINUTES = 200
 SKIP_FILES = {"Day1/00_day0_selfcheck.ipynb", "Day2/21_lists_tuples-2.ipynb"}
 
 HEADING = re.compile(r"^#{1,4} ", re.M)
-CORE_PLAN = re.compile(
-    r"\*\*Session plan\*\* — core material ≈ \*\*\d+ min\*\*, everything ≈ \*\*\d+ min\*\*\.")
-ALL_CORE_PLAN = re.compile(
-    r"\*\*Session plan\*\* — ≈ \*\*\d+ min\*\*\. Every section here is")
 
+# Only the numbers are ever touched. The wording of the session plan cell is
+# David's, and the first notebook of each day carries a longer version that
+# explains the [IF TIME] and [EXTRA] labels, so rewriting the whole cell from a
+# template here would flatten both. Matching the "approx N min" occurrences in
+# place leaves everything else exactly as written.
+MINUTES_IN_PLAN = re.compile(r"(\u2248 \*\*)(\d+)( min\*\*)")
 
 def minutes(chars: int) -> int:
     return max(5, round(chars / CHARS_PER_MIN / 5) * 5)
@@ -88,23 +90,30 @@ def main() -> int:
         per_day[day][1] += total
 
         idx = next((i for i, c in enumerate(cells[:8])
-                    if "**Session plan**" in "".join(c["source"])), None)
+                    if "**Session plan**" in "".join(c["source"])
+                    or "**Session plan:**" in "".join(c["source"])), None)
         if idx is None:
             print(f"  {path}: no session plan cell")
             continue
         src = "".join(cells[idx]["source"])
-        if core == total:
-            new = ALL_CORE_PLAN.sub(
-                f"**Session plan** — ≈ **{t_min} min**. Every section here is", src)
-        else:
-            new = CORE_PLAN.sub(
-                f"**Session plan** — core material ≈ **{c_min} min**, "
-                f"everything ≈ **{t_min} min**.", src)
-        if new == src:
-            print(f"  {path}: already {c_min}/{t_min} min")
+        found = MINUTES_IN_PLAN.findall(src)
+        if not found:
+            print(f"  {path}: session plan cell has no minute figure to update")
             continue
-        old = re.search(r"≈ \*\*(\d+) min", src).group(1)
-        print(f"  {path}: {old} -> {c_min}/{t_min} min")
+
+        # One figure means an all-core notebook; two means core then everything.
+        wanted = [t_min] if len(found) == 1 else [c_min, t_min]
+        if len(found) != len(wanted):
+            print(f"  {path}: expected {len(wanted)} minute figures, found {len(found)}")
+            continue
+        if [int(f[1]) for f in found] == wanted:
+            print(f"  {path}: already {'/'.join(str(w) for w in wanted)} min")
+            continue
+
+        it = iter(wanted)
+        new = MINUTES_IN_PLAN.sub(lambda m: f"{m.group(1)}{next(it)}{m.group(3)}", src)
+        print(f"  {path}: {'/'.join(f[1] for f in found)} -> "
+              f"{'/'.join(str(w) for w in wanted)} min")
         changed += 1
         if write:
             cells[idx]["source"] = new.splitlines(keepends=True)
