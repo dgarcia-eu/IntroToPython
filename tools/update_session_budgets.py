@@ -39,7 +39,8 @@ MORNING_MINUTES = 200
 
 # Not taught sessions: the Day 0 self-check, and the redirect stub left behind
 # at the old Day 2 filename.
-SKIP_FILES = {"Day1/00_day0_selfcheck.ipynb", "Day2/21_lists_tuples-2.ipynb"}
+# The Day 0 self-check is not a taught session, so it carries no session plan.
+SKIP_FILES = {"Day1/00_day0_selfcheck.ipynb"}
 
 HEADING = re.compile(r"^#{1,4} ", re.M)
 

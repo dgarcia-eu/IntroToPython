@@ -21,9 +21,6 @@ format:
 
 ## Recap of Day 1
 
-*Fill in from yesterday's feedback form before the session. Delete the slide if
-there is genuinely nothing to pick up — but check the form first.*
-
 ::: {.incremental}
 - **You asked us to repeat:** …
 - **We ran out of time on:** …
@@ -92,5 +89,5 @@ t.append(4)
 
 ## Feedback on Day 1
 
-![](QR.png){height="12.5em" fig-align="center"}
+![](QR.png){height="18em" fig-align="center"}
 
