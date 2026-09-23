@@ -44,7 +44,7 @@ Monday morning to a broken setup.
     - [12_lists_tuples-1.ipynb](Day1/12_lists_tuples-1.ipynb)
 - **[Read the exam blueprint](EXAM_BLUEPRINT.md)** on your own time
 - Assignment 1: Variables, Strings, Numbers, Lists, and Loops
-  - [assignment_1.ipynb](Day1/assignment_1/assignment_1.ipynb) -- **Deadline: October 12th, 23:59**
+  - [assignment_1.ipynb](Day1/assignment_1/assignment_1.ipynb) -- **Deadline: Monday, October 12, 2026, 23:59**
   - [Extra exercises 1 (ungraded)](Day1/assignment_1/assignment_1-extra.ipynb)
 
 ### Day 2
@@ -59,7 +59,7 @@ Monday morning to a broken setup.
 - Interactive lecture: List comprehensions
     - [23_comprehensions.ipynb](Day2/23_comprehensions.ipynb)
 - Assignment 2: Lists, Tuples, Sets, Comprehensions, and if-statements
-  - [assignment_2.ipynb](Day2/assignment_2/assignment_2.ipynb) -- **Deadline: October 13th, 23:59**
+  - [assignment_2.ipynb](Day2/assignment_2/assignment_2.ipynb) -- **Deadline: Tuesday, October 13, 2026, 23:59**
   - [Extra exercises 2 (ungraded)](Day2/assignment_2/assignment_2-extra.ipynb)
 
 ### Day 3
@@ -70,7 +70,7 @@ Monday morning to a broken setup.
 - Interactive lecture: Functions and scope
   - [32_functions.ipynb](Day3/32_functions.ipynb)
 - Assignment 3: Dictionaries and Functions
-  - [assignment_3.ipynb](Day3/assignment_3/assignment_3.ipynb) -- **Deadline: October 14th, 23:59**
+  - [assignment_3.ipynb](Day3/assignment_3/assignment_3.ipynb) -- **Deadline: Wednesday, October 14, 2026, 23:59**
   - [Extra exercises 3 (ungraded)](Day3/assignment_3/assignment_3-extra.ipynb)
 
 ### Day 4
@@ -85,7 +85,7 @@ Monday morning to a broken setup.
 - Interactive lecture: Data Exploration with Pandas
   - [43_data_exploration_Pandas.ipynb](Day4/43_data_exploration_Pandas.ipynb)
 - Assignment 4: Data exploration
-  - [assignment_4.ipynb](Day4/assignment_4/assignment_4.ipynb) - **Deadline: October 15th, 23:59**
+  - [assignment_4.ipynb](Day4/assignment_4/assignment_4.ipynb) -- **Deadline: Thursday, October 15, 2026, 23:59**
   - [Extra exercises 4 (ungraded)](Day4/assignment_4/assignment_4-extra.ipynb)
 
 
@@ -97,7 +97,7 @@ Monday morning to a broken setup.
 - Interactive lecture: Beyond the notebook -- scripts, packages, and environments
   - [52_beyond_the_notebook.ipynb](Day5/52_beyond_the_notebook.ipynb)
 - Assignment 5: Data visualization
-  - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 16th, 23:59**
+  - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: Friday, October 16, 2026, 23:59**
 - End of the course: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
 
 --------------------------------------------------
