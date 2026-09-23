@@ -1,4 +1,4 @@
-# 2 - ALMOST
+# 2. Fill the gap
 words = ['the', 'old', 'man', 'and', 'the', 'sea', 'again']
 long_count = 0
 for word in words:
@@ -6,7 +6,7 @@ for word in words:
         long_count = long_count + 1     # or: long_count += 1
 print(long_count)
 
-# 3 - ON YOUR OWN
+# 3. Your own code
 words = ['the', 'old', 'man', 'and', 'the', 'sea']
 first_letters = []                      # before: an empty list to fill
 for word in words:

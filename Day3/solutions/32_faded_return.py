@@ -1,11 +1,11 @@
-# 2 - ALMOST
+# 2. Fill the gap
 def average(numbers):
     total = sum(numbers)
     return total / len(numbers)
 
 print(average([2, 4, 6]))
 
-# 3 - ON YOUR OWN
+# 3. Your own code
 def initials(first, last):
     return first[0].upper() + "." + last[0].upper() + "."
 
