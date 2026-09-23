@@ -78,11 +78,15 @@ letters_d = {x: word.count(x) for x in word}
 print(letters_d['e'])
 ```
 
-6.  Describe the role of lambda in this code:
+6.  Describe the role of `key` in this code:
 
 ```python
 countpairs = [(x,y) for (x,y) in counts.items()]
-countpairs.sort(key=lambda x: x[1], reverse = True)
+
+def by_count(pair):
+    return pair[1]
+
+countpairs.sort(key=by_count, reverse = True)
 ```
 
 ---

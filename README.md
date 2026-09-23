@@ -67,7 +67,7 @@ Monday morning to a broken setup.
 - Quiz about Day 2: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day3/Slides/Day3.html)
 - Interactive lecture: Dictionaries
   - [31_dictionaries.ipynb](Day3/31_dictionaries.ipynb)
-- Interactive lecture: Functions, lambda, and scope
+- Interactive lecture: Functions and scope
   - [32_functions.ipynb](Day3/32_functions.ipynb)
 - Assignment 3: Dictionaries and Functions
   - [assignment_3.ipynb](Day3/assignment_3/assignment_3.ipynb) -- **Deadline: October 14th, 23:59**
@@ -91,7 +91,6 @@ Monday morning to a broken setup.
 
 ### Day 5
 
-- End of the course: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
 - **Written exam (90 min)**
 - Interactive lecture: Data visualisation in Python
   - [51_visualization.ipynb](Day5/51_visualization.ipynb)
@@ -99,6 +98,7 @@ Monday morning to a broken setup.
   - [52_beyond_the_notebook.ipynb](Day5/52_beyond_the_notebook.ipynb)
 - Assignment 5: Data visualization
   - [assignment_5.ipynb](Day5/assignment_5/assignment_5.ipynb) -- **Deadline: October 16th, 23:59**
+- End of the course: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
 
 --------------------------------------------------
 

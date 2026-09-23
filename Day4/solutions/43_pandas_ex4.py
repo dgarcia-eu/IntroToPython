@@ -3,7 +3,7 @@
 #    function: the 5% and the 95% quantile of age.
 # 2. To add the median in the middle, define it and list it in that order -
 #    .agg() keeps the order you give.
-# 3. Yes, there is more than one way: a named lambda, or the string "median",
+# 3. Yes, there is more than one way: a function of your own, the string "median",
 #    or df.age.quantile([0.05, 0.5, 0.95]).
 
 def lowend(x):

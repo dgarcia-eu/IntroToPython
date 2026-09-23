@@ -284,12 +284,17 @@ x = shout("hi")     # prints HI
 print(x)            # None - nothing was handed back
 ```
 
-Lambda function example:
+Sorting by something other than the whole item:
 
 ```python
-double = lambda x: x * 2                    # a small unnamed function
-pairs.sort(key=lambda pair: pair[1])        # sort by the second element
+def by_second(pair):
+    return pair[1]                  # what to sort on, given one item
+
+pairs.sort(key=by_second)                # lowest first
+pairs.sort(key=by_second, reverse=True)  # highest first
 ```
+
+**Pass the function's name, not a call.** `key=by_second`, never `key=by_second()`.
 
 ## Errors
 

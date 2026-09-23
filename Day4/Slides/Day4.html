@@ -254,10 +254,14 @@ David Garcia<br><span class="semester">Winter Semester 2026-27</span>
 <span id="cb5-2"><a href=""></a>letters_d <span class="op">=</span> {x: word.count(x) <span class="cf">for</span> x <span class="kw">in</span> word}</span>
 <span id="cb5-3"><a href=""></a><span class="bu">print</span>(letters_d[<span class="st">'e'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="6" type="1">
-<li>Describe the role of lambda in this code:</li>
+<li>Describe the role of <code>key</code> in this code:</li>
 </ol>
 <div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a>countpairs <span class="op">=</span> [(x,y) <span class="cf">for</span> (x,y) <span class="kw">in</span> counts.items()]</span>
-<span id="cb6-2"><a href=""></a>countpairs.sort(key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a><span class="kw">def</span> by_count(pair):</span>
+<span id="cb6-4"><a href=""></a>    <span class="cf">return</span> pair[<span class="dv">1</span>]</span>
+<span id="cb6-5"><a href=""></a></span>
+<span id="cb6-6"><a href=""></a>countpairs.sort(key<span class="op">=</span>by_count, reverse <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="feedback-on-day-3" class="slide level2">
 <h2>Feedback on Day 3</h2>
