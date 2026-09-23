@@ -203,26 +203,50 @@ def check_urls(paths: list[str], report: Report, network: bool) -> None:
         report.ok(f"all {len(urls)} URLs reachable")
 
 
-BINDER_RE = re.compile(r"mybinder\.org/v2/gh/([^/]+)/([^/]+)/([^)\s]+)")
+# The ref is bounded to ref-legal characters. The looser "[^)\\s]+" was fine
+# for markdown but swallowed the following '"><img' when the same badge was
+# scanned in generated HTML, making an identical ref look like a mismatch.
+BINDER_RE = re.compile(r"mybinder\.org/v2/gh/([^/\s]+)/([^/\s]+)/([\w.\-/]+)")
 
 
 def check_binder(report: Report, network: bool) -> None:
     """The Binder badge names a git ref. Check that ref actually has a spec.
 
     This is easy to get wrong and fails silently until a student clicks it. It
-    already did: the badge said HEAD, which is main, but the environment lives on
-    the refresh-2026 branch, so repo2docker reported "No environment specification
-    found". When the branch is merged, the badge has to move back to HEAD - and
-    this check is what will say so.
+    already did twice. First the badge said HEAD while the environment only
+    existed on the refresh-2026 branch, so repo2docker reported "No environment
+    specification found". Then the badge was moved to refresh-2026, which worked
+    until that branch was retired and the badge had to come back to HEAD.
+
+    Every Binder link in the repository is checked, not just the one in the
+    README. The Day 0 self-check notebook carries its own badge, and when the
+    branch was retired that link was left pointing at it - a dead link in a
+    student-facing notebook, which a README-only check would never have seen.
     """
-    try:
-        readme = open("README.md", encoding="utf-8").read()
-    except OSError:
+    import subprocess
+    tracked = subprocess.run(["git", "ls-files"], capture_output=True,
+                             text=True).stdout.split()
+    found: dict[tuple[str, str, str], list[str]] = {}
+    for path in tracked:
+        if not path.endswith((".md", ".ipynb", ".qmd", ".html", ".txt", ".py")):
+            continue
+        try:
+            text = open(path, encoding="utf-8", errors="ignore").read()
+        except OSError:
+            continue
+        for m in BINDER_RE.finditer(text):
+            found.setdefault(m.groups(), []).append(path)
+    if not found:
         return
-    m = BINDER_RE.search(readme)
-    if not m:
+    if len(found) > 1:
+        report.fail("Binder badges disagree about the git ref: "
+                    + "; ".join(f"{o}/{r}@{f} in {', '.join(sorted(set(ps)))}"
+                                for (o, r, f), ps in sorted(found.items()))
+                    + ". They must all point at the same ref.")
         return
-    owner, repo, ref = m.groups()
+    (owner, repo, ref), paths = next(iter(found.items()))
+    report.ok(f"all Binder badges agree on {ref} "
+              f"({len(set(paths))} file(s): {', '.join(sorted(set(paths)))})")
     if not network:
         report.note(f"Binder badge points at {owner}/{repo}@{ref}; "
                     f"re-run with --network to check that ref has an environment file")
