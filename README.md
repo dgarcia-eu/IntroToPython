@@ -102,7 +102,6 @@ Monday morning to a broken setup.
 
 --------------------------------------------------
 
-
 ## Course grading
 
 - The course is graded as pass/fail. To pass the course, you need the following:
@@ -121,3 +120,7 @@ I am the Professor for Social and Behavioral Data Science at the University of K
 to learn new ways to understand human behavior. I got my PhD from ETH Zurich in 2012 and a habilitation in 2018, starting to work as 
 full professor TU Graz in 2020 and then at the University of Konstanz in 2022. To learn more about my work, check my 
 [website](https://dgarcia.eu).
+
+## AI notice
+
+I frequently use Claude code for content search, routine checks, assistance organizing materials and making batch edits. All course materials have been closely developed and verified by human lecturers. If you find any mistakes or typos, please contact David so we can fix it.

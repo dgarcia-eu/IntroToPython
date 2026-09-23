@@ -1,0 +1,55 @@
+# The daily feedback questionnaire
+# =====================================================================
+# The wording actually used in 2025, recovered from the response exports.
+# Kept here so the questionnaire is reviewable and version-controlled like
+# everything else in the course, and so it can be rebuilt on any platform
+# without anyone having to remember what it said.
+#
+# Question 4 is deliberately not the same on all four days. Days 1 to 3 ask
+# about the course as it is running; Day 4 is the last form of the week and
+# asks the end-of-course question instead. David confirmed this on
+# 23 September 2026 as intended, not drift. The consequence to remember when
+# analysing: that column is two different questions and must not be pooled
+# across the week.
+
+title = "{course}: feedback on Day {day}"
+
+intro = """
+Two scales and two boxes, about thirty seconds. It is anonymous: no login,
+no name, no email. I read these before the next morning's session and change
+what we do, so saying "too fast" actually works.
+"""
+
+[[question]]
+number   = 1
+text     = "How hard to follow was yesterday's morning session?"
+type     = "scale"
+min      = 1
+max      = 7
+min_label = "very easy to follow"
+max_label = "very hard to follow"
+required = true
+
+[[question]]
+number   = 2
+text     = "How hard was yesterday's assignment?"
+type     = "scale"
+min      = 1
+max      = 7
+min_label = "very easy"
+max_label = "very hard"
+required = true
+
+[[question]]
+number   = 3
+text     = "Is there anything from yesterday that you need us to repeat today?"
+type     = "free_text"
+required = false
+
+[[question]]
+number   = 4
+text     = "Feel free to suggest any improvements to the course or things that could help you follow"
+# Day 4 is the last form of the week, so it asks the end-of-course question:
+text_day4 = "How would you improve this course? What were you missing?"
+type     = "free_text"
+required = false

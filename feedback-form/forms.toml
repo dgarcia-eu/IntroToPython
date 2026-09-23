@@ -1,0 +1,65 @@
+# Daily feedback forms: configuration
+# =====================================================================
+# Read by tools/make_feedback.py, which generates the redirect pages in
+# this directory and the QR.png in each slide deck.
+#
+# The idea in one paragraph. The QR code on a slide does NOT point at the
+# survey. It points at a permanent address in this repository, one per day,
+# which forwards to whatever survey is currently collecting answers. So the
+# QR codes are generated once and are correct forever, and moving to a new
+# survey (next year, or a different platform entirely) is a one-line edit
+# to "target" below followed by one command.
+#
+# To open the forms for a new year:
+#   1. edit "year" and each "target" below
+#   2. run  python tools/make_feedback.py
+#   3. commit. The QR images will not change, and do not need reprinting.
+
+# The permanent home of the redirect pages. Changing this invalidates every
+# QR code that has ever been shown to a student, so treat it as fixed.
+base_url = "https://dgarcia-eu.github.io/IntroToPython/feedback-form"
+
+course  = "Introduction to Programming with Python"
+year    = 2026
+
+# Shown on the redirect page so students know where their answers go.
+# Keep it honest and keep it short.
+privacy = "Anonymous: no login, no name, no email address is recorded. The form itself is hosted by Google Forms."
+
+# --- one entry per feedback form --------------------------------------
+# "day"      the day being reviewed, which is what the form asks about
+# "deck"     the slide deck that shows this QR code (the morning after)
+# "target"   where to forward to. Empty string = not open yet, which
+#            renders a holding page instead of forwarding.
+#
+# The 2025 forms, recovered by decoding the QR images that were in the slide
+# decks before this system existed. Kept only as a record of what was used;
+# do not point 2026 at them, or this year's answers land among last year's.
+#   day 1  https://forms.gle/1pi7CCBYiJG8MmG58
+#   day 2  https://forms.gle/1ZWkCKUzoKC8otnq7
+#   day 3  https://forms.gle/pfcW4ZVn81F6pZSk9
+#   day 4  https://forms.gle/cJYUUZfsSMVgJ6xP7
+
+[[form]]
+day    = 1
+deck   = "Day2"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSc53Id8Vutq2ZqFmjDBmZHZDZzveLgvA7yVSRyScCTjxvKrXA/viewform"
+form_id = "13JhXqxoR1UAcJryhyIp_eC-6dCY-VUu9_Da0X_v4r08"
+
+[[form]]
+day    = 2
+deck   = "Day3"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSdyxOFgNFbjqi6DnbviJqUXucRpmMhZi0RkQr7Ivwh4Uq7MeQ/viewform"
+form_id = "1PlbAAXqkPsmBNoyt_FF9uRseEY0o785xEhpSUKw5wQY"
+
+[[form]]
+day    = 3
+deck   = "Day4"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSdBZ_EFtLo7yL8SLC7A-mZwqwDmRMXiu5C88oqWg_M6T3rs6A/viewform"
+form_id = "1TZOEkIaewrIFo45SnAA9xat5vUjQcDeO9f1tJuZNnQo"
+
+[[form]]
+day    = 4
+deck   = "Day5"
+target = "https://docs.google.com/forms/d/e/1FAIpQLScG_1Qh19Q_2jXnC2BENwPJkD3FadFC-C1iEHyGNeYkoFs8ZA/viewform"
+form_id = "1EGjh_WtvNn5T3pGegfkY6YhzMZmN65_VdC8DATmCPi4"

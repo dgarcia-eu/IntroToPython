@@ -45,3 +45,10 @@ GradingSheets/
 Feedback/
 *.xlsx
 *.docx
+
+# --- Credentials never belong in a repository ---------------------------------
+# The Google OAuth client and token live in ~/.config/introtopython/.
+# These patterns are belt and braces in case one is ever copied in by mistake.
+google_client_secret*.json
+google_token*.json
+client_secret_*.json

@@ -19,17 +19,6 @@ format:
     fig-align: left
 ---
 
-## Recap of Day 1
-
-::: {.incremental}
-- **You asked us to repeat:** …
-- **We ran out of time on:** …
-- **The assignment tripped people up on:** …
-:::
-
-**Anything else from yesterday you want to go over? Now is the moment.**
-
-
 ## Quiz I
 
 1. Write the output of the following code:
