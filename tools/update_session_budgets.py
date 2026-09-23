@@ -60,7 +60,7 @@ def minutes(chars: int) -> int:
 def measure(cells) -> tuple[int, int]:
     """(core chars, total chars)."""
     total = skippable = 0
-    in_skip = False
+    skip_level: int | None = None
     for c in cells:
         s = "".join(c["source"])
         total += len(s)
@@ -70,8 +70,17 @@ def measure(cells) -> tuple[int, int]:
             # matching anywhere in the cell made that block look skippable.
             head = HEADING.search(s)
             line = s[head.start():].split("\n", 1)[0]
-            in_skip = "[IF TIME]" in line or "[EXTRA" in line
-        if in_skip:
+            level = len(line) - len(line.lstrip("#"))
+            if "[IF TIME]" in line or "[EXTRA" in line:
+                skip_level = level
+            elif skip_level is not None and level <= skip_level:
+                # A sibling or higher heading ends the skipped block. Anything
+                # deeper is part of it: a labelled section that contains
+                # subsections used to stop at its own first subsection, which
+                # counted almost none of it as skippable. Pickle in 42_files has
+                # been measured that way since it was labelled.
+                skip_level = None
+        if skip_level is not None:
             skippable += len(s)
     return total - skippable, total
 
