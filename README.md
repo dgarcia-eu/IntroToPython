@@ -85,13 +85,13 @@ Monday morning to a broken setup.
 - Interactive lecture: Data Exploration with Pandas
   - [43_data_exploration_Pandas.ipynb](Day4/43_data_exploration_Pandas.ipynb)
 - Assignment 4: Data exploration
-  - Quiz about Day 4: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
   - [assignment_4.ipynb](Day4/assignment_4/assignment_4.ipynb) - **Deadline: October 15th, 23:59**
   - [Extra exercises 4 (ungraded)](Day4/assignment_4/assignment_4-extra.ipynb)
 
 
 ### Day 5
 
+- End of the course: [Slides](https://dgarcia-eu.github.io/IntroToPython/Day5/Slides/Day5.html)
 - **Written exam (90 min)**
 - Interactive lecture: Data visualisation in Python
   - [51_visualization.ipynb](Day5/51_visualization.ipynb)

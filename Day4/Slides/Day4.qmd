@@ -104,5 +104,5 @@ countpairs.sort(key=lambda x: x[1], reverse = True)
 
 ## Feedback on Day 3
 
-![](QR.png){height="12.5em" fig-align="center"}
+![](QR.png){.qr-code .nostretch fig-align="center"}
 

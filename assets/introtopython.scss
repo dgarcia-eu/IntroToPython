@@ -122,3 +122,46 @@
     position: absolute !important;
   }
 }
+
+// --- Feedback QR codes --------------------------------------------------------
+// These are scanned from the back of a lecture theatre, so they want to be as
+// large as the slide allows.
+//
+// Two traps here, both found the hard way:
+//
+// 1. Quarto adds .r-stretch to a lone image on a slide automatically, and
+//    reveal's stretch code then sets height as an INLINE style. Inline beats
+//    any rule here, and inside the fixed 16:9 container it measures the slide
+//    as zero, so the image rendered at height 0 and vanished entirely. The
+//    .nostretch class on the image in the .qmd is what opts out of that.
+//
+// 2. Container-query units are the wrong tool despite the container above.
+//    They resolve against the 16:9 body box, while the image lives inside
+//    .slides, which reveal scales with a transform. The two do not compose,
+//    and the image comes out wildly oversized.
+//
+// Plain pixels in reveal's own coordinate space are correct: the deck is
+// 1280x720 logical, reveal scales the whole thing to fit, and 540px of 720
+// leaves room for the heading and the footer bar.
+//
+// image-rendering: pixelated keeps the QR modules as hard squares when the
+// image is scaled up on a projector. Smoothing blurs the module edges, which
+// is the one thing a phone camera needs sharp.
+// 620px of the 720 slide height, measured rather than guessed: the heading and
+// its margin take about 70, which puts the bottom of the code at 690 and leaves
+// 30 clear of the footer bar. That is as large as this slide can go.
+.reveal img.qr-code {
+  display: block;
+  margin: 0 auto;
+  height: 620px;
+  width: auto;
+  max-width: 100%;
+  image-rendering: pixelated;
+}
+
+// Quarto wraps the image in a figure div carrying a 30px bottom margin meant
+// for a caption. There is no caption here, so it is 30px of the slide spent on
+// nothing, which is 30px the QR code can have instead.
+.reveal .slides section > .quarto-figure:has(img.qr-code) {
+  margin-bottom: 0;
+}

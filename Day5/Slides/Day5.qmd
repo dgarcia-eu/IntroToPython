@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Programming<br>with Python<br><span class='session'>Day 5 &ndash; Quiz on Day 4</span>"
+title: "Introduction to Programming<br>with Python<br><span class='session'>Day 5 &ndash; End of the course</span>"
 author: "David Garcia<br><span class='semester'>Winter Semester 2026-27</span>"
 format:
   revealjs:
@@ -33,7 +33,7 @@ there is genuinely nothing to pick up — but check the form first.*
 **Anything else from yesterday you want to go over? Now is the moment.**
 
 
-## Quiz I
+## Quiz I {visibility="hidden"}
 
 
 1.  Write the output of the following code:
@@ -62,7 +62,7 @@ mean([1,2,3])
 > NameError: name 'mean' is not defined
 ```
 
----
+## Quiz II {visibility="hidden"}
 
 3. Consider the code below. Briefly describe what it does:
 
@@ -80,7 +80,7 @@ a) ```df.loc[0]```
 b) ```df[0]```
 c) ```df.get(0)```
 
----
+## Quiz III {visibility="hidden"}
 
 5. Describe in your own words the output of the following code:
 
@@ -100,8 +100,6 @@ df.education-num.mean()
 df.groupby("marital-status")["capital-gain"].mean()
 ```
 
----
-
 ## Visual Studio Code for ICSS
 
 https://code.visualstudio.com/
@@ -113,5 +111,5 @@ https://code.visualstudio.com/
 
 ## Feedback on Day 4
 
-![](QR.png){height="12.5em" fig-align="center"}
+![](QR.png){.qr-code .nostretch fig-align="center"}
 

@@ -78,5 +78,5 @@ t.append(4)
 
 ## Feedback on Day 1
 
-![](QR.png){height="18em" fig-align="center"}
+![](QR.png){.qr-code .nostretch fig-align="center"}
 

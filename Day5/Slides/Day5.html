@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="David Garcia Winter Semester 2026-27">
-  <title>Introduction to Programming with Python Day 5 – Quiz on Day 4</title>
+  <title>Introduction to Programming with Python Day 5 – End of the course</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -94,7 +94,7 @@
     code span.vs { color: #032f62; } /* VerbatimString */
     code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Day5_files/libs/revealjs/dist/theme/quarto-310ef45ebf6ab72cf6c029c23fe61516.css">
+  <link rel="stylesheet" href="Day5_files/libs/revealjs/dist/theme/quarto-2a5399fb0610534c04970dee9a55c5f3.css">
   <link href="Day5_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="Day5_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="Day5_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -192,7 +192,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to Programming<br>with Python<br><span class="session">Day 5 – Quiz on Day 4</span></h1>
+  <h1 class="title">Introduction to Programming<br>with Python<br><span class="session">Day 5 – End of the course</span></h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -215,67 +215,9 @@ David Garcia<br><span class="semester">Winter Semester 2026-27</span>
 </div>
 <p><strong>Anything else from yesterday you want to go over? Now is the moment.</strong></p>
 </section>
-<section id="quiz-i" class="slide level2">
-<h2>Quiz I</h2>
-<ol type="1">
-<li>Write the output of the following code:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a>short_list <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">'3'</span>, <span class="dv">4</span>]</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a><span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-4"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> short_list:</span>
-<span id="cb1-5"><a href=""></a>    <span class="cf">try</span>:</span>
-<span id="cb1-6"><a href=""></a>        <span class="bu">sum</span> <span class="op">+=</span> i</span>
-<span id="cb1-7"><a href=""></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-<span id="cb1-8"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Invalid value"</span>)</span>
-<span id="cb1-9"><a href=""></a><span class="bu">print</span>(<span class="st">"Total sum:"</span>, <span class="bu">sum</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>The following code outputs an error. Rewrite it so it calculates the mean of the values:</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>mean([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
-<span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a><span class="op">&gt;</span> Traceback (most recent call last):</span>
-<span id="cb2-4"><a href=""></a><span class="op">&gt;</span>   File <span class="st">"&lt;python-input-3&gt;"</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
-<span id="cb2-5"><a href=""></a><span class="op">&gt;</span>     mean([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
-<span id="cb2-6"><a href=""></a><span class="op">&gt;</span>     <span class="op">^^^^</span></span>
-<span id="cb2-7"><a href=""></a><span class="op">&gt;</span> <span class="pp">NameError</span>: name <span class="st">'mean'</span> <span class="kw">is</span> <span class="kw">not</span> defined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section class="slide level2">
 
-<ol start="3" type="1">
-<li>Consider the code below. Briefly describe what it does:</li>
-</ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'helloworld.csv'</span>, <span class="st">'a'</span>) <span class="im">as</span> f:</span>
-<span id="cb3-2"><a href=""></a>    line <span class="op">=</span> f.readline()</span>
-<span id="cb3-3"><a href=""></a>    <span class="cf">while</span> line:</span>
-<span id="cb3-4"><a href=""></a>        <span class="bu">print</span>(line)</span>
-<span id="cb3-5"><a href=""></a>        line <span class="op">=</span> f.readline()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li>Out of the lines below, select the ones that return the first row in a pandas data frame:</li>
-</ol>
-<ol type="a">
-<li><code>df.loc[0]</code></li>
-<li><code>df[0]</code></li>
-<li><code>df.get(0)</code></li>
-</ol>
-</section>
-<section class="slide level2">
 
-<ol start="5" type="1">
-<li>Describe in your own words the output of the following code:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>df.columns()</span>
-<span id="cb4-2"><a href=""></a><span class="op">&gt;</span> Index([<span class="st">'age'</span>, <span class="st">'workclass'</span>, <span class="st">'fnlwgt'</span>, <span class="st">'education'</span>, <span class="st">'education-num'</span>,</span>
-<span id="cb4-3"><a href=""></a><span class="op">&gt;</span>        <span class="st">'marital-status'</span>, <span class="st">'occupation'</span>, <span class="st">'relationship'</span>, <span class="st">'race'</span>, <span class="st">'sex'</span>,</span>
-<span id="cb4-4"><a href=""></a><span class="op">&gt;</span>        <span class="st">'capital-gain'</span>, <span class="st">'capital-loss'</span>, <span class="st">'hours-per-week'</span>, <span class="st">'native-country'</span>,</span>
-<span id="cb4-5"><a href=""></a><span class="op">&gt;</span>        <span class="st">'class'</span>],</span>
-<span id="cb4-6"><a href=""></a><span class="op">&gt;</span>       dtype<span class="op">=</span><span class="st">'object'</span>)</span>
-<span id="cb4-7"><a href=""></a>df.education<span class="op">-</span>num.mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="6" type="1">
-<li>Assuming that df contains information on individual people, describe in your own words what the following code does:</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>df.groupby(<span class="st">"marital-status"</span>)[<span class="st">"capital-gain"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+
 <section id="visual-studio-code-for-icss" class="slide level2">
 <h2>Visual Studio Code for ICSS</h2>
 <p>https://code.visualstudio.com/</p>
@@ -286,7 +228,7 @@ David Garcia<br><span class="semester">Winter Semester 2026-27</span>
 <h2>Feedback on Day 4</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="QR.png" class="quarto-figure quarto-figure-center" style="height:12.5em"></p>
+<p><img data-src="QR.png" class="qr-code quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 

@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import glob
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -45,11 +46,21 @@ def scan(pdf: str, workdir: str) -> tuple[int, list[str]]:
 
 
 def slide_titles(qmd: str) -> list[str]:
-    """The '## ' headings in the source, cleaned of markdown emphasis."""
+    """The '## ' headings in the source, cleaned of markdown emphasis.
+
+    Slides marked {visibility="hidden"} are skipped. They are deliberately kept
+    in the source but left out of the rendered deck, so demanding that they
+    appear in the printed PDF would report an intended state as a failure. The
+    Day 5 quiz is the case this exists for.
+    """
     out = []
     for line in open(qmd, encoding="utf-8").read().split("\n"):
         if line.startswith("## "):
-            t = line[3:].strip().strip("*").replace("**", "").replace("*", "")
+            t = line[3:].strip()
+            if re.search(r'\{[^}]*visibility\s*=\s*"hidden"[^}]*\}\s*$', t):
+                continue
+            t = re.sub(r"\s*\{[^}]*\}\s*$", "", t)  # drop any other attributes
+            t = t.strip().strip("*").replace("**", "").replace("*", "")
             out.append(" ".join(t.split()))
     return out
 

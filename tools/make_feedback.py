@@ -119,10 +119,12 @@ def qr_png(url: str) -> bytes:
         sys.exit("segno is not installed. Run: pip install segno")
     import io
     buf = io.BytesIO()
-    # Error correction M: the usual choice for a projected slide. scale 12
-    # gives an image comfortably larger than it is ever displayed, so it
-    # stays crisp whether the deck is shown at 12.5em or 18em.
-    segno.make(url, error="m").save(buf, kind="png", scale=12, border=2)
+    # Error correction M: the usual choice for a projected slide. The QR now
+    # fills most of the slide height (see .qr-code in assets/introtopython.scss),
+    # so scale 20 gives roughly 740px, comfortably above what a 720p slide
+    # displays. Rendering above the displayed size, rather than below it, is
+    # what keeps the module edges hard on a projector.
+    segno.make(url, error="m").save(buf, kind="png", scale=20, border=2)
     return buf.getvalue()
 
 

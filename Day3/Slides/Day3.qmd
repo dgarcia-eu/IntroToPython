@@ -74,5 +74,5 @@ print(formatted_dates)
 
 ## Feedback on Day 2
 
-![](QR.png){height="12.5em" fig-align="center"}
+![](QR.png){.qr-code .nostretch fig-align="center"}
 
