@@ -61,6 +61,14 @@ python tools/make_google_forms.py             # create and publish them
 python tools/make_feedback.py                 # regenerate the redirect pages
 ```
 
+**Run the second command once per year, not once per session.** Google mints a
+brand new form on every call, with a new URL, so a second run makes a second
+set of four, repoints every QR code at them, and leaves the first four alive in
+Drive holding any answers already given. The script now refuses to do that and
+tells you what to do instead, so you cannot trip over it by accident, but it is
+worth knowing why. To regenerate only the redirect pages, run the third command
+on its own: it never contacts Google.
+
 The first real run opens a browser once so you can approve access. Because
 the app is yours and unverified, Google shows **"Google hasn't verified this
 app"**. That is expected: click *Advanced* then *Go to IntroToPython feedback
@@ -74,7 +82,8 @@ Edit `year` in `forms.toml`, then:
 python tools/make_google_forms.py && python tools/make_feedback.py
 ```
 
-Commit the result. **Do not reprint or re-export any QR code.** The images in
+Changing `year` is what tells the script these are a new cohort's forms rather
+than an accidental repeat, so do that first. Commit the result. **Do not reprint or re-export any QR code.** The images in
 the slide decks point at this repository, not at Google, and the redirect
 pages are what change.
 

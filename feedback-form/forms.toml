@@ -21,6 +21,7 @@ base_url = "https://dgarcia-eu.github.io/IntroToPython/feedback-form"
 
 course  = "Introduction to Programming with Python"
 year    = 2026
+forms_created_for = 2026   # written by tools/make_google_forms.py
 
 # Shown on the redirect page so students know where their answers go.
 # Keep it honest and keep it short.
@@ -43,23 +44,23 @@ privacy = "Anonymous: no login, no name, no email address is recorded. The form 
 [[form]]
 day    = 1
 deck   = "Day2"
-target = "https://docs.google.com/forms/d/e/1FAIpQLSc53Id8Vutq2ZqFmjDBmZHZDZzveLgvA7yVSRyScCTjxvKrXA/viewform"
-form_id = "13JhXqxoR1UAcJryhyIp_eC-6dCY-VUu9_Da0X_v4r08"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSfCeHunKMPJqrlVNmnV2uJEKyt0KTdiyTLLRQSxyDFE4DCFrQ/viewform"
+form_id = "1iOrxMKyTESgkj5pXcVNhCMNdKhFGjtE12TqWuw5z6Bk"
 
 [[form]]
 day    = 2
 deck   = "Day3"
-target = "https://docs.google.com/forms/d/e/1FAIpQLSdyxOFgNFbjqi6DnbviJqUXucRpmMhZi0RkQr7Ivwh4Uq7MeQ/viewform"
-form_id = "1PlbAAXqkPsmBNoyt_FF9uRseEY0o785xEhpSUKw5wQY"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSfViwDiUJzJuohfMbLzE151v1YIrA-Oj8mbOkPZP87Md1OowA/viewform"
+form_id = "172SD-5jQNPe5HSptC1ZMrtD-0bHAWYnQ7L4MYiN9qFw"
 
 [[form]]
 day    = 3
 deck   = "Day4"
-target = "https://docs.google.com/forms/d/e/1FAIpQLSdBZ_EFtLo7yL8SLC7A-mZwqwDmRMXiu5C88oqWg_M6T3rs6A/viewform"
-form_id = "1TZOEkIaewrIFo45SnAA9xat5vUjQcDeO9f1tJuZNnQo"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSecgsgLX4gUK22BoVAyYkGCaEL8miZ6y21m4sBjjeMX9WAuWw/viewform"
+form_id = "1T409iH7iAtV0NvNLEiXn57Rgj76tye7Hm1p2dpWI6-4"
 
 [[form]]
 day    = 4
 deck   = "Day5"
-target = "https://docs.google.com/forms/d/e/1FAIpQLScG_1Qh19Q_2jXnC2BENwPJkD3FadFC-C1iEHyGNeYkoFs8ZA/viewform"
-form_id = "1EGjh_WtvNn5T3pGegfkY6YhzMZmN65_VdC8DATmCPi4"
+target = "https://docs.google.com/forms/d/e/1FAIpQLSdhao5n2ZTuAjL2aJQtP4H_eC73hOmdMn4EsoU1KvMIaFFCwA/viewform"
+form_id = "1YeYBvAREpOAxub-8iCt9eGzbsQBsoZwqXKhirrNTl2g"

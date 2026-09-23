@@ -87,7 +87,7 @@ def build_items(questions: dict, day: int) -> list[dict]:
     return items
 
 
-def set_targets(path: str, results: dict[int, tuple[str, str]]) -> None:
+def set_targets(path: str, results: dict[int, tuple[str, str]], year: int) -> None:
     """Write target/form_id back per day, leaving every comment untouched.
 
     forms.toml is hand-maintained and its comments carry the instructions for
@@ -96,7 +96,16 @@ def set_targets(path: str, results: dict[int, tuple[str, str]]) -> None:
     lines = open(path, encoding="utf-8").read().splitlines(keepends=True)
     out: list[str] = []
     day: int | None = None
+    stamped = False
     for line in lines:
+        if re.match(r"\s*forms_created_for\s*=", line):
+            continue  # rewritten below, next to "year"
+        if re.match(r"\s*year\s*=", line) and not stamped:
+            out.append(line)
+            out.append(f"forms_created_for = {year}   "
+                       f"# written by tools/make_google_forms.py\n")
+            stamped = True
+            continue
         m = re.match(r"\s*day\s*=\s*(\d+)", line)
         if m:
             day = int(m.group(1))
@@ -139,6 +148,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--year", type=int, help="override the year in forms.toml")
+    ap.add_argument("--replace", action="store_true",
+                    help="create a fresh set even though this year already has one")
     ap.add_argument("--dry-run", action="store_true",
                     help="print exactly what would be sent, contact nothing")
     args = ap.parse_args()
@@ -174,6 +185,24 @@ def main() -> int:
                 print(f"   {i}. [{kind}, {req}]\n      {item['title']}")
         print(f"\nDry run: nothing was created. {len(plans)} forms would be made for {year}.")
         return 0
+
+    # Creating forms is not idempotent: Google mints a new form every time,
+    # with a new URL. Running this twice for the same year therefore leaves
+    # four orphaned live forms, silently repoints every QR code at the new
+    # set, and strands any answers already given. That happened once, by
+    # following the setup guide's own instructions, so refuse it here.
+    existing = [f["day"] for f in cfg["form"] if f.get("form_id")]
+    if existing and cfg.get("forms_created_for") == year and not args.replace:
+        print(f"{CONFIG} already records forms for {year} "
+              f"(day{', day'.join(map(str, existing))}).\n\n"
+              f"Creating more would mint a second set with different URLs and\n"
+              f"orphan the ones the QR codes currently point at. Pick one:\n\n"
+              f"  next year's forms   edit 'year' in {CONFIG}, then rerun\n"
+              f"  replace this year's --replace (the current forms stay alive in\n"
+              f"                      Drive and keep any answers; unpublish or\n"
+              f"                      delete them yourself)\n"
+              f"  just the pages      python tools/make_feedback.py")
+        return 1
 
     from googleapiclient.discovery import build
     service = build("forms", "v1", credentials=credentials())
@@ -227,7 +256,7 @@ def main() -> int:
                             f"it does not. Fix before showing the QR code.")
         results[p["day"]] = (url, form_id)
 
-    set_targets(CONFIG, results)
+    set_targets(CONFIG, results, year)
     print(f"\nWrote {len(results)} responder URLs into {CONFIG}.")
     if problems:
         print("\nPROBLEMS:")
