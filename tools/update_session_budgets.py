@@ -11,7 +11,9 @@ decide what to cut before the session rather than during it.
 
 Run this after adding or removing notebook content:
 
-    python tools/update_session_budgets.py            # report only
+    python tools/update_session_budgets.py                      # report only
+    python tools/update_session_budgets.py --write Day3/32_functions.ipynb
+                                              # rewrite just that one            # report only
     python tools/update_session_budgets.py --write     # rewrite the cells
 
 Estimates come from content volume at CHARS_PER_MIN, calibrated against the
@@ -76,6 +78,12 @@ def measure(cells) -> tuple[int, int]:
 
 def main() -> int:
     write = "--write" in sys.argv
+    # --only limits writing to the notebooks named, while the report still
+    # covers everything so the day totals stay meaningful. This exists because
+    # a wholesale --write once overwrote hand-set minutes that were deliberate:
+    # the numbers are a teaching judgement, and the tool only measures content
+    # volume. Reporting on all of them is useful; rewriting all of them is not.
+    only = {a for a in sys.argv[1:] if not a.startswith("--")}
     changed = 0
     per_day: dict[str, list[int]] = {}
     for path in sorted(glob.glob("Day*/[0-9][0-9]_*.ipynb")):
@@ -115,6 +123,9 @@ def main() -> int:
         new = MINUTES_IN_PLAN.sub(lambda m: f"{m.group(1)}{next(it)}{m.group(3)}", src)
         print(f"  {path}: {'/'.join(f[1] for f in found)} -> "
               f"{'/'.join(str(w) for w in wanted)} min")
+        if only and path not in only:
+            print("        (left alone: not named on the command line)")
+            continue
         changed += 1
         if write:
             cells[idx]["source"] = new.splitlines(keepends=True)

@@ -93,7 +93,7 @@ def splice_solutions(nb, workdir: str) -> int:
 
 
 def check_execution(paths: list[str], report: Report, with_solutions: bool = False) -> None:
-    print(f"\n[1/4] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
+    print(f"\n[1/5] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
     for path in paths:
         workdir = os.path.dirname(path) or "."
         nb = nbformat.read(path, as_version=4)
@@ -151,7 +151,7 @@ def check_warnings(path: str, nb, report: Report) -> None:
 
 
 def check_load_paths(paths: list[str], report: Report) -> None:
-    print("\n[2/4] Checking %load solution paths")
+    print("\n[2/5] Checking %load solution paths")
     total = broken = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -169,7 +169,7 @@ def check_load_paths(paths: list[str], report: Report) -> None:
 
 
 def check_urls(paths: list[str], report: Report, network: bool) -> None:
-    print("\n[3/4] Checking external URLs")
+    print("\n[3/5] Checking external URLs")
     urls: dict[str, str] = {}
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -305,8 +305,51 @@ def check_binder(report: Report, network: bool) -> None:
         f"repo2docker ignores root-level config entirely.")
 
 
+
+PLACEHOLDER_LINE = re.compile(r"^\s*(#.*)?$")
+
+
+def check_primm(paths: list[str], report: Report) -> None:
+    """A "Predict, Run, Investigate" prompt must have something to run.
+
+    The prompt tells students to predict what the next cell does before running
+    it. That instruction is empty if the next cell is markdown, or if it is a
+    bare "# Your code here". Both had happened: one prompt in 42_files sat
+    directly above the next section heading, and one in the pandas notebook
+    pointed at a placeholder. Nothing errors, the exercise just quietly asks
+    for a prediction about nothing.
+    """
+    print("\n[5/5] Checking Predict/Run/Investigate blocks")
+    bad = total = 0
+    for path in paths:
+        nb = nbformat.read(path, as_version=4)
+        cells = nb.cells
+        for i, cell in enumerate(cells):
+            if cell.cell_type != "markdown" or "Predict" not in cell.source:
+                continue
+            total += 1
+            nxt = cells[i + 1] if i + 1 < len(cells) else None
+            if nxt is None or nxt.cell_type != "code":
+                bad += 1
+                report.fail(f"{path}: the Predict/Run/Investigate prompt in cell {i} "
+                            f"is not followed by a code cell, so there is nothing "
+                            f"to predict")
+                continue
+            # Only the phrasing that PROMISES existing code needs it. A prompt
+            # that says "write it in the cell below" is asking the student to
+            # fill the placeholder, which is correct and must not be flagged.
+            promises_code = re.search(r"before running the cell below", cell.source, re.I)
+            if (promises_code
+                    and all(PLACEHOLDER_LINE.match(l) for l in nxt.source.splitlines())):
+                bad += 1
+                report.fail(f"{path}: the prompt in cell {i} says to predict what the "
+                            f"cell below does, but cell {i + 1} is only a placeholder. "
+                            f"Either add the code or ask them to write it themselves")
+    if not bad:
+        report.ok(f"all {total} Predict/Run/Investigate prompts have runnable code")
+
 def check_kernels(paths: list[str], report: Report) -> None:
-    print("\n[4/4] Checking notebook metadata")
+    print("\n[4/5] Checking notebook metadata")
     bad = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -340,6 +383,7 @@ def main() -> int:
     check_load_paths(every, report)
     check_urls(every, report, args.network)
     check_binder(report, args.network)
+    check_primm(lectures, report)
     check_kernels(every, report)
 
     print("\n" + "=" * 68)
