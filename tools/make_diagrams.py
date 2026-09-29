@@ -298,36 +298,57 @@ def dict_vs_list(path):
 
 # --------------------------------------------------------------------------
 def nested_dicts(path):
-    """Diagram 2: the value can itself be a list or a dictionary."""
-    fig, ax = canvas(11.5, 4.6)
-    ax.plot([5.7, 5.7], [0.5, 4.0], color="#cccccc", lw=1.2, ls=(0, (4, 4)))
+    """Diagram 2: the value can itself be a list or a dictionary.
 
-    note(ax, 2.6, 4.15, "a list inside a dictionary", size=12.5, color=INK, bold=True)
+    The inner dictionary is drawn with the same key-box, arrow, value-box
+    shape as every other dictionary in this set, and wrapped in braces. An
+    earlier version drew it as a plain panel of text, which did not say
+    "dictionary" at all: it could have been anything.
+    """
+    fig, ax = canvas(12.8, 5.1)
+    ax.plot([6.15, 6.15], [0.75, 4.35], color="#cccccc", lw=1.2, ls=(0, (4, 4)))
+
+    # ---- left: a list inside a dictionary --------------------------------
+    note(ax, 3.0, 4.6, "a list inside a dictionary", size=12.5, color=INK, bold=True)
     for i, (k, v) in enumerate([("'eric'", "[3, 11, 19]"), ("'ever'", "[2, 4, 5]")]):
-        yy = 3.0 - i * 0.95
-        box(ax, 0.5, yy, 1.4, 0.7, k, size=11)
-        box(ax, 2.4, yy, 2.5, 0.7, v, size=11, fill="#ffffff")
-        arrow(ax, (1.95, yy + 0.35), (2.35, yy + 0.35), lw=1.4)
-    note(ax, 2.6, 1.15, "favorite_numbers['eric'][0]", size=11.5, color=BLUE, mono=True)
-    note(ax, 2.6, 0.78, "3", size=12, color=BLUE, mono=True)
+        yy = 3.35 - i * 0.92
+        box(ax, 0.5, yy, 1.4, 0.68, k, size=11)
+        box(ax, 2.4, yy, 2.6, 0.68, v, size=11, fill="#ffffff")
+        arrow(ax, (1.95, yy + 0.34), (2.35, yy + 0.34), lw=1.4)
+    note(ax, 3.0, 2.06, "each value here is a list", size=10.5, color=MUTED)
+    note(ax, 3.0, 1.55, "favorite_numbers['eric'][0]", size=11.5, color=BLUE, mono=True)
+    note(ax, 3.0, 1.18, "3", size=12, color=BLUE, mono=True)
 
-    note(ax, 8.6, 4.15, "a dictionary inside a dictionary", size=12.5, color=INK, bold=True)
-    box(ax, 6.0, 2.05, 1.5, 0.7, "'gabby'", size=11)
-    ax.add_patch(FancyBboxPatch((7.95, 1.55), 3.1, 1.7,
+    # ---- right: a dictionary inside a dictionary -------------------------
+    note(ax, 9.4, 4.6, "a dictionary inside a dictionary", size=12.5, color=INK,
+         bold=True)
+    box(ax, 6.45, 2.61, 1.5, 0.68, "'gabby'", size=11)
+    arrow(ax, (8.0, 2.95), (8.4, 2.95), lw=1.4)
+
+    # The inner dictionary: its own frame, its own braces, its own key-value
+    # pairs drawn exactly like the outer ones.
+    ax.add_patch(FancyBboxPatch((8.45, 1.9), 3.9, 2.15,
                                 boxstyle="round,pad=0.04,rounding_size=0.08",
-                                linewidth=1.6, facecolor="#ffffff", edgecolor=EDGE))
+                                linewidth=1.6, facecolor="#fbfbfb", edgecolor=EDGE,
+                                linestyle=(0, (5, 3))))
+    note(ax, 10.3, 3.82, "another dictionary", size=10.5, color=MUTED)
+    ax.text(8.66, 2.72, "{", ha="center", va="center", fontsize=30, color=MUTED, **MONO)
+    ax.text(12.12, 2.72, "}", ha="center", va="center", fontsize=30, color=MUTED, **MONO)
     for i, (k, v) in enumerate([("'name'", "'gabby'"), ("'follower_num'", "13")]):
-        yy = 2.72 - i * 0.62
-        ax.text(8.15, yy, k, ha="left", va="center", fontsize=10, color=INK, **MONO)
-        ax.text(10.85, yy, v, ha="right", va="center", fontsize=10, color=INK, **MONO)
-    arrow(ax, (7.55, 2.4), (7.9, 2.4), lw=1.4)
-    note(ax, 8.6, 1.15, "overall_users['gabby']['follower_num']", size=11.5,
+        yy = 2.9 - i * 0.68
+        box(ax, 8.9, yy, 1.75, 0.5, k, size=9.5)
+        box(ax, 11.0, yy, 0.85, 0.5, v, size=9.5, fill="#ffffff")
+        arrow(ax, (10.7, yy + 0.25), (10.95, yy + 0.25), lw=1.2)
+    note(ax, 9.4, 1.55, "overall_users['gabby']['follower_num']", size=11.5,
          color=ORANGE, mono=True)
-    note(ax, 8.6, 0.78, "13", size=12, color=ORANGE, mono=True)
+    note(ax, 9.4, 1.18, "13", size=12, color=ORANGE, mono=True)
 
-    note(ax, 5.75, 0.2,
-         "A value can be any structure, including another list or dictionary. "
-         "Reach in one bracket at a time.", size=11.5, color=INK)
+    note(ax, 6.3, 0.5,
+         "A value can be any structure, including another list or another "
+         "dictionary.", size=11.5, color=INK)
+    note(ax, 6.3, 0.14,
+         "Each pair of brackets reaches in one level: first the outer key, then "
+         "the inner one.", size=11, color=MUTED)
     save(fig, path)
 
 
@@ -455,33 +476,6 @@ def name_and_value(path):
 
 
 # --------------------------------------------------------------------------
-def json_four_names(path):
-    """Diagram 8: dump, dumps, load, loads."""
-    fig, ax = canvas(11, 4.7)
-    box(ax, 4.2, 1.85, 2.6, 0.95, "a dictionary\nin Python", size=11.5, mono=False)
-    box(ax, 0.4, 1.85, 2.3, 0.95, "a file\non disk", size=11.5, mono=False,
-        fill="#f2f2f2", edge="#999999")
-    box(ax, 8.3, 1.85, 2.3, 0.95, "a string\nin memory", size=11.5, mono=False,
-        fill="#f2f2f2", edge="#999999")
-
-    arrow(ax, (4.15, 2.55), (2.75, 2.55), color=BLUE, lw=1.8)
-    note(ax, 3.45, 3.08, "json.dump(obj, f)", size=11, color=BLUE, mono=True)
-    arrow(ax, (2.75, 2.05), (4.15, 2.05), color=BLUE, lw=1.8)
-    note(ax, 3.45, 1.62, "json.load(f)", size=11, color=BLUE, mono=True)
-
-    arrow(ax, (6.85, 2.55), (8.25, 2.55), color=ORANGE, lw=1.8)
-    note(ax, 7.55, 3.08, "json.dumps(obj)", size=11, color=ORANGE, mono=True)
-    arrow(ax, (8.25, 2.05), (6.85, 2.05), color=ORANGE, lw=1.8)
-    note(ax, 7.55, 1.62, "json.loads(s)", size=11, color=ORANGE, mono=True)
-
-    note(ax, 5.5, 0.95, "The s is for string.", size=13, color=INK, bold=True)
-    note(ax, 5.5, 0.45,
-         "dump and load take an open file. dumps and loads hand you, or take "
-         "from you, a plain string.", size=11.5, color=INK)
-    save(fig, path)
-
-
-# --------------------------------------------------------------------------
 def args_kwargs(path):
     """Diagram 9: * collects into a tuple, ** into a dictionary."""
     fig, ax = canvas(11.4, 5.0)
@@ -563,7 +557,6 @@ def main():
     nested_dicts("Day3/img/nested_dicts.png")
     boolean_mask("Day4/img/boolean_mask.png")
     groupby_diagram("Day4/img/groupby.png")
-    json_four_names("Day4/img/json_four_names.png")
     args_kwargs("Day4/img/args_kwargs.png")
 
 
