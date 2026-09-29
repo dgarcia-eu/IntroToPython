@@ -93,7 +93,7 @@ def splice_solutions(nb, workdir: str) -> int:
 
 
 def check_execution(paths: list[str], report: Report, with_solutions: bool = False) -> None:
-    print(f"\n[1/5] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
+    print(f"\n[1/6] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
     for path in paths:
         workdir = os.path.dirname(path) or "."
         nb = nbformat.read(path, as_version=4)
@@ -151,7 +151,7 @@ def check_warnings(path: str, nb, report: Report) -> None:
 
 
 def check_load_paths(paths: list[str], report: Report) -> None:
-    print("\n[2/5] Checking %load solution paths")
+    print("\n[2/6] Checking %load solution paths")
     total = broken = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -169,7 +169,7 @@ def check_load_paths(paths: list[str], report: Report) -> None:
 
 
 def check_urls(paths: list[str], report: Report, network: bool) -> None:
-    print("\n[3/5] Checking external URLs")
+    print("\n[3/6] Checking external URLs")
     urls: dict[str, str] = {}
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -319,7 +319,7 @@ def check_primm(paths: list[str], report: Report) -> None:
     pointed at a placeholder. Nothing errors, the exercise just quietly asks
     for a prediction about nothing.
     """
-    print("\n[5/5] Checking Predict/Run/Investigate blocks")
+    print("\n[5/6] Checking Predict/Run/Investigate blocks")
     bad = total = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -349,7 +349,7 @@ def check_primm(paths: list[str], report: Report) -> None:
         report.ok(f"all {total} Predict/Run/Investigate prompts have runnable code")
 
 def check_kernels(paths: list[str], report: Report) -> None:
-    print("\n[4/5] Checking notebook metadata")
+    print("\n[4/6] Checking notebook metadata")
     bad = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -360,6 +360,37 @@ def check_kernels(paths: list[str], report: Report) -> None:
     if not bad:
         report.ok(f"all {len(paths)} notebooks declare the python3 kernel")
 
+
+
+IMG_RE = re.compile(r'<img[^>]*\bsrc="([^"]+)"|!\[[^\]]*\]\(([^)\s]+)\)')
+
+
+def check_images(paths: list[str], report: Report) -> None:
+    """Every image a notebook references must exist next to it.
+
+    The diagrams carry teaching that the prose no longer repeats, so a diagram
+    that silently 404s costs more than a broken link. Remote URLs are left to
+    the link checker; this is only about files that ship with the repository.
+    """
+    print("\n[6/6] Checking notebook images")
+    total = missing = 0
+    for path in paths:
+        nb = nbformat.read(path, as_version=4)
+        workdir = os.path.dirname(path) or "."
+        for i, cell in enumerate(nb.cells):
+            if cell.cell_type != "markdown":
+                continue
+            for a, b in IMG_RE.findall(cell.source):
+                src = a or b
+                if src.startswith(("http://", "https://", "data:", "attachment:")):
+                    continue
+                total += 1
+                if not os.path.exists(os.path.join(workdir, src)):
+                    missing += 1
+                    report.fail(f"{path}: cell {i} references {src}, "
+                                f"which does not exist")
+    if not missing:
+        report.ok(f"all {total} local notebook images resolve")
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -384,6 +415,7 @@ def main() -> int:
     check_urls(every, report, args.network)
     check_binder(report, args.network)
     check_primm(lectures, report)
+    check_images(every, report)
     check_kernels(every, report)
 
     print("\n" + "=" * 68)
