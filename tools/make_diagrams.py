@@ -226,46 +226,11 @@ def comprehension_to_loop(path):
     save(fig, path)
 
 
-# --------------------------------------------------------------------------
-def return_vs_print(path):
-    """Diagram 5: return hands a value back, print only shows it."""
-    fig, ax = canvas(11, 4.6)
-    ax.plot([5.5, 5.5], [0.5, 4.1], color="#cccccc", lw=1.2, ls=(0, (4, 4)))
-
-    # Left: return.
-    note(ax, 2.7, 4.25, "x = double(5)", size=13.5, color=INK, bold=True, mono=True)
-    box(ax, 1.05, 2.35, 3.3, 1.05, "def double(n):\n    return n * 2", size=11)
-    name(ax, 1.0, 1.25, "x")
-    box(ax, 1.15, 0.9, 0.95, 0.7, "10", fill="#ffffff")
-    arrow(ax, (2.7, 2.3), (1.85, 1.65), color=BLUE)
-    note(ax, 2.55, 1.98, "hands 10 back", size=11.5, color=BLUE, ha="left")
-    note(ax, 2.7, 0.52, "x is 10", size=12, color=BLUE, mono=True)
-
-    # Right: print.
-    note(ax, 8.4, 4.25, 'x = shout("hi")', size=13.5, color=INK, bold=True, mono=True)
-    box(ax, 6.7, 2.35, 3.4, 1.05, "def shout(t):\n    print(t.upper())", size=11)
-    box(ax, 8.95, 1.35, 1.15, 0.62, "HI", fill="#f2f2f2", edge="#999999")
-    note(ax, 10.2, 1.66, "screen", size=10.5, ha="left")
-    arrow(ax, (9.3, 2.3), (9.5, 2.02), color=MUTED)
-    name(ax, 6.65, 1.25, "x")
-    box(ax, 6.8, 0.9, 1.35, 0.7, "None", fill="#ffffff")
-    arrow(ax, (7.6, 2.3), (7.5, 1.65), color=ORANGE)
-    note(ax, 7.35, 1.98, "hands None back", size=11.5, color=ORANGE, ha="right")
-    note(ax, 8.4, 0.52, "x is None", size=12, color=ORANGE, mono=True)
-
-    note(ax, 5.5, 0.14,
-         "print puts characters on the screen. Only return gives the caller "
-         "something to keep.",
-         size=11.5, color=INK)
-    save(fig, path)
-
-
 def main():
     os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
     two_names_one_list("Day2/img/two_names_one_list.png")
     slicing("Day2/img/slicing_cuts.png")
     comprehension_to_loop("Day2/img/comprehension_to_loop.png")
-    return_vs_print("Day3/img/return_vs_print.png")
 
 
 if __name__ == "__main__":
