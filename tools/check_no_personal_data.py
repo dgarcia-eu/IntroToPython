@@ -31,6 +31,18 @@ FORBIDDEN_PATHS = [
     (re.compile(r"coverage_matrix", re.I), "the coverage matrix reveals task-by-task solution structure"),
 ]
 
+# Paths that look like one of the patterns above but genuinely belong here.
+# Each needs a reason: the whole point of the check is that nobody adds a
+# grading sheet by waving it through.
+ALLOWED_PATHS = {
+    # A deliberately terrible grade calculator written by an AI agent, used for
+    # the code-review exercise at the end of Day 5. It matches "grades?[-_.]"
+    # on its filename alone. It contains no data of any kind: the grades are
+    # typed in by whoever runs it.
+    "Day5/AI_grade_calculator.py",
+    "Day5/solutions/52_ai_code_review.py",
+}
+
 # Emails that are meant to be here. Anything else is treated as a leak.
 ALLOWED_EMAILS = {
     # The instructor's own institutional address, on the slides and in the README.
@@ -73,6 +85,8 @@ def main() -> int:
     files = tracked()
 
     for path in files:
+        if path in ALLOWED_PATHS:
+            continue
         for pattern, why in FORBIDDEN_PATHS:
             if pattern.search(path):
                 problems.append(f"{path}\n      {why}")

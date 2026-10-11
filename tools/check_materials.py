@@ -93,7 +93,7 @@ def splice_solutions(nb, workdir: str) -> int:
 
 
 def check_execution(paths: list[str], report: Report, with_solutions: bool = False) -> None:
-    print(f"\n[1/6] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
+    print(f"\n[1/7] Executing notebooks{' with solutions spliced in' if with_solutions else ''}")
     for path in paths:
         workdir = os.path.dirname(path) or "."
         nb = nbformat.read(path, as_version=4)
@@ -151,7 +151,7 @@ def check_warnings(path: str, nb, report: Report) -> None:
 
 
 def check_load_paths(paths: list[str], report: Report) -> None:
-    print("\n[2/6] Checking %load solution paths")
+    print("\n[2/7] Checking %load solution paths")
     total = broken = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -169,7 +169,7 @@ def check_load_paths(paths: list[str], report: Report) -> None:
 
 
 def check_urls(paths: list[str], report: Report, network: bool) -> None:
-    print("\n[3/6] Checking external URLs")
+    print("\n[3/7] Checking external URLs")
     urls: dict[str, str] = {}
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -319,7 +319,7 @@ def check_primm(paths: list[str], report: Report) -> None:
     pointed at a placeholder. Nothing errors, the exercise just quietly asks
     for a prediction about nothing.
     """
-    print("\n[5/6] Checking Predict/Run/Investigate blocks")
+    print("\n[5/7] Checking Predict/Run/Investigate blocks")
     bad = total = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -349,7 +349,7 @@ def check_primm(paths: list[str], report: Report) -> None:
         report.ok(f"all {total} Predict/Run/Investigate prompts have runnable code")
 
 def check_kernels(paths: list[str], report: Report) -> None:
-    print("\n[4/6] Checking notebook metadata")
+    print("\n[4/7] Checking notebook metadata")
     bad = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -372,7 +372,7 @@ def check_images(paths: list[str], report: Report) -> None:
     that silently 404s costs more than a broken link. Remote URLs are left to
     the link checker; this is only about files that ship with the repository.
     """
-    print("\n[6/6] Checking notebook images")
+    print("\n[6/7] Checking notebook images")
     total = missing = 0
     for path in paths:
         nb = nbformat.read(path, as_version=4)
@@ -391,6 +391,41 @@ def check_images(paths: list[str], report: Report) -> None:
                                 f"which does not exist")
     if not missing:
         report.ok(f"all {total} local notebook images resolve")
+
+
+def check_solutions_not_pasted(paths: list[str], report: Report) -> None:
+    """A "%load solutions/..." cell must hold the pointer, nothing more.
+
+    Running that cell in Jupyter replaces it with the solution and comments the
+    magic out. Save the notebook afterwards and the answer ships to students,
+    which quietly removes the exercise. It had happened three times before this
+    check existed, in 22_if_statements, 42_files and 52_beyond_the_notebook,
+    and nothing in the repository noticed.
+    """
+    print("\n[7/7] Checking solution cells are not expanded")
+    import ast as _ast
+    total = bad = 0
+    for path in paths:
+        nb = nbformat.read(path, as_version=4)
+        for i, cell in enumerate(nb.cells):
+            if cell.cell_type != "code" or not re.search(r"^\s*#\s*%load\s",
+                                                         cell.source, re.M):
+                continue
+            total += 1
+            code = "\n".join(l for l in cell.source.splitlines()
+                              if not l.lstrip().startswith("#"))
+            try:
+                n_exec = len(_ast.parse(code).body) if code.strip() else 0
+            except SyntaxError:
+                n_exec = 1
+            if n_exec or len(cell.source.splitlines()) > 5:
+                bad += 1
+                report.fail(f"{path}: cell {i} holds a %load pointer but also "
+                            f"{len(cell.source.splitlines())} lines of content. "
+                            f"The solution has been pasted in; collapse it back "
+                            f"to the commented %load line")
+    if not bad:
+        report.ok(f"all {total} solution pointers are still pointers")
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -416,6 +451,7 @@ def main() -> int:
     check_binder(report, args.network)
     check_primm(lectures, report)
     check_images(every, report)
+    check_solutions_not_pasted(every, report)
     check_kernels(every, report)
 
     print("\n" + "=" * 68)
